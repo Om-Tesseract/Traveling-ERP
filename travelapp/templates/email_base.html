@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024" />
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            background-color: #003049;
+            padding: 10px;
+
+        }
+
+        h2 {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .logo {
+            height: 4rem;
+            /* max-width: 100px; */
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://icams.tesseracttechnolabs.com/static/media/iWalkTheTalk_Logo_final.ca9a96b1dfa2d648da56.png" width="100" style="margin-top: 10px; margin-bottom: 10px;" alt="Company Logo" class="logo">
+            <h2>{{html_subject}}</h2>
+        </div>
+        <p>Dear {{ name}},</p>
+        <p>We received a request to reset the password for your account associated with this email address. If you made this request, please follow the instructions below to reset your password.</p>
+        <h3>Reset Your Password</h3>
+        <p>To reset your password, click on the link below or copy and paste it into your web browser:</p>
+        <p><a href="{{ reset_link }}">{{ reset_link }}</a></p>
+        <p>If you did not request a password reset, please ignore this email. Your account remains secure, and no changes have been made.</p>
+        <p>Thank you,<br>iCAMS Support Team</p>
+    </div>
+</body>
+
+</html>
