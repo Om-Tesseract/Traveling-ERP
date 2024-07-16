@@ -1,0 +1,8 @@
+1. first activity name is Arrival at city name
+2. last activity name is Departure from  city name
+
+12-07-24 task
+1. create hotel filter api 
+2. create road transport filter api
+3. create activities filter api
+

@@ -1,6 +1,6 @@
 # serializers.py
 from rest_framework import serializers
-from api.models import Company,Customer,Package,Employee,EmployeeAttendance,CustomisedPackage, CityNight, City, Nationality, Travel_Details,Activity,Itinerary
+from api.models import Company,Customer,Package,Employee,EmployeeAttendance,CustomisedPackage, CityNight, Cities, Nationality, Travel_Details,Activity,Itinerary
 
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
@@ -32,7 +32,7 @@ class EmployeeAttendanceSerializer(serializers.ModelSerializer):
 
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
-        model = City
+        model = Cities
         fields = ['id', 'name', 'state', 'country']
 
 class NationalitySerializer(serializers.ModelSerializer):
@@ -125,3 +125,4 @@ class ItinerarySerializer(serializers.ModelSerializer):
     class Meta:
         model=Itinerary 
         fields='__all__'
+        

@@ -1,0 +1,334 @@
+{
+    "rt":[
+        {
+          "vehicle_type": "AC Sedan",
+          "seats": 4,
+          "destination": "Jaipur",
+          "cost": 4500.00,
+          "pickup_from": "Ahmedabad"
+        },
+        {
+          "vehicle_type": "AC Innova",
+          "seats": 6,
+          "destination": "Jodhpur",
+          "cost": 8500.00,
+          "pickup_from": "Ahmedabad"
+        },
+        {
+          "vehicle_type": "AC Innova Crysta",
+          "seats": 7,
+          "destination": "Udaipur",
+          "cost": 12000.00,
+          "pickup_from": "Ahmedabad"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 9,
+          "destination": "Delhi",
+          "cost": 22000.00,
+          "pickup_from": "Ajmer"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 17,
+          "destination": "Jaipur",
+          "cost": 24000.00,
+          "pickup_from": "Ajmer"
+        },
+        {
+          "vehicle_type": "Coach",
+          "seats": 35,
+          "destination": "Jaipur",
+          "cost": 55000.00,
+          "pickup_from": "Jaipur"
+        },
+        {
+          "vehicle_type": "AC Sedan",
+          "seats": 4,
+          "destination": "Delhi",
+          "cost": 5000.00,
+          "pickup_from": "Jaipur"
+        },
+        {
+          "vehicle_type": "AC Innova",
+          "seats": 6,
+          "destination": "Jodhpur",
+          "cost": 8200.00,
+          "pickup_from": "Jaipur"
+        },
+        {
+          "vehicle_type": "AC Innova Crysta",
+          "seats": 7,
+          "destination": "Udaipur",
+          "cost": 12500.00,
+          "pickup_from": "Jaipur"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 9,
+          "destination": "Jaipur",
+          "cost": 23000.00,
+          "pickup_from": "Abu"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 17,
+          "destination": "Jodhpur",
+          "cost": 25000.00,
+          "pickup_from": "Abu"
+        },
+        {
+          "vehicle_type": "Coach",
+          "seats": 35,
+          "destination": "Udaipur",
+          "cost": 60000.00,
+          "pickup_from": "Abu"
+        },
+        {
+          "vehicle_type": "AC Sedan",
+          "seats": 4,
+          "destination": "Delhi",
+          "cost": 4800.00,
+          "pickup_from": "Udaipur"
+        },
+        {
+          "vehicle_type": "AC Innova",
+          "seats": 6,
+          "destination": "Jaipur",
+          "cost": 8400.00,
+          "pickup_from": "Udaipur"
+        },
+        {
+          "vehicle_type": "AC Innova Crysta",
+          "seats": 7,
+          "destination": "Jodhpur",
+          "cost": 13000.00,
+          "pickup_from": "Udaipur"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 9,
+          "destination": "Delhi",
+          "cost": 23500.00,
+          "pickup_from": "Ahmedabad"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 17,
+          "destination": "Jaipur",
+          "cost": 24500.00,
+          "pickup_from": "Ahmedabad"
+        },
+        {
+          "vehicle_type": "Coach",
+          "seats": 35,
+          "destination": "Jodhpur",
+          "cost": 61000.00,
+          "pickup_from": "Ahmedabad"
+        },
+        {
+          "vehicle_type": "AC Sedan",
+          "seats": 4,
+          "destination": "Udaipur",
+          "cost": 4700.00,
+          "pickup_from": "Ajmer"
+        },
+        {
+          "vehicle_type": "AC Innova",
+          "seats": 6,
+          "destination": "Delhi",
+          "cost": 8600.00,
+          "pickup_from": "Ajmer"
+        },
+        {
+          "vehicle_type": "AC Innova Crysta",
+          "seats": 7,
+          "destination": "Jaipur",
+          "cost": 12800.00,
+          "pickup_from": "Ajmer"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 9,
+          "destination": "Jodhpur",
+          "cost": 24000.00,
+          "pickup_from": "Jaipur"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 17,
+          "destination": "Udaipur",
+          "cost": 25500.00,
+          "pickup_from": "Jaipur"
+        },
+        {
+          "vehicle_type": "Coach",
+          "seats": 35,
+          "destination": "Delhi",
+          "cost": 57500.00,
+          "pickup_from": "Jaipur"
+        },
+        {
+          "vehicle_type": "AC Sedan",
+          "seats": 4,
+          "destination": "Jodhpur",
+          "cost": 4900.00,
+          "pickup_from": "Abu"
+        },
+        {
+          "vehicle_type": "AC Innova",
+          "seats": 6,
+          "destination": "Udaipur",
+          "cost": 8700.00,
+          "pickup_from": "Abu"
+        },
+        {
+          "vehicle_type": "AC Innova Crysta",
+          "seats": 7,
+          "destination": "Delhi",
+          "cost": 13500.00,
+          "pickup_from": "Abu"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 9,
+          "destination": "Jaipur",
+          "cost": 24500.00,
+          "pickup_from": "Udaipur"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 17,
+          "destination": "Jodhpur",
+          "cost": 26500.00,
+          "pickup_from": "Udaipur"
+        },
+        {
+          "vehicle_type": "Coach",
+          "seats": 35,
+          "destination": "Udaipur",
+          "cost": 63000.00,
+          "pickup_from": "Abu"
+        },
+        {
+          "vehicle_type": "AC Sedan",
+          "seats": 4,
+          "destination": "Delhi",
+          "cost": 5100.00,
+          "pickup_from": "Udaipur"
+        },
+        {
+          "vehicle_type": "AC Innova",
+          "seats": 6,
+          "destination": "Jaipur",
+          "cost": 8900.00,
+          "pickup_from": "Udaipur"
+        },
+        {
+          "vehicle_type": "AC Innova Crysta",
+          "seats": 7,
+          "destination": "Jodhpur",
+          "cost": 14000.00,
+          "pickup_from": "Udaipur"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 9,
+          "destination": "Jaipur",
+          "cost": 25000.00,
+          "pickup_from": "Abu"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 17,
+          "destination": "Delhi",
+          "cost": 27000.00,
+          "pickup_from": "Abu"
+        },
+        {
+          "vehicle_type": "Coach",
+          "seats": 35,
+          "destination": "Jaipur",
+          "cost": 65000.00,
+          "pickup_from": "Abu"
+        },
+        {
+          "vehicle_type": "AC Sedan",
+          "seats": 4,
+          "destination": "Delhi",
+          "cost": 4800.00,
+          "pickup_from": "Ajmer"
+        },
+        {
+          "vehicle_type": "AC Innova",
+          "seats": 6,
+          "destination": "Jaipur",
+          "cost": 8600.00,
+          "pickup_from": "Ajmer"
+        },
+        {
+          "vehicle_type": "AC Innova Crysta",
+          "seats": 7,
+          "destination": "Jodhpur",
+          "cost": 13300.00,
+          "pickup_from": "Ajmer"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 9,
+          "destination": "Udaipur",
+          "cost": 24000.00,
+          "pickup_from": "Ajmer"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 17,
+          "destination": "Jaipur",
+          "cost": 26000.00,
+          "pickup_from": "Jaipur"
+        },
+        {
+          "vehicle_type": "Coach",
+          "seats": 35,
+          "destination": "Delhi",
+          "cost": 57000.00,
+          "pickup_from": "Jaipur"
+        },
+        {
+          "vehicle_type": "AC Sedan",
+          "seats": 4,
+          "destination": "Manali",
+          "cost": 12000.00,
+          "pickup_from": "Ahmedabad"
+        },
+        {
+          "vehicle_type": "AC Innova",
+          "seats": 6,
+          "destination": "Manali",
+          "cost": 18000.00,
+          "pickup_from": "Ahmedabad"
+        },
+        {
+          "vehicle_type": "AC Innova Crysta",
+          "seats": 7,
+          "destination": "Manali",
+          "cost": 20000.00,
+          "pickup_from": "Ahmedabad"
+        },
+        {
+          "vehicle_type": "Tempo Traveler",
+          "seats": 9,
+          "destination": "Manali",
+          "cost": 32000.00,
+          "pickup_from": "Ahmedabad"
+        },
+        {
+          "vehicle_type": "Coach",
+          "seats": 35,
+          "destination": "Manali",
+          "cost": 75000.00,
+          "pickup_from": "Ahmedabad"
+        }
+      ]
+      
+}

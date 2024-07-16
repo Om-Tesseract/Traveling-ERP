@@ -18,7 +18,8 @@ class Country(models.Model):
     region=models.CharField(max_length=50,null=True)
     nationality=models.CharField(max_length=50,null=True)
     emojiU=models.CharField(max_length=50,null=True)
-
+    def __str__(self) -> str:
+        return self.name
 class States(models.Model):
     name= models.CharField(max_length=60)
     country=models.ForeignKey(Country,on_delete=models.CASCADE,related_name="country_states_set")
@@ -29,7 +30,21 @@ class Cities(models.Model):
     state= models.ForeignKey(States,on_delete=models.CASCADE,related_name="state_city_set")
     country=models.ForeignKey(Country,on_delete=models.CASCADE,related_name="country_city_set")
 
-    
+    def __str__(self) -> str:
+        return f"{self.name} {self.state.name}"
+
+
+class RoadTransportOption(models.Model):
+    vehicle_type = models.CharField(max_length=100)
+    seats = models.IntegerField()
+    cost = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+   
+
+    def __str__(self):
+       
+        return f"{self.vehicle_type} (Seats: {self.seats} people)"
+
+
 class Company(models.Model):
     custom_user=models.ForeignKey(CustomUser,on_delete=models.CASCADE,null=True,blank=True,related_name="company_set")
     website = models.CharField(max_length=50, null=True, blank=True)
@@ -41,6 +56,8 @@ class Company(models.Model):
     secondary_txt_color=models.CharField(max_length=60,null=True)
     # class Meta:
     #     db_table = 'company'
+    def __str__(self) -> str:
+        return f"{self.custom_user.first_name}"
 class Employee(BaseModel):
     emp_name = models.CharField(max_length=100)
     emp_salary = models.DecimalField(max_digits=10, decimal_places=2,default=0)
@@ -90,13 +107,6 @@ class Package(models.Model):
         return self.package_name
     
 
-class City(models.Model):
-    name = models.CharField(max_length=100,null=True,blank=True)
-    state = models.CharField(max_length=100,null=True,blank=True)
-    country = models.CharField(max_length=100,null=True,blank=True)
-
-    def __str__(self):
-        return f'{self.name}, {self.state}, {self.country}'
 
 class Nationality(models.Model):
     nationality_choice=models.CharField(max_length=200,null=True,blank=True)
@@ -105,35 +115,38 @@ class Nationality(models.Model):
         return f'{self.nationality_choice}'
 
 
-class CustomisedPackage(models.Model):
+class CustomisedPackage(BaseModel):
+    package_name=models.CharField(max_length=200,)
     customer=models.ForeignKey(Customer,on_delete=models.SET_NULL,related_name="customer_package",null=True,blank=True)
-    leaving_from= models.ForeignKey(City, on_delete=models.CASCADE,related_name="leaving_city",null=True,blank=True)
-    nationality=models.ForeignKey(Nationality,on_delete=models.SET_NULL,related_name="nationality",null=True,blank=True)
-    leaving_on=models.DateTimeField(auto_now=True)
-    number_of_rooms = models.IntegerField(null=True,blank=True)
-    number_of_adults = models.IntegerField(null=True,blank=True)
-    number_of_children = models.IntegerField(null=True,blank=True)
+    leaving_from= models.ForeignKey(Cities, on_delete=models.SET_NULL,related_name="leaving_city",null=True,blank=True)
+    nationality=models.ForeignKey(Country,on_delete=models.SET_NULL,related_name="package_nationality",null=True,blank=True)
+    leaving_on=models.DateTimeField()
+    number_of_rooms = models.IntegerField(default=1)
+    number_of_adults = models.IntegerField(default=0)
+    number_of_children = models.IntegerField(default=0)
+    company=models.ForeignKey(Company,null=True,on_delete=models.CASCADE)
+
 
     INTEREST_CHOICES = [
-        ('honeymoon', 'Honeymoon'),
-        ('luxury', 'Luxury'),
-        ('leisure', 'Leisure'),
-        ('spa', 'Spa'),
-        ('history', 'History'),
-        ('art_and_culture', 'Art and Culture'),
-        ('adventure', 'Adventure'),
-        ('shopping', 'Shopping'),
-        ('entertainment', 'Entertainment'),
-        ('nightlife', 'Nightlife'),
+        ('Honeymoon', 'Honeymoon'), 
+        ('Luxury', 'Luxury'),
+        ('Leisure', 'Leisure'),
+        ('Spa', 'Spa'),
+        ('History', 'History'),
+        ('Art and Culture', 'Art and Culture'),
+        ('Adventure', 'Adventure'),
+        ('Shopping', 'Shopping'),
+        ('Entertainment', 'Entertainment'),
+        ('Nightlife', 'Nightlife'),
     ]
-    interests = MultiSelectField(max_length=200, choices=INTEREST_CHOICES)
+    interests = MultiSelectField(max_length=200, choices=INTEREST_CHOICES,null=True)
 
     TRAVEL_CHOICES=[
         ('couple','Couple'),
         ('family','Family'),
         ('friends','Friends'),
     ]
-    who_is_travelling=models.CharField(max_length=50,choices=TRAVEL_CHOICES)
+    who_is_travelling=models.CharField(max_length=50,choices=TRAVEL_CHOICES,null=True)
 
     #checkbox fields
     #couple
@@ -145,30 +158,74 @@ class CustomisedPackage(models.Model):
     #friends
     women_only=models.BooleanField(default=False)
     men_only=models.BooleanField(default=False)
-
-    STAR_CHOICES=[
-        ('3_star','3 Stars'),
-        ('4_star','4 Stars'),
-        ('5_star','5 Stars'),
-    ]
-    star_rating=models.CharField(max_length=20,choices=STAR_CHOICES,default="Recommended")
+  
+    room_type=models.CharField(max_length=20,null=True)
+    star_rating=models.IntegerField(default=3)
     add_transfers=models.BooleanField(default=False)
     add_tours_and_travels=models.BooleanField(default=False)
-
     itinerary_created=models.BooleanField(default=False)
 
 class CityNight(models.Model):
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.ForeignKey(Cities, on_delete=models.CASCADE)
     package = models.ForeignKey(CustomisedPackage, on_delete=models.CASCADE, related_name='city_nights')
     nights = models.IntegerField()
-    
+
+
+
 
 class Travel_Details(models.Model):
     package = models.ForeignKey(CustomisedPackage, on_delete=models.CASCADE, null=True, blank=True)
-    destinations = models.JSONField(null=True, blank=True)  
     vehicles = models.JSONField(null=True, blank=True)
+    is_flights=models.BooleanField(default=False)
+    road_transport=models.ForeignKey(RoadTransportOption,on_delete=models.CASCADE,null=True,blank=True)
     PNR = models.CharField(max_length=100, null=True, blank=True)
-    hotel_details=models.JSONField(null=True,blank=True)
+    destination = models.ForeignKey(Cities,null=True,blank=True,on_delete=models.CASCADE,related_name="destination")
+    pickup_from = models.ForeignKey(Cities,null=True, blank=True,on_delete=models.CASCADE,related_name="pickup_from")
+
+# class Expansion    
+
+
+class Hotel(models.Model):
+    name = models.CharField(max_length=255)
+    address = models.TextField(null=True)
+    area=models.CharField(max_length=50,null=True,blank=True)
+    city = models.ForeignKey('Cities', on_delete=models.CASCADE, related_name='hotels')
+    star_rating = models.IntegerField(null=True, blank=True)
+    rate=models.CharField(max_length=20,null=True)
+    desc=models.TextField(null=True,blank=True)
+    contact_info = models.JSONField(null=True, blank=True)  # Contact details like phone, email, etc.
+    image_url = models.URLField(max_length=200,null=True,blank=True)
+    ln=models.FloatField(null=True, blank=True)
+    lt=models.FloatField(null=True, blank=True)
+    def __str__(self):
+        return self.name
+    
+class RoomType(models.Model):
+    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,related_name="rooms_type")
+    rnm = models.CharField("room name",max_length=255)
+    meal_plan = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    availability = models.BooleanField(default=True)
+    amenity = models.JSONField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.rnm} - {self.hotel.name}"
+
+
+class HotelDetails(models.Model):
+    
+    package = models.ForeignKey('CustomisedPackage', on_delete=models.CASCADE, related_name='hotel_details')
+    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE)
+    citynight= models.ForeignKey(CityNight, on_delete=models.CASCADE,null=True)
+    check_in_date = models.DateField()
+    check_out_date = models.DateField()
+    room_type = models.CharField(max_length=100)  # e.g., Single, Double, Suite
+    number_of_rooms = models.IntegerField()
+    total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    additional_requests = models.TextField(null=True, blank=True)  # Any special requests made by the customer
+
+    def __str__(self):
+        return f'{self.hotel.name} - {self.room_type}'
 
 
 class Activity(models.Model):
@@ -185,19 +242,32 @@ class Activity(models.Model):
         ('nightlife', 'Nightlife'),
     ]
     
-    category = models.CharField(max_length=50, choices=category_choices, null=True, blank=True)
-    duration = models.CharField(max_length=300, null=True, blank=True)  # in hours
+    
+    category = MultiSelectField(max_length=250, choices=category_choices)
+    duration = models.CharField(max_length=30, null=True, blank=True)  
     age_limit = models.IntegerField(null=True, blank=True)
-    activity_name = models.CharField(max_length=40, null=True, blank=True)
-    activity_desc = models.CharField(max_length=300, null=True, blank=True)
-    activity_city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="activities_in_city",null=True,blank=True)
+    activity_name = models.CharField(max_length=350)
+    sequence=models.IntegerField(null=True, blank=True)
+    activity_desc = models.TextField(null=True, blank=True)
+    activity_city = models.ForeignKey(Cities, on_delete=models.CASCADE, related_name="activities_in_city",null=True)
 
     def __str__(self):
         return self.activity_name if self.activity_name else "Activity"
 
+
+
+
 class Itinerary(models.Model):
-    package=models.ForeignKey(CustomisedPackage,on_delete=models.CASCADE,null=True,blank=True)
+    statues_choices=[
+      ("PENDING","PENDING"),
+      ("COMPLETED","COMPLETED"),
+    ]
+    package=models.ForeignKey(CustomisedPackage,on_delete=models.CASCADE,)
+    citynight= models.ForeignKey(CityNight, on_delete=models.CASCADE,null=True)
     days=models.DateField()
-    activities=models.ManyToManyField(Activity)
+    activities=models.ManyToManyField(Activity,related_name="Itinrtary_activities",)
     activity_input=models.TextField(null=True,blank=True)
-    travel_details=models.ForeignKey(Travel_Details,on_delete=models.SET_NULL,null=True,blank=True)
+    status=models.CharField(max_length=60,default="PENDING",choices=statues_choices)
+  
+    class Meta:
+        get_latest_by = "days"
