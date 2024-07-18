@@ -7,7 +7,7 @@ from api.models import *
 from itertools import cycle
 from django.contrib.auth import get_user_model
 from django.db import transaction
-from django.db.models import Q
+from django.db.models import Q,F,Sum,Count,Exists, OuterRef, Subquery
 
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
@@ -208,11 +208,18 @@ class CityNightSerializer(serializers.ModelSerializer):
     id=serializers.IntegerField(required=False)
     class Meta:
         model = CityNight
-        fields = ['id', 'city', 'nights']
+        fields = '__all__'
+        extra_kwargs ={
+            "package":{"required":False}
+        }
     
     def to_representation(self, instance):
         data=super().to_representation(instance)
         data['city_name']=instance.city.name
+        data['city']=Cities.objects.filter(id=instance.city.id).values(
+            "id",'name','img','img_url',country_name=F('country__name'),state_name=F('state__name')
+        ).first()
+      
         return data
    
 
@@ -252,12 +259,21 @@ class HotelDetailSerializer(serializers.ModelSerializer):
 
         }  
 
+
+class FlightDetailSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(required=False)
+    class Meta:
+        model=Flight_Details
+        fields='__all__'
+        extra_kwargs={
+            "package":{"required": False}
+        }
 class CustomisedPackageUpdateSerializer(serializers.ModelSerializer):
     hotel_details=HotelDetailSerializer(many=True,write_only=True)
     travel_details=TravelDetailsSerializer(many=True,write_only=True)
     itineraty=ItineraryPackageSerializer(many=True,write_only=True)
     interests = serializers.MultipleChoiceField(choices=CustomisedPackage.INTEREST_CHOICES)
-   
+    flight_details=FlightDetailSerializer(many=True,write_only=True)
     class Meta:
        fields= '__all__'
        model=CustomisedPackage
@@ -266,13 +282,24 @@ class CustomisedPackageUpdateSerializer(serializers.ModelSerializer):
                "required":False
            }
        }
-    
+    @transaction.atomic()
     def update(self, instance, validated_data):
 
         city_nights_data = instance.city_nights.all()
         hotel_detail=validated_data.pop('hotel_details', [])
         travel_details=validated_data.pop('travel_details', [])
-
+        flight_details= validated_data.pop('flight_details', [])
+        for flight in flight_details:
+            if flight.get('id'):
+                try:
+                    flight_intance=Flight_Details.objects.get(id=flight.get('id'))
+                    for key, value in flight.items():
+                            setattr(flight_intance, key, value)
+                    flight_intance.save()
+                except Flight_Details.DoesNotExist as e:
+                    raise serializers.ValidationError({"error": e})
+            else:
+                Flight_Details.objects.create(package=instance,**flight)
         for travel in travel_details:
             if travel.get('id'):
                 travel_instance=Travel_Details.objects.filter(
@@ -354,6 +381,18 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
                 "required": False
             },
         }
+
+    def add_road_transport(self,package,destination):
+        rto=RoadTransportOption.objects.filter(seats__gte=package.number_of_adults).order_by('seats').first()
+        travel_details=None
+        
+        if rto:
+            print("rto==>",rto)
+            travel_details=Travel_Details.objects.create(package=package,road_transport=rto,destination=destination,pickup_from=package.leaving_from)
+        return travel_details
+    def update_road_transport(self,package,destination,pickup_from):
+        travel_details=Travel_Details.objects.filter(package=package).update(pickup_from=pickup_from,destination=destination)
+
     @transaction.atomic()  
     def create(self, validated_data):
         city_nights_data = validated_data.pop('city_nights')
@@ -374,111 +413,20 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
             
         
         hotel_leaving_date=package.leaving_on
-        itenerary_date = package.leaving_on
-        print("Leaving",hotel_leaving_date)
-
-        rto=RoadTransportOption.objects.filter(seats__gte=package.number_of_adults).first()
-        travel_details=None
-        # print("Travel details",rto,city_nights_data[0].get('city'),package.leaving_from)
-        if rto:
-            print("rto==>",rto)
-            travel_details=Travel_Details.objects.create(package=package,road_transport=rto,destination=city_nights_data[0].get('city'),pickup_from=package.leaving_from)
-
+        itin_city_change_last_date = package.leaving_on
+     
+        self.add_road_transport(package,city_nights_data[0].get('city'))
+       
         # Create CityNight instances
         for city_night_data in city_nights_data:
-            total_price=None
             city_night=CityNight.objects.create(package=package, **city_night_data)
-            hotel_obj=Hotel.objects.filter(city=city_night_data.get('city'),star_rating=package.star_rating)
-            if hotel_obj.exists():
-                hotel=hotel_obj.first()
-                room_types=RoomType.objects.filter(Q(hotel=hotel)
-                                                   |
-                        Q(rnm__icontains=package.room_type)).first()
+            self.add_hotel_detail(package,city_night,hotel_leaving_date)
+            self.add_itinerary(package,city_night,itin_city_change_last_date)
                 
-                per_night_price = room_types.price if room_types else 0
-        
-            
-                total_price = per_night_price * city_night.nights
-                hotel_detail={
-                    "package":package,
-                    "hotel":hotel,
-                    "check_in_date":hotel_leaving_date,
-                    "check_out_date":hotel_leaving_date + datetime.timedelta(days=city_night.nights),
-                    "number_of_rooms":package.number_of_rooms,
-                    "room_type":package.room_type,
-                    "total_price":total_price,
-                    "citynight":city_night,
-
-                }
-                print("hotel detail",hotel_detail)
-                hotel_details=HotelDetails.objects.create(**hotel_detail)
-                hotel_leaving_date=hotel_details.check_out_date
-                print(hotel_details)
-            
-       
-            
-            # Filter and sort activities based on category and city
-           
-            category_q = Q()
-            for interest in package.interests:
-                category_q |= Q(category__icontains=interest)
-    
-           
-            activity_list = list(
-                Activity.objects.filter(
-                    activity_city=city_night.city
-                ).exclude(
-                    activity_name__icontains='Departure from'
-                ).exclude(
-                    activity_name__icontains='Arrival at'
-                ).order_by('sequence')
-            )
-
-
-            print("Activtion list",activity_list)
-            # Create an iterator to cycle through activities
-            activity_cycle = cycle(activity_list)
           
-            # Create itinerary entries for each day of the city night stay
-            for i in range(city_night.nights):
-                # Get the next unique activity from the cycle
-                if i==0:
-                    activity,is_created = Activity.objects.get_or_create(activity_name__icontains=f"Arrival at {city_night.city.name}",activity_city=city_night.city)
-                    print("Activity=======>",activity,is_created)
-                else:
-                    else_activity,is_created =Activity.objects.get_or_create(activity_name="Day at Leisure",activity_city=city_night.city,sequence=2,category=['leisure'],activity_desc=f"Explore {city_night.city.name} on your own")
-                    activity = next(activity_cycle, else_activity)
-                itinerary_date = itenerary_date + datetime.timedelta(days=i)
-                itinerary = Itinerary.objects.create(
-                    package=package, 
-                    days=itinerary_date, 
-                    citynight=city_night
-                   
-                )   
-               
-                print("Created itinerary",city_night.city.name,itinerary,itinerary.days)
-                if activity:
-                   
-                    print(activity.activity_city.name)
-                    # Create itinerary entry with the activity
-                    itinerary.activities.add(activity)
-                else:
-                    # Handle the case where there are fewer activities than days
-                    print(f"Warning: Insufficient activities for {city_night.city}")
-    
-            # Update the itenerary_date for the next city
-            itenerary_date = itinerary_date + datetime.timedelta(days=1)
-
         # add last day of package
-        last_iti=Itinerary.objects.filter(package_id=package.id).last()
-        itinerary = Itinerary.objects.create(
-                    package=package, 
-                    days=last_iti.days+datetime.timedelta(days=1), 
-                   citynight=last_iti.citynight,
-                  
-                ) 
-        activity, is_created=Activity.objects.get_or_create(activity_name=f"Departure from {itinerary.citynight.city.name}",activity_city=city_night.city)
-        itinerary.activities.add(activity)  
+        self.add_last_itinerary(package)
+        
         return package
     
     def delete_city_nights(self,del_list,package:CustomisedPackage):
@@ -516,7 +464,7 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
                     "check_in_date":hotel_leaving_date,
                     "check_out_date":hotel_leaving_date + datetime.timedelta(days=city_night.nights),
                     "number_of_rooms":package.number_of_rooms,
-                    "room_type":package.room_type,
+                    "room_type":room_types.rnm if room_types else package.room_type,
                     "total_price":total_price,
                     "citynight":city_night,
 
@@ -555,7 +503,7 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
                     activity,is_created = Activity.objects.get_or_create(activity_name__icontains=f"Arrival at {city_night.city.name}",activity_city=city_night.city)
                     print("Activity=======>",activity,is_created)
                 else:
-                    else_activity,is_created =Activity.objects.get_or_create(activity_name="Day at Leisure",activity_city=city_night.city,sequence=2,category=['leisure'],activity_desc=f"Explore {city_night.city.name} on your own")
+                    else_activity,is_created =Activity.objects.get_or_create(activity_name="Day at Leisure",activity_city=city_night.city,category=['leisure'],activity_desc=f"Explore {city_night.city.name} on your own")
                     activity = next(activity_cycle, else_activity)
                 itinerary_date = itin_city_change_last_date + datetime.timedelta(days=i)
                 itinerary = Itinerary.objects.create(
@@ -577,10 +525,13 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
     
             # Update the itenerary_date for the next city
             itin_city_change_last_date = itinerary_date + datetime.timedelta(days=1)
+   
+
     @transaction.atomic()
     def update(self, instance, validated_data):
         city_nights_data = validated_data.pop('city_nights',[])
         del_city_nigths = validated_data.pop('del_city_nigths',[])
+      
         if len(del_city_nigths)>0:
             self.delete_city_nights(del_city_nigths,instance)
         
@@ -588,12 +539,14 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
         itin_city_change_last_date =validated_data.get('leaving_on', instance.leaving_on)
         is_change_city=False
         instance.leaving_on=validated_data.get('leaving_on', instance.leaving_on)
+        # self.update_road_transport(instance,city_nights_data[0].get('city'),instance.leaving_from)
+
         for city_night in city_nights_data:
             city = city_night.get('city')
             city_night_id = city_night.get('id', None)
             if city_night_id:
                 city_night_obj = CityNight.objects.get(id=city_night_id, package=instance)
-                if city_night_obj.city.name !=city.name or city_night_obj.nights != city_night.get('nights',city_night_obj.nights) or city_night_obj.city.name !=city.name:
+                if city_night_obj.city.name !=city.name or city_night_obj.city.name !=city.name:
                     city_night_obj.nights=city_night.get('nights',city_night_obj.nights)
                     city_night_obj.city=city
                     self.delete_hotels_detail(instance,city_night_obj)
@@ -602,8 +555,22 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
                     self.add_itinerary(instance,city_night_obj,itin_city_change_last_date)
                     is_change_city=True
                     city_night_obj.save()
-        
-        
+                elif city_night_obj.nights < city_night.get('nights',city_night_obj.nights):        
+                    add_night_count=  city_night.get('nights',city_night_obj.nights)-city_night_obj.nights
+                    # add night
+                    city_night_obj.nights=city_night.get('nights',city_night_obj.nights)
+                    city_night_obj.city=city
+                    self.add_nights(city_night_obj,abs(add_night_count))
+                    print('adding night',add_night_count)
+                    city_night_obj.save()
+                elif city_night_obj.nights > city_night.get('nights',city_night_obj.nights):     
+                    remove_night_count=  city_night.get('nights',city_night_obj.nights)-city_night_obj.nights
+                    city_night_obj.nights=city_night.get('nights',city_night_obj.nights)
+                    city_night_obj.city=city
+                    self.reduce_nights(city_night_obj,abs(remove_night_count))
+                    # less night
+                    print('remove night',abs(remove_night_count))
+                    city_night_obj.save()
             else:
                 
                 it=Itinerary.objects.filter(package=instance).order_by('date')
@@ -615,231 +582,636 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
                 self.add_itinerary(instance,city_night_obj,itin_city_change_last_date)
                 is_change_city=True
                               
-
-
-        if is_change_city:
+        
+        iti_count=Itinerary.objects.filter(package=instance).count()
+        nights_count=CityNight.objects.filter(package=instance).values().aggregate(total_nights=Sum('nights')).get('total_nights')
+        print(nights_count,iti_count)
+        # if iti_count==nights_count:
+           
+        self.reschedule(instance)       
+        CustomisedPackage.objects.filter(id=instance.id).update(**validated_data)
+        return validated_data
+    def add_last_itinerary(self, instance,):
             last_iti=Itinerary.objects.filter(package_id=instance.id).last()
             itinerary = Itinerary.objects.create(
                         package=instance, 
                         days=last_iti.days+datetime.timedelta(days=1), 
                        citynight=last_iti.citynight,
                     ) 
-            activity, is_created=Activity.objects.get_or_create(activity_name=f"Departure from {itinerary.citynight.city.name}",activity_city=city_night_obj.city)
+            activity, is_created=Activity.objects.get_or_create(activity_name=f"Departure from {itinerary.citynight.city.name}",activity_city=last_iti.citynight.city)
             itinerary.activities.add(activity)  
-        self.reschedule(instance)       
-        CustomisedPackage.objects.filter(id=instance.id).update(**validated_data)
-        return validated_data
-    
     def reschedule(self,package):
         itiners=Itinerary.objects.filter(package=package).order_by('days')
         start_itin_date=package.leaving_on
+
+        excluded_activities_subquery = Activity.objects.filter(
+            Q(activity_name__icontains='Departure from') 
+        )
+
+        # Filter itineraries to exclude those having excluded activities
+        itineraries = Itinerary.objects.annotate(
+            has_excluded_activities=Exists(
+                excluded_activities_subquery.filter(
+                    id__in=OuterRef('activities')
+                )
+            )
+        ).filter(has_excluded_activities=True,citynight__package=package).order_by('days')
+        itineraries.delete()
+        
+ 
         for it in itiners:
             print(start_itin_date)
             it.days=start_itin_date
             it.save()
             start_itin_date=start_itin_date + datetime.timedelta(days=1)
-    # @transaction.atomic()
-    # def update(self, instance, validated_data):
-    #     city_nights_data = validated_data.pop('city_nights',[])
-    #     del_city_nigths = validated_data.pop('del_city_nigths',[])
-    #     CityNight.objects.filter(id__in=del_city_nigths).delete()
-    #     # print(city_nights_data)
-    #     if validated_data.get('interests'):
-    #         validated_data['interests']=list(validated_data.get('interests'))
-    #     itenerary_date = instance.leaving_on
-    #     print("trip started at: " , itenerary_date)
-    #     current_night = 1
-    #     for city_night in city_nights_data:
-    #         city = city_night.get('city')
-    #         city_night_id = city_night.get('id', None)
-         
-    #         if city_night_id:
-    #             city_night_obj = CityNight.objects.get(id=city_night_id, package=instance)
-                
-    #             if city_night_obj.city.name !=city.name and city_night_obj.nights != city_night.get('nights',city_night.nights) or city_night_obj.city.name !=city.name:
-    #                 print("change city_name and night")
-                    
-    #             elif city_night_obj.nights != city_night.get('nights',city_night_obj.nights):
-    #                     print("change night")
-                    
-                   
-
-    #                 # if city_night_obj.nights < city_night.get('nights',city_night_obj.nights):
-    #                     # add night
-    #                     add_night=city_night.get('nights') - city_night_obj.nights
-    #                     print("add night",add_night)
-                       
-    #                     for i in range(city_night['nights']):
-    #                         # select first 
-    #                         if i==0:
-    #                             activity,is_created = Activity.objects.get_or_create(activity_name__icontains=f"Arrival at {city_night_obj.city.name}",activity_city=city_night_obj.city)
-    #                         elif i==city_night['nights']:
-    #                             activity, is_created=Activity.objects.get_or_create(activity_name=f"Departure from {city_night_obj.city.name}",activity_city=city_night_obj.city)
-
-    #                         else:
-    #                             activity,is_created =Activity.objects.get_or_create(activity_name="Day at Leisure",activity_city=city_night_obj.city,category=['leisure'],activity_desc=f"Explore {city_night_obj.city.name} on your own")
-                            
-    #                         itinerary_date = itenerary_date + datetime.timedelta(days=i)
-                            
-    #                         itierary=Itinerary.objects.filter(package=instance,citynight_id=city_night_id,days=itinerary_date.strftime('%Y-%m-%d'))
-    #                         print(itinerary_date.strftime('%Y-%m-%d'))
-    #                         current_night += 1
-    #                         if itierary.exists():
-    #                             if i!=city_night['nights']+1:
-    #                                 act = Activity.objects.filter(activity_name__icontains="Departure from", activity_city=city)
-    #                                 if act.exists():
-    #                                     if itierary.first().activities.filter(id__in=act.values_list('id', flat=True)).exists():
-    #                                         # Activity exists in the itinerary's activities
-    #                                         itierary.first().activities.clear
-    #                                         itierary.first().activities.add(activity)
-                                            
-    #                             itierary.update(
-    #                                 days=itinerary_date
-    #                             )
-    #                         else:
-    #                             print("not found")
-    #                             itinerary = Itinerary.objects.create(
-    #                                     package=instance, 
-    #                                     days=itinerary_date, 
-    #                                     citynight_id=city_night_id
-
-    #                                 )   
-               
-    #                             # print("Created itinerary",city_night_obj.city.name,itinerary,itinerary.days)
-    #                             if activity:
-                                
-    #                                 print("",activity.activity_city.name,activity.activity_name)
-    #                                 # Create itinerary entry with the activity
-    #                                 itinerary.activities.add(activity)
-    #                             else:
-    #                                 # Handle the case where there are fewer activities than days
-    #                                 print(f"Warning: Insufficient activities for {city_night.city}")
-                        
-    #                         # print(current_night,itenerary_date.strftime('%Y-%m-%d'),itierary)
-    #                         # itenerary_date=itenerary_date + datetime.timedelta(days=1)
-
-    #                     # Itiners=Itinerary.objects.filter(citynight=city_night,package=instance).order_by('days')
-                        
-    #                     # for itiner in Itiners:
-    #                     #     print(itiner.days)
-
-    #                     # print("last==>",Itiners)
-    #                 # elif city_night_obj.nights > city_night.get('nights',city_night_obj.nights):
-    #                 #     pass
-
-    #                     # less night
-
-    #          # Update the itenerary_date for the next city
-    #         itenerary_date = itinerary_date + datetime.timedelta(days=1)
-
-                     
-
-        #     for _ in range(city_night['nights']):
-        #         expanded_city_nights.append({
-        #             'id': city_night['id'],
-        #             'city': city_night['city'],
-        #             'night': current_night,
-        #             "city_night": city_night,
-        #             'date':itenerary_date + datetime.timedelta(days=current_night - 1)
-        #         })
-                
-        #         current_night += 1
-        # for cn in expanded_city_nights:
-        #     city_night_id = cn.get('id', None)
-        #     if city_night_id:
-        #         itierary=Itinerary.objects.filter(package=instance,citynight_id=cn.get('id'),days=date_obj)
-        #         city_night = CityNight.objects.get(id=city_night_id, package=instance)
         
-       
-        # expanded_city_nights = []
-        # current_night = 1
-        # for city_night in city_nights_data:
-        #     for _ in range(city_night['nights']):
-        #         expanded_city_nights.append({
-        #             'id': city_night['id'],
-        #             'city': city_night['city'],
-        #             'night': current_night,
-        #             "city_night": city_night,
-        #             'date':itenerary_date + datetime.timedelta(days=current_night - 1)
-        #         })
-                
-        #         current_night += 1
-        # for cn in expanded_city_nights:
-        #     date_str = cn.get('date')
-        #     date_obj = date_str.strftime('%Y-%m-%d')
-        #     city_night_id = cn.get('id', None)
-        #     if city_night_id:
-        #         itierary=Itinerary.objects.filter(package=instance,citynight_id=cn.get('id'),days=date_obj)
-        #         city_night = CityNight.objects.get(id=city_night_id, package=instance)
-                
-       
-        # for city_night_data in city_nights_data:
-        #     city = city_night_data.pop('city')
-        #     city_night_id = city_night_data.get('id', None)
-        #     city_night_data['city'] = city
-            
-        #     if city_night_id:
-        #         city_night = CityNight.objects.get(id=city_night_id, package=instance)
-                
-        #         if city_night.city.name !=city.name and city_night.nights != city_night_data.get('nights',city_night.nights) or city_night.city.name !=city.name:
-        #             print("change city_name and night")
-                    
-        #         elif city_night.nights != city_night_data.get('nights',city_night.nights):
-        #             print("change night")
-                    
-        #             if city_night.nights < city_night_data.get('nights',city_night.nights):
-        #                 # add night
-        #                 add_night=city_night_data.get('nights') - city_night.nights
-        #                 print("add night",add_night)
+        hotel_ck_in_date= package.leaving_on
 
-        #                 Itiners=Itinerary.objects.filter(citynight=city_night,package=instance).order_by('days')
-                        
-        #                 for itiner in Itiners:
-        #                     print(itiner.days)
+        cn_list=CityNight.objects.filter(package=package)
+        for cn in cn_list:
+            hotel_details=HotelDetails.objects.filter(package=package,citynight_id=cn.id)
+            hotel_details.update(
+             check_in_date=hotel_ck_in_date,
+             check_out_date=hotel_ck_in_date + datetime.timedelta(days=cn.nights)
+            )
 
-        #                 print("last==>",Itiners)
-        #             elif city_night.nights > city_night_data.get('nights',city_night.nights):
-        #                 # less night
-        #                 pass
-
-        #         else:
-        #             print("else")
-            #     # city_night.city = city
-            #     # city_night.nights = city_night_data.get('nights', city_night.nights)
-            #     # city_night.save()
-
-            # else:
-            #     CityNight.objects.create(package=instance, city=city, **city_night_data)
-        # CustomisedPackage.objects.filter(id=instance.id).update(**validated_data)
-        # return validated_data
+            hotel_ck_in_date=hotel_details.first().check_out_date
+        self.add_last_itinerary(package)
     def add_nights(self, city_night, additional_nights):
         itineraries = Itinerary.objects.filter(citynight=city_night, package=city_night.package).order_by('days')
         last_itinerary = itineraries.last()
         last_day = last_itinerary.days if last_itinerary else city_night.package.leaving_on
         
+        # Convert the activity_list to an iterator
+        activity_list = list(
+                Activity.objects.filter(
+                    activity_city=city_night.city
+                ).exclude(
+                    activity_name__icontains='Departure from'
+                ).exclude(
+                    activity_name__icontains='Arrival at'
+                ).order_by('sequence')
+            )
+        activity_iterator = iter(activity_list)
         for i in range(additional_nights):
             new_day = last_day + datetime.timedelta(days=i+1)
-            act,is_created=Activity.objects.get_or_create(activity_name="Day at Leisure",activity_city__name=city_night.city.name,sequence=2,category=['leisure'],activity_desc=f"Explore {city_night.city.name} on your own")
+            
+            else_activity,is_created =Activity.objects.get_or_create(activity_name="Day at Leisure",activity_city=city_night.city,category=['leisure'],activity_desc=f"Explore {city_night.city.name} on your own")
+            activity = next(activity_iterator, else_activity)
+
+
             itiner=Itinerary.objects.create(
                 package=city_night.package,
                 citynight=city_night,
                 days=new_day,
-                
                 status='PENDING'
             )
-            itiner.activities.add(act)
-
-        last=Itinerary.objects.filter(
-                package=city_night.package,
-                citynight_id=city_night.id).order_by('days').last()
-        activity, is_created=Activity.objects.get_or_create(activity_name=f"Departure from {last.citynight.city.name}",activity_city=city_night.city)
-        last.activities.set(activity)
-        print("add night last Itinerary",last)
+            itiner.activities.add(activity)
 
     def reduce_nights(self, city_night, reduced_nights):
-        itineraries = Itinerary.objects.filter(citynight=city_night, package=city_night.package).order_by('days')
+        excluded_activities_subquery = Activity.objects.filter(
+            Q(activity_name__icontains='Departure from') |
+            Q(activity_name__icontains='Arrival at')
+        )
+
+        # Filter itineraries to exclude those having excluded activities
+        itineraries = Itinerary.objects.annotate(
+            has_excluded_activities=Exists(
+                excluded_activities_subquery.filter(
+                    id__in=OuterRef('activities')
+                )
+            )
+        ).filter(has_excluded_activities=False,citynight=city_night).order_by('days')
+        print("iti===>",itineraries)
+       
         itineraries_to_delete = itineraries.reverse()[:reduced_nights]
+        for i in itineraries_to_delete:
+            print("delete days",i.days,i.activities.all())
         Itinerary.objects.filter(id__in=[itinerary.id for itinerary in itineraries_to_delete]).delete()
+
+
+
+# only update trip detail 
+# class CustomisedPackageSerializer(serializers.ModelSerializer):
+#     city_nights = CityNightSerializer(many=True,required=False)
+#     interests = serializers.MultipleChoiceField(choices=CustomisedPackage.INTEREST_CHOICES)
+#     del_city_nigths=serializers.ListField(write_only=True,required=False)
+    
+#     class Meta:
+#         model = CustomisedPackage
+#         fields='__all__'
+#         extra_kwargs = {
+#             "customer":{
+#                 "required": True
+#             },
+#             "leaving_from":{
+#                 "required": True
+#             },
+#             "package_name":{
+#                 "required": False
+#             },
+#         }
+#     @transaction.atomic()  
+#     def create(self, validated_data):
+#         city_nights_data = validated_data.pop('city_nights')
+#         validated_data['package_name']=F"Trip to {city_nights_data[0].get('city').name}"
+#         req_user=self.context.get('request').user
+#         if req_user.role == 'Employee':
+#             company = Employee.objects.filter(emp_user=req_user).first().company
+#             validated_data['company']=company
+        
+#         elif req_user.role == 'Company':
+#             # print(req_user.email)
+#             company = Company.objects.filter(custom_user_id=req_user.id).first()
+#             # print("company==>",company)
+#             validated_data['company'] = company
+#         validated_data['updated_by'] = req_user
+#         validated_data['created_by'] = req_user
+#         package = CustomisedPackage.objects.create(**validated_data)
+            
+        
+#         hotel_leaving_date=package.leaving_on
+#         itenerary_date = package.leaving_on
+#         print("Leaving",hotel_leaving_date)
+
+#         rto=RoadTransportOption.objects.filter(seats__gte=package.number_of_adults).first()
+#         travel_details=None
+#         # print("Travel details",rto,city_nights_data[0].get('city'),package.leaving_from)
+#         if rto:
+#             print("rto==>",rto)
+#             travel_details=Travel_Details.objects.create(package=package,road_transport=rto,destination=city_nights_data[0].get('city'),pickup_from=package.leaving_from)
+
+#         # Create CityNight instances
+#         for city_night_data in city_nights_data:
+#             total_price=None
+#             city_night=CityNight.objects.create(package=package, **city_night_data)
+#             hotel_obj=Hotel.objects.filter(city=city_night_data.get('city'),star_rating=package.star_rating)
+#             if hotel_obj.exists():
+#                 hotel=hotel_obj.first()
+#                 room_types=RoomType.objects.filter(Q(hotel=hotel)
+#                                                    |
+#                         Q(rnm__icontains=package.room_type)).first()
+                
+#                 per_night_price = room_types.price if room_types else 0
+        
+            
+#                 total_price = per_night_price * city_night.nights
+#                 hotel_detail={
+#                     "package":package,
+#                     "hotel":hotel,
+#                     "check_in_date":hotel_leaving_date,
+#                     "check_out_date":hotel_leaving_date + datetime.timedelta(days=city_night.nights),
+#                     "number_of_rooms":package.number_of_rooms,
+#                     "room_type":package.room_type if not room_types else room_types.rnm ,
+#                     "total_price":total_price,
+#                     "citynight":city_night,
+
+#                 }
+#                 print("hotel detail",hotel_detail)
+#                 hotel_details=HotelDetails.objects.create(**hotel_detail)
+#                 hotel_leaving_date=hotel_details.check_out_date
+#                 print(hotel_details)
+            
+       
+            
+#             # Filter and sort activities based on category and city
+           
+#             category_q = Q()
+#             for interest in package.interests:
+#                 category_q |= Q(category__icontains=interest)
+    
+           
+#             activity_list = list(
+#                 Activity.objects.filter(
+#                     activity_city=city_night.city
+#                 ).exclude(
+#                     activity_name__icontains='Departure from'
+#                 ).exclude(
+#                     activity_name__icontains='Arrival at'
+#                 ).order_by('sequence')
+#             )
+
+
+#             print("Activtion list",activity_list)
+#             # Create an iterator to cycle through activities
+#             activity_cycle = cycle(activity_list)
+          
+#             # Create itinerary entries for each day of the city night stay
+#             for i in range(city_night.nights):
+#                 # Get the next unique activity from the cycle
+#                 if i==0:
+#                     activity,is_created = Activity.objects.get_or_create(activity_name__icontains=f"Arrival at {city_night.city.name}",activity_city=city_night.city)
+#                     print("Activity=======>",activity,is_created)
+#                 else:
+#                     else_activity,is_created =Activity.objects.get_or_create(activity_name="Day at Leisure",activity_city=city_night.city,sequence=2,category=['leisure'],activity_desc=f"Explore {city_night.city.name} on your own")
+#                     activity = next(activity_cycle, else_activity)
+#                 itinerary_date = itenerary_date + datetime.timedelta(days=i)
+#                 itinerary = Itinerary.objects.create(
+#                     package=package, 
+#                     days=itinerary_date, 
+#                     citynight=city_night
+                   
+#                 )   
+               
+#                 print("Created itinerary",city_night.city.name,itinerary,itinerary.days)
+#                 if activity:
+                   
+#                     print(activity.activity_city.name)
+#                     # Create itinerary entry with the activity
+#                     itinerary.activities.add(activity)
+#                 else:
+#                     # Handle the case where there are fewer activities than days
+#                     print(f"Warning: Insufficient activities for {city_night.city}")
+    
+#             # Update the itenerary_date for the next city
+#             itenerary_date = itinerary_date + datetime.timedelta(days=1)
+
+#         # add last day of package
+#         last_iti=Itinerary.objects.filter(package_id=package.id).last()
+#         itinerary = Itinerary.objects.create(
+#                     package=package, 
+#                     days=last_iti.days+datetime.timedelta(days=1), 
+#                    citynight=last_iti.citynight,
+                  
+#                 ) 
+#         activity, is_created=Activity.objects.get_or_create(activity_name=f"Departure from {itinerary.citynight.city.name}",activity_city=city_night.city)
+#         itinerary.activities.add(activity)  
+#         return package
+    
+#     def delete_city_nights(self,del_list,package:CustomisedPackage):
+    
+#         for cn_id in del_list:
+#             cn=CityNight.objects.filter(id=cn_id)
+#             if cn.exists():
+#                 Travel_Details.objects.filter(package=package,destination=cn.first().city).delete()
+
+#         CityNight.objects.filter(id__in=del_list).delete()
+#         self.reschedule(package)
+#     def delete_hotels_detail(self,package,citynight):
+#         hotel_detail =HotelDetails.objects.filter(package=package,citynight=citynight)
+#         hotel_detail.delete()
+#     def delete_itinerary(self,package,citynight):
+#         itinerary_detail =Itinerary.objects.filter(package=package,citynight=citynight)
+#         itinerary_detail.delete()
+
+
+#     def add_hotel_detail(self,package:CustomisedPackage,city_night:CityNight,hotel_leaving_date):
+#         hotel_obj=Hotel.objects.filter(city=city_night.city,star_rating=package.star_rating)
+#         if hotel_obj.exists():
+#                 hotel=hotel_obj.first()
+#                 room_types=RoomType.objects.filter(Q(hotel=hotel)
+#                                                    |
+#                         Q(rnm__icontains=package.room_type)).first()
+                
+#                 per_night_price = room_types.price if room_types else 0
+        
+            
+#                 total_price = per_night_price * city_night.nights
+#                 hotel_detail={
+#                     "package":package,
+#                     "hotel":hotel,
+#                     "check_in_date":hotel_leaving_date,
+#                     "check_out_date":hotel_leaving_date + datetime.timedelta(days=city_night.nights),
+#                     "number_of_rooms":package.number_of_rooms,
+#                     "room_type":room_types.rnm if room_types else package.room_type,
+#                     "total_price":total_price,
+#                     "citynight":city_night,
+
+#                 }
+#                 print("hotel detail",hotel_detail)
+#                 hotel_details=HotelDetails.objects.create(**hotel_detail)
+#                 hotel_leaving_date=hotel_details.check_out_date
+#                 print(hotel_details)
+                
+    
+#     def add_itinerary(self,package:CustomisedPackage,city_night:CityNight,itin_city_change_last_date):
+#             category_q = Q()
+#             for interest in package.interests:
+#                 category_q |= Q(category__icontains=interest)
+    
+           
+#             activity_list = list(
+#                 Activity.objects.filter(
+#                     activity_city=city_night.city
+#                 ).exclude(
+#                     activity_name__icontains='Departure from'
+#                 ).exclude(
+#                     activity_name__icontains='Arrival at'
+#                 ).order_by('sequence')
+#             )
+
+
+#             print("Activtion list",activity_list)
+#             # Create an iterator to cycle through activities
+#             activity_cycle = cycle(activity_list)
+          
+#             # Create itinerary entries for each day of the city night stay
+#             for i in range(city_night.nights):
+#                 # Get the next unique activity from the cycle
+#                 if i==0:
+#                     activity,is_created = Activity.objects.get_or_create(activity_name__icontains=f"Arrival at {city_night.city.name}",activity_city=city_night.city)
+#                     print("Activity=======>",activity,is_created)
+#                 else:
+#                     else_activity,is_created =Activity.objects.get_or_create(activity_name="Day at Leisure",activity_city=city_night.city,sequence=2,category=['leisure'],activity_desc=f"Explore {city_night.city.name} on your own")
+#                     activity = next(activity_cycle, else_activity)
+#                 itinerary_date = itin_city_change_last_date + datetime.timedelta(days=i)
+#                 itinerary = Itinerary.objects.create(
+#                     package=package, 
+#                     days=itinerary_date, 
+#                     citynight=city_night
+                   
+#                 )   
+               
+#                 print("Created itinerary",city_night.city.name,itinerary,itinerary.days)
+#                 if activity:
+                   
+#                     print(activity.activity_city.name)
+#                     # Create itinerary entry with the activity
+#                     itinerary.activities.add(activity)
+#                 else:
+#                     # Handle the case where there are fewer activities than days
+#                     print(f"Warning: Insufficient activities for {city_night.city}")
+    
+#             # Update the itenerary_date for the next city
+#             itin_city_change_last_date = itinerary_date + datetime.timedelta(days=1)
+   
+
+#     @transaction.atomic()
+#     def update(self, instance, validated_data):
+#         city_nights_data = validated_data.pop('city_nights',[])
+#         del_city_nigths = validated_data.pop('del_city_nigths',[])
+#         if len(del_city_nigths)>0:
+#             self.delete_city_nights(del_city_nigths,instance)
+        
+#         hotel_leaving_date=validated_data.get('leaving_on', instance.leaving_on)
+#         itin_city_change_last_date =validated_data.get('leaving_on', instance.leaving_on)
+#         is_change_city=False
+#         instance.leaving_on=validated_data.get('leaving_on', instance.leaving_on)
+#         for city_night in city_nights_data:
+#             city = city_night.get('city')
+#             city_night_id = city_night.get('id', None)
+#             if city_night_id:
+#                 city_night_obj = CityNight.objects.get(id=city_night_id, package=instance)
+#                 if city_night_obj.city.name !=city.name or city_night_obj.nights != city_night.get('nights',city_night_obj.nights) or city_night_obj.city.name !=city.name:
+#                     city_night_obj.nights=city_night.get('nights',city_night_obj.nights)
+#                     city_night_obj.city=city
+#                     self.delete_hotels_detail(instance,city_night_obj)
+#                     self.delete_itinerary(instance,city_night_obj)
+#                     self.add_hotel_detail(instance,city_night_obj,hotel_leaving_date)
+#                     self.add_itinerary(instance,city_night_obj,itin_city_change_last_date)
+#                     is_change_city=True
+#                     city_night_obj.save()
+        
+        
+#             else:
+                
+#                 it=Itinerary.objects.filter(package=instance).order_by('date')
+#                 if it.exists():
+#                     hotel_leaving_date=it.last().days
+                
+#                 city_night_obj=CityNight.objects.create(package=instance, **city_night)
+#                 self.add_hotel_detail(instance,city_night_obj,hotel_leaving_date)
+#                 self.add_itinerary(instance,city_night_obj,itin_city_change_last_date)
+#                 is_change_city=True
+                              
+
+
+#         if is_change_city:
+#             last_iti=Itinerary.objects.filter(package_id=instance.id).last()
+#             itinerary = Itinerary.objects.create(
+#                         package=instance, 
+#                         days=last_iti.days+datetime.timedelta(days=1), 
+#                        citynight=last_iti.citynight,
+#                     ) 
+#             activity, is_created=Activity.objects.get_or_create(activity_name=f"Departure from {itinerary.citynight.city.name}",activity_city=city_night_obj.city)
+#             itinerary.activities.add(activity)  
+#         self.reschedule(instance)       
+#         CustomisedPackage.objects.filter(id=instance.id).update(**validated_data)
+#         return validated_data
+    
+#     def reschedule(self,package):
+#         itiners=Itinerary.objects.filter(package=package).order_by('days')
+#         start_itin_date=package.leaving_on
+#         for it in itiners:
+#             print(start_itin_date)
+#             it.days=start_itin_date
+#             it.save()
+#             start_itin_date=start_itin_date + datetime.timedelta(days=1)
+        
+#         hotel_ck_in_date= package.leaving_on
+
+#         cn_list=CityNight.objects.filter(package=package)
+#         for cn in cn_list:
+#             hotel_details=HotelDetails.objects.filter(package=package,citynight_id=cn.id)
+#             hotel_details.update(
+#              check_in_date=hotel_ck_in_date,
+#              check_out_date=hotel_ck_in_date + datetime.timedelta(days=cn.nights)
+#             )
+
+#             hotel_ck_in_date=hotel_details.first().check_out_date
+
+#     # @transaction.atomic()
+#     # def update(self, instance, validated_data):
+#     #     city_nights_data = validated_data.pop('city_nights',[])
+#     #     del_city_nigths = validated_data.pop('del_city_nigths',[])
+#     #     CityNight.objects.filter(id__in=del_city_nigths).delete()
+#     #     # print(city_nights_data)
+#     #     if validated_data.get('interests'):
+#     #         validated_data['interests']=list(validated_data.get('interests'))
+#     #     itenerary_date = instance.leaving_on
+#     #     print("trip started at: " , itenerary_date)
+#     #     current_night = 1
+#     #     for city_night in city_nights_data:
+#     #         city = city_night.get('city')
+#     #         city_night_id = city_night.get('id', None)
+         
+#     #         if city_night_id:
+#     #             city_night_obj = CityNight.objects.get(id=city_night_id, package=instance)
+                
+#     #             if city_night_obj.city.name !=city.name and city_night_obj.nights != city_night.get('nights',city_night.nights) or city_night_obj.city.name !=city.name:
+#     #                 print("change city_name and night")
+                    
+#     #             elif city_night_obj.nights != city_night.get('nights',city_night_obj.nights):
+#     #                     print("change night")
+                    
+                   
+
+#     #                 # if city_night_obj.nights < city_night.get('nights',city_night_obj.nights):
+#     #                     # add night
+#     #                     add_night=city_night.get('nights') - city_night_obj.nights
+#     #                     print("add night",add_night)
+                       
+#     #                     for i in range(city_night['nights']):
+#     #                         # select first 
+#     #                         if i==0:
+#     #                             activity,is_created = Activity.objects.get_or_create(activity_name__icontains=f"Arrival at {city_night_obj.city.name}",activity_city=city_night_obj.city)
+#     #                         elif i==city_night['nights']:
+#     #                             activity, is_created=Activity.objects.get_or_create(activity_name=f"Departure from {city_night_obj.city.name}",activity_city=city_night_obj.city)
+
+#     #                         else:
+#     #                             activity,is_created =Activity.objects.get_or_create(activity_name="Day at Leisure",activity_city=city_night_obj.city,category=['leisure'],activity_desc=f"Explore {city_night_obj.city.name} on your own")
+                            
+#     #                         itinerary_date = itenerary_date + datetime.timedelta(days=i)
+                            
+#     #                         itierary=Itinerary.objects.filter(package=instance,citynight_id=city_night_id,days=itinerary_date.strftime('%Y-%m-%d'))
+#     #                         print(itinerary_date.strftime('%Y-%m-%d'))
+#     #                         current_night += 1
+#     #                         if itierary.exists():
+#     #                             if i!=city_night['nights']+1:
+#     #                                 act = Activity.objects.filter(activity_name__icontains="Departure from", activity_city=city)
+#     #                                 if act.exists():
+#     #                                     if itierary.first().activities.filter(id__in=act.values_list('id', flat=True)).exists():
+#     #                                         # Activity exists in the itinerary's activities
+#     #                                         itierary.first().activities.clear
+#     #                                         itierary.first().activities.add(activity)
+                                            
+#     #                             itierary.update(
+#     #                                 days=itinerary_date
+#     #                             )
+#     #                         else:
+#     #                             print("not found")
+#     #                             itinerary = Itinerary.objects.create(
+#     #                                     package=instance, 
+#     #                                     days=itinerary_date, 
+#     #                                     citynight_id=city_night_id
+
+#     #                                 )   
+               
+#     #                             # print("Created itinerary",city_night_obj.city.name,itinerary,itinerary.days)
+#     #                             if activity:
+                                
+#     #                                 print("",activity.activity_city.name,activity.activity_name)
+#     #                                 # Create itinerary entry with the activity
+#     #                                 itinerary.activities.add(activity)
+#     #                             else:
+#     #                                 # Handle the case where there are fewer activities than days
+#     #                                 print(f"Warning: Insufficient activities for {city_night.city}")
+                        
+#     #                         # print(current_night,itenerary_date.strftime('%Y-%m-%d'),itierary)
+#     #                         # itenerary_date=itenerary_date + datetime.timedelta(days=1)
+
+#     #                     # Itiners=Itinerary.objects.filter(citynight=city_night,package=instance).order_by('days')
+                        
+#     #                     # for itiner in Itiners:
+#     #                     #     print(itiner.days)
+
+#     #                     # print("last==>",Itiners)
+#     #                 # elif city_night_obj.nights > city_night.get('nights',city_night_obj.nights):
+#     #                 #     pass
+
+#     #                     # less night
+
+#     #          # Update the itenerary_date for the next city
+#     #         itenerary_date = itinerary_date + datetime.timedelta(days=1)
+
+                     
+
+#         #     for _ in range(city_night['nights']):
+#         #         expanded_city_nights.append({
+#         #             'id': city_night['id'],
+#         #             'city': city_night['city'],
+#         #             'night': current_night,
+#         #             "city_night": city_night,
+#         #             'date':itenerary_date + datetime.timedelta(days=current_night - 1)
+#         #         })
+                
+#         #         current_night += 1
+#         # for cn in expanded_city_nights:
+#         #     city_night_id = cn.get('id', None)
+#         #     if city_night_id:
+#         #         itierary=Itinerary.objects.filter(package=instance,citynight_id=cn.get('id'),days=date_obj)
+#         #         city_night = CityNight.objects.get(id=city_night_id, package=instance)
+        
+       
+#         # expanded_city_nights = []
+#         # current_night = 1
+#         # for city_night in city_nights_data:
+#         #     for _ in range(city_night['nights']):
+#         #         expanded_city_nights.append({
+#         #             'id': city_night['id'],
+#         #             'city': city_night['city'],
+#         #             'night': current_night,
+#         #             "city_night": city_night,
+#         #             'date':itenerary_date + datetime.timedelta(days=current_night - 1)
+#         #         })
+                
+#         #         current_night += 1
+#         # for cn in expanded_city_nights:
+#         #     date_str = cn.get('date')
+#         #     date_obj = date_str.strftime('%Y-%m-%d')
+#         #     city_night_id = cn.get('id', None)
+#         #     if city_night_id:
+#         #         itierary=Itinerary.objects.filter(package=instance,citynight_id=cn.get('id'),days=date_obj)
+#         #         city_night = CityNight.objects.get(id=city_night_id, package=instance)
+                
+       
+#         # for city_night_data in city_nights_data:
+#         #     city = city_night_data.pop('city')
+#         #     city_night_id = city_night_data.get('id', None)
+#         #     city_night_data['city'] = city
+            
+#         #     if city_night_id:
+#         #         city_night = CityNight.objects.get(id=city_night_id, package=instance)
+                
+#         #         if city_night.city.name !=city.name and city_night.nights != city_night_data.get('nights',city_night.nights) or city_night.city.name !=city.name:
+#         #             print("change city_name and night")
+                    
+#         #         elif city_night.nights != city_night_data.get('nights',city_night.nights):
+#         #             print("change night")
+                    
+#         #             if city_night.nights < city_night_data.get('nights',city_night.nights):
+#         #                 # add night
+#         #                 add_night=city_night_data.get('nights') - city_night.nights
+#         #                 print("add night",add_night)
+
+#         #                 Itiners=Itinerary.objects.filter(citynight=city_night,package=instance).order_by('days')
+                        
+#         #                 for itiner in Itiners:
+#         #                     print(itiner.days)
+
+#         #                 print("last==>",Itiners)
+#         #             elif city_night.nights > city_night_data.get('nights',city_night.nights):
+#         #                 # less night
+#         #                 pass
+
+#         #         else:
+#         #             print("else")
+#             #     # city_night.city = city
+#             #     # city_night.nights = city_night_data.get('nights', city_night.nights)
+#             #     # city_night.save()
+
+#             # else:
+#             #     CityNight.objects.create(package=instance, city=city, **city_night_data)
+#         # CustomisedPackage.objects.filter(id=instance.id).update(**validated_data)
+#         # return validated_data
+#     # def add_nights(self, city_night, additional_nights):
+#     #     itineraries = Itinerary.objects.filter(citynight=city_night, package=city_night.package).order_by('days')
+#     #     last_itinerary = itineraries.last()
+#     #     last_day = last_itinerary.days if last_itinerary else city_night.package.leaving_on
+        
+#     #     for i in range(additional_nights):
+#     #         new_day = last_day + datetime.timedelta(days=i+1)
+#     #         act,is_created=Activity.objects.get_or_create(activity_name="Day at Leisure",activity_city__name=city_night.city.name,sequence=2,category=['leisure'],activity_desc=f"Explore {city_night.city.name} on your own")
+#     #         itiner=Itinerary.objects.create(
+#     #             package=city_night.package,
+#     #             citynight=city_night,
+#     #             days=new_day,
+                
+#     #             status='PENDING'
+#     #         )
+#     #         itiner.activities.add(act)
+
+#     #     last=Itinerary.objects.filter(
+#     #             package=city_night.package,
+#     #             citynight_id=city_night.id).order_by('days').last()
+#     #     activity, is_created=Activity.objects.get_or_create(activity_name=f"Departure from {last.citynight.city.name}",activity_city=city_night.city)
+#     #     last.activities.set(activity)
+#     #     print("add night last Itinerary",last)
+
+#     # def reduce_nights(self, city_night, reduced_nights):
+#     #     itineraries = Itinerary.objects.filter(citynight=city_night, package=city_night.package).order_by('days')
+#     #     itineraries_to_delete = itineraries.reverse()[:reduced_nights]
+#     #     Itinerary.objects.filter(id__in=[itinerary.id for itinerary in itineraries_to_delete]).delete()
 
 
 class RoadTransportSerializer(serializers.ModelSerializer):
@@ -902,6 +1274,18 @@ class HotelRoomTypeSerializer(serializers.ModelSerializer):
         model= RoomType
         fields='__all__'
 
+    def to_representation(self, instance):
+        data=super().to_representation(instance)
+        try:
+            amenity_list = json.loads(instance.amenity)
+            data['amenity'] = amenity_list
+        except json.JSONDecodeError as e:
+                    # Handle JSON decoding error
+            print(f"Error decoding JSON: {e}")
+        if instance.category:
+            data['category_name']=instance.category.name
+       
+        return data
 
 class HotelSerializer(serializers.ModelSerializer):
     rooms_type=HotelRoomTypeSerializer(many=True)
@@ -909,7 +1293,15 @@ class HotelSerializer(serializers.ModelSerializer):
         model= Hotel
         fields='__all__'
 
+    def to_representation(self, instance):
+        data=super().to_representation(instance)
 
+        data['hotel_imgs']=instance.hotel_images.all().values()
+        if instance.city:
+            data['city_name']=instance.city.name
+            data['state_name']=instance.city.state.name
+            data['country_name']=instance.city.country.name
+        return data
 class ItineraryPackageSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -942,3 +1334,133 @@ class ItinerarySerializer(serializers.ModelSerializer):
         return  data
     
 
+class ExpanseSerializer(serializers.ModelSerializer):
+    package_name= serializers.CharField(read_only=True,source='package.package_name')
+    class Meta:
+        model=ExpenseDetail
+        fields="__all__"
+        extra_kwargs={
+            "total_amount":{"required": False},
+            "company":{"required": False}
+        }
+    def create(self, validated_data):
+        req_user=self.context.get('request').user
+        if req_user.role == 'Employee':
+            company = Employee.objects.filter(emp_user=req_user).first().company
+            validated_data['company']=company
+        
+        elif req_user.role == 'Company':
+            # print(req_user.email)
+            company = Company.objects.filter(custom_user_id=req_user.id).first()
+            # print("company==>",company)
+            validated_data['company'] = company
+        amount = validated_data.get('amount', 0)
+        tax = validated_data.get('tax', 0)
+        validated_data['total_amount'] = amount + (amount * tax / 100)
+        return super().create(validated_data)
+    
+    def update(self, instance, validated_data):
+        amount = validated_data.get('amount', instance.amount)
+        tax = validated_data.get('tax', instance.tax)
+        instance.total_amount = amount + (amount * tax / 100)
+        
+        # Update other fields
+        instance.vendor = validated_data.get('vendor', instance.vendor)
+        instance.date = validated_data.get('date', instance.date)
+        instance.tax = validated_data.get('tax', instance.tax)
+        instance.purposes = validated_data.get('purposes', instance.purposes)
+        instance.amount = validated_data.get('amount', instance.amount)
+
+        instance.save()
+        return instance
+    
+
+
+
+class PassengerSerializer(serializers.ModelSerializer):
+    id= serializers.IntegerField(allow_null=True,required=False)
+    departure_city_name=serializers.CharField(read_only=True,source="departure_city.name")
+    arrival_city_name=serializers.CharField(read_only=True,source="arrival_city.name")
+    class Meta:
+        model = AirTicketPassenger
+        fields = '__all__'
+        extra_kwargs={
+            "invoice":{"required": False}
+        }
+class AirTicketInvoiceSerializer(serializers.ModelSerializer):
+    passengers = PassengerSerializer(many=True,write_only=True)
+    del_passengers =serializers.ListField(required=False)
+    class Meta:
+        model = AirTicketInvoice
+        fields = '__all__'
+        extra_kwargs={
+            "invoice_no":{"required": False}
+        }
+
+    def validate_passengers(self, value):
+        if not value:
+            raise serializers.ValidationError("Passengers list cannot be empty.")
+        return value
+
+    def validate(self, data):
+        # Automatically generate invoice_number in the format INV<cyear><sequence>
+        req_user = self.context.get('request').user
+         
+        if req_user.role == 'Employee':
+            company = Employee.objects.filter(emp_user=req_user).first().company
+            data['company']=company
+        
+        elif req_user.role == 'Company':
+            # print(req_user.email)
+            company = Company.objects.filter(custom_user_id=req_user.id).first()
+            # print("company==>",company)
+            data['company'] = company
+        
+        company = data.get('company')
+        current_year = datetime.datetime.now().year
+        if company:
+            last_invoice = AirTicketInvoice.objects.filter(company=company).order_by('id').last()
+        else:
+            last_invoice = AirTicketInvoice.objects.all().order_by('id').last()
+
+        if last_invoice:
+            last_invoice_number = last_invoice.invoice_no
+            last_sequence = int(last_invoice_number.split('INV')[-1])
+            new_sequence = last_sequence + 1
+            data['invoice_no'] = f'INV{current_year}{new_sequence:04d}'
+        else:
+            data['invoice_no'] = f'INV{current_year}0001'
+
+        return data
+    def to_representation(self, instance):
+        data=super().to_representation(instance)
+        passenger_instance=instance.passengers.all()
+        serializer=PassengerSerializer(instance=passenger_instance,many=True)
+        data['passengers']=serializer.data
+
+        return data
+    def create(self, validated_data):
+        passengers_data = validated_data.pop('passengers',[])
+        del_passengers = validated_data.pop('del_passengers',[])
+        invoice = AirTicketInvoice.objects.create(**validated_data)
+        for passenger_data in passengers_data:
+            AirTicketPassenger.objects.create(invoice=invoice, **passenger_data)
+        return invoice
+
+    def update(self, instance, validated_data):
+        passengers_data = validated_data.pop('passengers')
+        del_passengers = validated_data.pop('del_passengers',[])
+        if len(del_passengers) > 0:
+            AirTicketPassenger.objects.filter(id__in=del_passengers,invoice=instance).delete()
+        instance = super().update(instance, validated_data)
+
+        for passenger_data in passengers_data:
+            passenger_id = passenger_data.get('id')
+            if passenger_id:
+                passenger = AirTicketPassenger.objects.get(id=passenger_id, invoice=instance)
+                for attr, value in passenger_data.items():
+                    setattr(passenger, attr, value)
+                passenger.save()
+            else:
+                AirTicketPassenger.objects.create(invoice=instance, **passenger_data)
+        return instance

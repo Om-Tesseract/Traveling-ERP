@@ -26,10 +26,11 @@ class States(models.Model):
     state_code=models.CharField(max_length=20,null=True)
 
 class Cities(models.Model):
-    name=models.CharField(max_length=60,)
+    name=models.CharField(max_length=60, )
     state= models.ForeignKey(States,on_delete=models.CASCADE,related_name="state_city_set")
     country=models.ForeignKey(Country,on_delete=models.CASCADE,related_name="country_city_set")
-
+    img=models.ImageField(upload_to="city_images", blank=True, null=True)
+    img_url=models.URLField(null=True,blank=True)
     def __str__(self) -> str:
         return f"{self.name} {self.state.name}"
 
@@ -168,21 +169,75 @@ class CustomisedPackage(BaseModel):
 class CityNight(models.Model):
     city = models.ForeignKey(Cities, on_delete=models.CASCADE)
     package = models.ForeignKey(CustomisedPackage, on_delete=models.CASCADE, related_name='city_nights')
+    # sequence = models.IntegerField(default=1)
     nights = models.IntegerField()
 
-
-
-
+class Flight_Details(models.Model):
+    package = models.ForeignKey(CustomisedPackage, on_delete=models.CASCADE, null=True, blank=True)
+    destination_to = models.ForeignKey(Cities,on_delete=models.CASCADE,related_name="flight_destination")
+    ret_destination_to = models.ForeignKey(Cities,null=True,blank=True,on_delete=models.CASCADE,related_name="ret_destination")
+    pickup_from = models.ForeignKey(Cities,on_delete=models.CASCADE,related_name="flight_pickup_from")
+    ret_pickup_from = models.ForeignKey(Cities,null=True, blank=True,on_delete=models.CASCADE,related_name="ret_pickup_from")
+    airlines=models.CharField(max_length=100,null=True)
+    sequence=models.IntegerField()
+    depart_on=models.DateField()
+    return_on=models.DateField(null=True, blank=True)
+    flt_class=models.CharField(max_length=50)
+    PNR = models.CharField(max_length=100, null=True, blank=True)
+    type=models.CharField(max_length=30,default="Open Jaw")
+    
 class Travel_Details(models.Model):
     package = models.ForeignKey(CustomisedPackage, on_delete=models.CASCADE, null=True, blank=True)
-    vehicles = models.JSONField(null=True, blank=True)
-    is_flights=models.BooleanField(default=False)
     road_transport=models.ForeignKey(RoadTransportOption,on_delete=models.CASCADE,null=True,blank=True)
     PNR = models.CharField(max_length=100, null=True, blank=True)
     destination = models.ForeignKey(Cities,null=True,blank=True,on_delete=models.CASCADE,related_name="destination")
     pickup_from = models.ForeignKey(Cities,null=True, blank=True,on_delete=models.CASCADE,related_name="pickup_from")
 
-# class Expansion    
+
+def default_amenities():
+    return {
+        "Accessibility": [
+            "Lift Elevator"
+        ],
+        "Available in All Rooms": [
+            "Air Conditioning",
+            "Kitchenette",
+            "Coffee/Tea Maker",
+            "Ironing Facilities"
+        ],
+        "Dining, Drinking and Snacking": [
+            "Mini Bar",
+            "Restaurant",
+            "Room Service"
+        ],
+        "Things to do, ways to relax": [
+            "Lawn",
+            "Tours"
+        ],
+        "Fitness and Recreation": [
+            "Indoor Games"
+        ],
+        "Getting Around": [
+            "Car Rental Facility"
+        ],
+        "Internet": [
+            "Free WiFi",
+            "Wi-Fi in all rooms",
+            "Wi-Fi"
+        ],
+        "Services and Conveniences": [
+            "Travel Desk",
+            "Concierge Services",
+            "Currency Exchange",
+            "Daily Housekeeping",
+            "Dry Cleaning Service",
+            "Laundry",
+            "Luggage Storage",
+            "Smoking Area",
+            "Hot Shower"
+        ]
+    }
+
 
 
 class Hotel(models.Model):
@@ -197,16 +252,32 @@ class Hotel(models.Model):
     image_url = models.URLField(max_length=200,null=True,blank=True)
     ln=models.FloatField(null=True, blank=True)
     lt=models.FloatField(null=True, blank=True)
+    amenities =models.JSONField(default=default_amenities)
+    cleaniless_rate = models.FloatField(default=3.8)
+    service_rate = models.FloatField(default=3.9)
+    comfort_rate = models.FloatField(default=3.6)
+    amenities_rate = models.FloatField(default=3.7)
     def __str__(self):
         return self.name
-    
+class HotelImages(models.Model):
+    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,related_name="hotel_images")
+    image=models.ImageField(upload_to="hotel_images")
+
+
+class RoomCategory(models.Model):
+    name=models.CharField(max_length=150,unique=True)
+
+    def __str__(self) -> str:
+        return f"{self.name}"
 class RoomType(models.Model):
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,related_name="rooms_type")
     rnm = models.CharField("room name",max_length=255)
     meal_plan = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     availability = models.BooleanField(default=True)
-    amenity = models.JSONField(null=True, blank=True)
+    amenity = models.TextField()
+    category = models.ForeignKey(RoomCategory,on_delete=models.CASCADE,related_name="cate_roomtype")
+
 
     def __str__(self):
         return f"{self.rnm} - {self.hotel.name}"
@@ -271,3 +342,85 @@ class Itinerary(models.Model):
   
     class Meta:
         get_latest_by = "days"
+
+
+
+class ExpenseDetail(BaseModel):
+    package=models.ForeignKey(CustomisedPackage,on_delete=models.CASCADE)
+    vendor= models.CharField(max_length=50)
+    date=models.DateField()
+    tax=models.IntegerField()
+    company=models.ForeignKey(Company, on_delete=models.CASCADE)
+    purposes=models.TextField()
+    amount=models.DecimalField(decimal_places=2,max_digits=20)
+    total_amount=models.DecimalField(decimal_places=2,max_digits=20)
+    # date,amount,tax,purpose,total amt
+
+    def __str__(self) -> str:
+        return f"{self.vendor}"
+    
+# invoice tables 
+class AirTicketInvoice(BaseModel):
+    # INV TPYE
+    NORMAL='Normal'
+    REISSUE='Reissue'
+    VOID='VOID'
+    INV_TYPE_CHOICE=[
+        (NORMAL,NORMAL),
+        (REISSUE,REISSUE),
+        (VOID,VOID)
+    ]
+   
+    package=models.ForeignKey(CustomisedPackage,on_delete=models.CASCADE,null=True,blank=True)
+    company=models.ForeignKey(Company,on_delete=models.CASCADE,null=True,blank=True)
+    invoice_no = models.CharField(max_length=50) #FORMAT AUTO GENERATE IN SEQUENCE INV240001 
+    invoice_type=models.CharField(max_length=100,choices=INV_TYPE_CHOICE,default=NORMAL)
+    customer=models.ForeignKey(Customer, on_delete=models.CASCADE)
+    # auto set customer state
+    place_of_supply=models.CharField(max_length=150,null=True, blank=True)
+    gov_tax = models.DecimalField(max_digits=10, decimal_places=2)
+    tds_amt = models.DecimalField(max_digits=10, decimal_places=2)
+    gross_amt = models.DecimalField(max_digits=10, decimal_places=2)
+    net_amt = models.DecimalField(max_digits=10, decimal_places=2)
+    discount_amt = models.DecimalField(max_digits=10, decimal_places=2,default=0)
+   
+    invoice_date = models.DateField()
+    notes = models.TextField(blank=True, null=True)
+    narration = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"Invoice {self.invoice_no}"
+
+class AirTicketPassenger(models.Model):
+    invoice = models.ForeignKey(AirTicketInvoice, related_name='passengers', on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=254,null=True, blank=True)
+    phone = models.CharField(max_length=20,null=True, blank=True)
+    date_of_birth = models.DateField(null=True, blank=True)
+    airline_name = models.CharField(max_length=100)
+    flight_no=models.CharField(max_length=100,null=True)
+    ticket_no=models.CharField(max_length=150,null=True,blank=True)
+    departure_city = models.ForeignKey(Cities,on_delete=models.CASCADE,related_name='inv_departure_city')
+    arrival_city =  models.ForeignKey(Cities,on_delete=models.CASCADE,related_name='inv_arrival_city')
+    # departure_date = models.DateTimeField()
+    arrival_date = models.DateTimeField()
+    flight_class = models.CharField(max_length=20, choices=[
+        ('Economy', 'Economy'),
+        ('Business', 'Business'),
+        ('First Class', 'First Class'),
+    ])
+    pnr_no = models.CharField(max_length=20)
+    # change 
+    basic_amt =models.DecimalField(decimal_places=2,max_digits=50)
+    yq_tax=models.DecimalField(decimal_places=2,max_digits=50,default=0)
+    yr_tax=models.DecimalField(decimal_places=2,max_digits=50,default=0)
+    k3_tax=models.DecimalField(decimal_places=2,max_digits=50,default=0)
+    other_tax=models.DecimalField(decimal_places=2,max_digits=50,default=0)
+    other_change=models.DecimalField(decimal_places=2,max_digits=50,default=0)
+    # markup 
+    markup_basic=models.DecimalField(decimal_places=2,max_digits=50,default=0)
+    markup_yq=models.DecimalField(decimal_places=2,max_digits=50,default=0)
+    markup_other=models.DecimalField(decimal_places=2,max_digits=50,default=0)
+    gross_total=models.DecimalField(decimal_places=2,max_digits=50,default=0)
+    def __str__(self):
+        return f"{self.name}"

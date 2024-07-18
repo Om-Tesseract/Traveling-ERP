@@ -39,7 +39,7 @@ class CustomerFilter(filter_field.FilterSet):
 class HotelsFilter(filter_field.FilterSet):
     name = filter_field.CharFilter(field_name='name', lookup_expr='icontains')
     city = filter_field.CharFilter(field_name='city__name', lookup_expr='icontains')
-    star_rating = filter_field.CharFilter(field_name='star_rating' , lookup_expr='icontains')
+    star_rating = filter_field.CharFilter(field_name='star_rating' , lookup_expr='contains')
     class Meta:
         model = Hotel
         fields = ['name', 'city', 'star_rating']

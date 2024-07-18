@@ -77,7 +77,10 @@ class ActivityUpdateDestroyAPI(BaseRetrieveUpdateDestroyAPIView):
 def RoomTypeListView(request):
     roomtype=RoomType.objects.all().values('rnm').distinct()
     return Response(roomtype)
-
+@api_view(['GET'])
+def MealPlanListView(request):
+    meal_plan=RoomType.objects.all().values('meal_plan').distinct()
+    return Response(meal_plan)
 class ItineraryUpdateDeleteView(BaseRetrieveUpdateDestroyAPIView):
     queryset=Itinerary.objects.all()
     serializer_class=serializers.ItinerarySerializer
@@ -110,14 +113,32 @@ class CustomizePackageListView(APIView):
                 'check_in_date','check_out_date','room_type','number_of_rooms',
                 'total_price','additional_requests',
                 hotel_name=F('hotel__name'),hotel_address=F('hotel__address'),
-                hotel_city=F('hotel__city'),hotel_star_rating=F('hotel__star_rating'),
+                hotel_city=F('hotel__city'),hotel_state=F('hotel__city__state__name'),
+                hotel_country=F('hotel__city__country__name'),
+                hotel_city_name=F('hotel__city__name'),hotel_star_rating=F('hotel__star_rating'),
                 image_url=F('hotel__image_url'),ln=F('hotel__ln'),lt=F('hotel__lt'),
                 contact_info=F('hotel__contact_info'),
-
+                review_rate=F('hotel__rate')
             )
             for ht in hoteldetails:
-                room_types=RoomType.objects.filter(hotel_id=ht.get('hotel')).values()
-                ht['room_types']=room_types
+                room_types=RoomType.objects.filter(hotel_id=ht.get('hotel'))
+                ht['meal_plan']=room_types.filter(rnm=ht.get('room_type')).first().meal_plan if room_types.filter(rnm=ht.get('room_type')).first() else None
+                # ht['amenity']=json.load(room_types.filter(rnm=ht.get('room_type')).first().amenity) if room_types.filter(rnm=ht.get('room_type')).first() else None
+                try:
+                    if room_types.filter(rnm=ht.get('room_type')).first().amenity:
+                        amenity_list = json.loads(room_types.filter(rnm=ht.get('room_type')).first().amenity)
+                        ht['amenity'] = amenity_list
+                except json.JSONDecodeError as e:
+                    # Handle JSON decoding error
+                    print(f"Error decoding JSON: {e}")
+                    ht['amenity'] = None
+                except AttributeError as e:
+                    # Handle attribute error if the filter or first() fails
+                    print(f"Attribute error: {e}")
+                    ht['amenity'] = None
+                ht['room_types']=room_types.values()
+
+
             package=CustomisedPackage.objects.filter(id=package_id).values(
                 'id','number_of_rooms','leaving_on','number_of_adults','number_of_children',
                 'interests','who_is_travelling','pregnant_women','elderly_people','with_walking_difficulty',
@@ -132,7 +153,7 @@ class CustomizePackageListView(APIView):
             itineraty_serializer=serializers.ItinerarySerializer(instance=itineraty,many=True)
             
             travel_details=Travel_Details.objects.filter(package_id=package_id).values(
-                'destination','id','vehicles','is_flights','PNR','road_transport_id','pickup_from',
+                'destination','id','PNR','road_transport_id','pickup_from',
                 vehicle_type=F('road_transport__vehicle_type'),seats=F('road_transport__seats'),
                
                 destination_name=F('destination__name'),
@@ -141,11 +162,20 @@ class CustomizePackageListView(APIView):
                 pickup_from_name=F('pickup_from__name'),
 
             )
+            flights_details=Flight_Details.objects.filter(package_id=package_id).values(
+                'destination_to','ret_destination_to','pickup_from','ret_pickup_from','depart_on','return_on','flt_class','PNR','airlines','type','sequence',
+                destination_to_name=F('destination_to__name'),
+                ret_destination_to_name=F('ret_destination_to__name'),
+                pickup_from_name=F('pickup_from__name'),
+                ret_pickup_from_name=F('ret_pickup_from__name'),
+
+            ).order_by('sequence')
             context={
                 
                 "hoteldetails":hoteldetails,
                 "travel_details":travel_details,
-                "itineraty":itineraty_serializer.data
+                "itineraty":itineraty_serializer.data,
+                'flights_details':flights_details
                 
             }
             package.update(context)
@@ -201,7 +231,6 @@ class CustomizePackageListView(APIView):
             for pkg in paginated_packages:
                 city_nights = CityNight.objects.filter(package_id=pkg.get('id'))
                 if city_nights:
-                    package_name = f"Trip to {city_nights.first().city.name}"
                     city_names = [city_night.city.name for city_night in city_nights]
                     destination = ', '.join(city_names)
     
@@ -211,7 +240,7 @@ class CustomizePackageListView(APIView):
                     add_on = {
                         "destination": destination,
                         "total_nights": total_nights_value,
-                        "package_name": package_name,
+                      
                     }
                     pkg.update(add_on)
     
@@ -241,6 +270,7 @@ class CustomizePackageListView(APIView):
 class UpdateCustomisedPackageView(generics.UpdateAPIView):
     queryset=CustomisedPackage.objects.all()
     serializer_class=serializers.CustomisedPackageUpdateSerializer
+
 
 
 class RoadTransportListCreateView(BaseListCreateAPIView):
@@ -316,6 +346,7 @@ class CustomerListCreateView(BaseListCreateAPIView):
 class CustomerUpdateDeleteView(BaseRetrieveUpdateDestroyAPIView):
     queryset= Customer.objects.all()
     authentication_classes=[JWTAuthentication]
+    filter_backends=[DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
     serializer_class=serializers.CustomerSerializer
     def get_queryset(self):
         req_user = self.request.user
@@ -329,6 +360,66 @@ class CustomerUpdateDeleteView(BaseRetrieveUpdateDestroyAPIView):
             return super().get_queryset()
         else:
             return Customer.objects.none() 
+#Expanse 
+class ExpanseListCreateView(BaseListCreateAPIView):
+    queryset=ExpenseDetail.objects.all()
+    authentication_classes=[JWTAuthentication]
+    serializer_class=serializers.ExpanseSerializer
+    filter_backends=[DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    search_fields=['vendor']
+    permission_classes=[IsAuthenticated]
+    def get_queryset(self):
+        req_user = self.request.user
+        if req_user.role == 'Employee':
+            if Employee.objects.filter(emp_user=req_user).exists():
+                emp = Employee.objects.filter(emp_user=req_user).first()
+                return self.queryset.filter(company=emp.company)
+        elif req_user.role == 'Company':
+            return self.queryset.filter(company__custom_user_id=req_user.id)
+        elif req_user.role == 'Admin':
+            return super().get_queryset()
+        else:
+            return ExpenseDetail.objects.none()
+        return super().get_queryset()
+
+
+class ExpanseRetrieveUpdateDestroyAPIView(BaseRetrieveUpdateDestroyAPIView):
+    queryset=ExpenseDetail.objects.all()
+    authentication_classes=[JWTAuthentication]
+    serializer_class=serializers.ExpanseSerializer
+    permission_classes=[IsAuthenticated]
+
+
+# AirTicketInvoice
+class AirTicketInvoiceListCreateView(BaseListCreateAPIView):
+    queryset=AirTicketInvoice.objects.all()
+    authentication_classes=[JWTAuthentication]
+    serializer_class=serializers.AirTicketInvoiceSerializer
+    filter_backends=[DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    search_fields=['invoice_no']
+    permission_classes=[IsAuthenticated]
+    def get_queryset(self):
+        req_user = self.request.user
+        if req_user.role == 'Employee':
+            if Employee.objects.filter(emp_user=req_user).exists():
+                emp = Employee.objects.filter(emp_user=req_user).first()
+                return self.queryset.filter(company=emp.company)
+        elif req_user.role == 'Company':
+            return self.queryset.filter(company__custom_user_id=req_user.id)
+        elif req_user.role == 'Admin':
+            return super().get_queryset()
+        else:
+            return AirTicketInvoice.objects.none()
+        return super().get_queryset()
+
+
+class AirTicketInvoiceRetrieveUpdateDestroyAPIView(BaseRetrieveUpdateDestroyAPIView):
+    queryset=AirTicketInvoice.objects.all()
+    authentication_classes=[JWTAuthentication]
+    serializer_class=serializers.AirTicketInvoiceSerializer
+    permission_classes=[IsAuthenticated]
+
+
 
 # Employee 
 class EmployeeListCreateView(BaseListCreateAPIView):
@@ -390,13 +481,11 @@ class CitiesListView(generics.ListAPIView):
     search_fields=['name']
     ordering='name'
     pagination_class=CustomPagination
-    def get_queryset(self):
-        state_id=self.kwargs.get('state_id')
-      
-        return self.queryset.filter(state_id=state_id)
+
     def get(self, request, *args, **kwargs):
         state_id=self.kwargs.get('state_id')
         search=self.kwargs.get('search')
+        pk=self.kwargs.get('pk')
     
         if search:
             queryset = self.queryset.filter(name__istartswith=search,country_id=101).values(
@@ -408,7 +497,17 @@ class CitiesListView(generics.ListAPIView):
             page = self.paginate_queryset(queryset)
             if page is not None:
                 return self.get_paginated_response(page)
-            
+        
+        elif pk:
+            queryset =self.queryset.filter(id=pk).values(
+                'id', 'name', 'state_id', 'country_id',
+                country_name=F('country__name'),
+                state_name=F('state__name')
+            )
+            page = self.paginate_queryset(queryset)
+            if page is not None:
+                return self.get_paginated_response(page)
+        
        
         elif state_id:
             queryset=self.queryset.filter(state_id=state_id)
@@ -429,6 +528,115 @@ class CitiesListView(generics.ListAPIView):
             page = self.paginate_queryset(queryset)
             if page is not None:
                 return self.get_paginated_response(page)
+
+
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def activity_data_entry(request):
+    try:
+        cities_data = {
+    'Udaipur': {
+       
+        'activities': [
+            {'name': 'City Palace Tour', 'category': 'history', 'duration': '2 hours', 'age_limit': 12, 'desc': 'Explore the historic City Palace.'},
+            {'name': 'Lake Pichola Boat Ride', 'category': 'leisure', 'duration': '1 hour', 'age_limit': 5, 'desc': 'Enjoy a serene boat ride on Lake Pichola.'},
+            {'name': 'Jag Mandir Visit', 'category': 'honeymoon', 'duration': '3 hours', 'age_limit': None, 'desc': 'Visit the beautiful Jag Mandir island palace.'},
+            {'name': 'Saheliyon Ki Bari', 'category': 'art_and_culture', 'duration': '1.5 hours', 'age_limit': None, 'desc': 'Stroll through the historic garden of Saheliyon Ki Bari.'},
+            {'name': 'Bagore Ki Haveli', 'category': 'art_and_culture', 'duration': '2 hours', 'age_limit': None, 'desc': 'Discover the cultural heritage of Bagore Ki Haveli.'},
+            {'name': 'Fateh Sagar Lake', 'category': 'leisure', 'duration': '2 hours', 'age_limit': None, 'desc': 'Relax by the scenic Fateh Sagar Lake.'},
+            {'name': 'Eklingji Temple Visit', 'category': 'history', 'duration': '1 hour', 'age_limit': None, 'desc': 'Visit the ancient Eklingji Temple.'},
+            {'name': 'Monsoon Palace Visit', 'category': 'adventure', 'duration': '2 hours', 'age_limit': 10, 'desc': 'Hike up to the Monsoon Palace for stunning views.'},
+            {'name': 'Shilpgram Visit', 'category': 'shopping', 'duration': '3 hours', 'age_limit': None, 'desc': 'Shop for traditional crafts at Shilpgram.'},
+            {'name': 'Ambrai Ghat', 'category': 'nightlife', 'duration': '1 hour', 'age_limit': 18, 'desc': 'Enjoy the nightlife at Ambrai Ghat.'},
+        ]
+    },
+    'Jaipur': {
+      
+        'activities': [
+            {'name': 'Amber Fort Tour', 'category': 'history', 'duration': '3 hours', 'age_limit': None, 'desc': 'Tour the magnificent Amber Fort.'},
+            {'name': 'Hawa Mahal Visit', 'category': 'art_and_culture', 'duration': '1 hour', 'age_limit': None, 'desc': 'Visit the iconic Hawa Mahal.'},
+            {'name': 'City Palace Jaipur', 'category': 'history', 'duration': '2 hours', 'age_limit': None, 'desc': 'Explore the historic City Palace of Jaipur.'},
+            {'name': 'Jantar Mantar', 'category': 'art_and_culture', 'duration': '1.5 hours', 'age_limit': None, 'desc': 'Discover the astronomical instruments at Jantar Mantar.'},
+            {'name': 'Jaipur Zoo Visit', 'category': 'entertainment', 'duration': '2 hours', 'age_limit': None, 'desc': 'Visit the Jaipur Zoo and see various animals.'},
+            {'name': 'Jal Mahal Visit', 'category': 'honeymoon', 'duration': '1 hour', 'age_limit': None, 'desc': 'Admire the Jal Mahal palace in the middle of Man Sagar Lake.'},
+            {'name': 'Albert Hall Museum', 'category': 'history', 'duration': '1.5 hours', 'age_limit': None, 'desc': 'Explore the exhibits at the Albert Hall Museum.'},
+            {'name': 'Nahargarh Fort Visit', 'category': 'adventure', 'duration': '3 hours', 'age_limit': None, 'desc': 'Hike up to Nahargarh Fort for panoramic views of Jaipur.'},
+            {'name': 'Bapu Bazaar Shopping', 'category': 'shopping', 'duration': '2 hours', 'age_limit': None, 'desc': 'Shop for souvenirs at Bapu Bazaar.'},
+            {'name': 'Chokhi Dhani', 'category': 'nightlife', 'duration': '4 hours', 'age_limit': None, 'desc': 'Experience Rajasthani culture at Chokhi Dhani.'},
+        ]
+    },
+    'Manali': {
+ 
+        'activities': [
+            {'name': 'Rohtang Pass', 'category': 'adventure', 'duration': '5 hours', 'age_limit': None, 'desc': 'Experience the thrill of visiting Rohtang Pass.'},
+            {'name': 'Solang Valley', 'category': 'adventure', 'duration': '4 hours', 'age_limit': 10, 'desc': 'Enjoy adventure sports in Solang Valley.'},
+            {'name': 'Hadimba Temple', 'category': 'history', 'duration': '1 hour', 'age_limit': None, 'desc': 'Visit the ancient Hadimba Temple.'},
+            {'name': 'Old Manali', 'category': 'art_and_culture', 'duration': '2 hours', 'age_limit': None, 'desc': 'Explore the quaint village of Old Manali.'},
+            {'name': 'Vashisht Hot Water Springs', 'category': 'spa', 'duration': '1 hour', 'age_limit': None, 'desc': 'Relax at the Vashisht Hot Water Springs.'},
+            {'name': 'Manu Temple', 'category': 'history', 'duration': '1 hour', 'age_limit': None, 'desc': 'Visit the Manu Temple, dedicated to sage Manu.'},
+            {'name': 'Jogini Waterfall', 'category': 'adventure', 'duration': '3 hours', 'age_limit': None, 'desc': 'Hike to the beautiful Jogini Waterfall.'},
+            {'name': 'Tibetan Monastery', 'category': 'art_and_culture', 'duration': '1 hour', 'age_limit': None, 'desc': 'Visit the Tibetan Monastery and explore Tibetan culture.'},
+            {'name': 'Mall Road Shopping', 'category': 'shopping', 'duration': '2 hours', 'age_limit': None, 'desc': 'Shop for souvenirs on Mall Road.'},
+            {'name': 'Manali Sanctuary', 'category': 'leisure', 'duration': '3 hours', 'age_limit': None, 'desc': 'Explore the natural beauty of Manali Sanctuary.'},
+        ]
+    },
+    'Mumbai': {
+                'activities': [
+                    {'name': 'Gateway of India', 'category': 'history', 'duration': '1 hour', 'age_limit': None, 'desc': 'Visit the iconic Gateway of India.'},
+                    {'name': 'Marine Drive', 'category': 'leisure', 'duration': '2 hours', 'age_limit': None, 'desc': 'Enjoy a leisurely walk along Marine Drive.'},
+                    {'name': 'Elephanta Caves', 'category': 'history', 'duration': '3 hours', 'age_limit': None, 'desc': 'Explore the ancient Elephanta Caves.'},
+                    {'name': 'Chhatrapati Shivaji Maharaj Vastu Sangrahalaya', 'category': 'art_and_culture', 'duration': '2 hours', 'age_limit': None, 'desc': 'Visit the museum to learn about Mumbai\'s history.'},
+                    {'name': 'Juhu Beach', 'category': 'leisure', 'duration': '2 hours', 'age_limit': None, 'desc': 'Relax at Juhu Beach and enjoy local snacks.'},
+                    {'name': 'Siddhivinayak Temple', 'category': 'spiritual', 'duration': '1 hour', 'age_limit': None, 'desc': 'Seek blessings at the Siddhivinayak Temple.'},
+                    {'name': 'Colaba Causeway', 'category': 'shopping', 'duration': '2 hours', 'age_limit': None, 'desc': 'Shop for unique items at Colaba Causeway.'},
+                    {'name': 'Haji Ali Dargah', 'category': 'spiritual', 'duration': '1 hour', 'age_limit': None, 'desc': 'Visit the Haji Ali Dargah located on an islet.'},
+                    {'name': 'Sanjay Gandhi National Park', 'category': 'adventure', 'duration': '4 hours', 'age_limit': None, 'desc': 'Explore the wildlife and nature at Sanjay Gandhi National Park.'},
+                    {'name': 'Bandra-Worli Sea Link', 'category': 'leisure', 'duration': '30 mins', 'age_limit': None, 'desc': 'Drive over the stunning Bandra-Worli Sea Link.'},
+                ]
+            },
+    'Delhi': {
+                'activities': [
+                    {'name': 'Red Fort', 'category': 'history', 'duration': '2 hours', 'age_limit': None, 'desc': 'Explore the historic Red Fort.'},
+                    {'name': 'Qutub Minar', 'category': 'history', 'duration': '1.5 hours', 'age_limit': None, 'desc': 'Visit the tallest brick minaret in the world.'},
+                    {'name': 'India Gate', 'category': 'history', 'duration': '1 hour', 'age_limit': None, 'desc': 'Pay your respects at India Gate.'},
+                    {'name': 'Lotus Temple', 'category': 'spiritual', 'duration': '1 hour', 'age_limit': None, 'desc': 'Visit the beautiful Lotus Temple.'},
+                    {'name': 'Humayun\'s Tomb', 'category': 'history', 'duration': '1.5 hours', 'age_limit': None, 'desc': 'Explore Humayun\'s Tomb, a UNESCO World Heritage site.'},
+                    {'name': 'Chandni Chowk', 'category': 'shopping', 'duration': '3 hours', 'age_limit': None, 'desc': 'Shop for various goods in the bustling Chandni Chowk market.'},
+                    {'name': 'Akshardham Temple', 'category': 'spiritual', 'duration': '3 hours', 'age_limit': None, 'desc': 'Visit the magnificent Akshardham Temple.'},
+                    {'name': 'Jama Masjid', 'category': 'spiritual', 'duration': '1 hour', 'age_limit': None, 'desc': 'Visit the grand Jama Masjid mosque.'},
+                    {'name': 'Raj Ghat', 'category': 'history', 'duration': '1 hour', 'age_limit': None, 'desc': 'Pay homage at the memorial of Mahatma Gandhi.'},
+                    {'name': 'Lodhi Gardens', 'category': 'leisure', 'duration': '2 hours', 'age_limit': None, 'desc': 'Relax and enjoy nature at Lodhi Gardens.'},
+                ]
+            },
+}
+
+        # Generate cities and activities
+        for city_name, city_data in cities_data.items():
+            city = Cities.objects.filter(
+                name=city_name, 
+            ).first()
+            # print(city)
+            for i, activity_data in enumerate(city_data['activities']):
+                print(Activity.objects.filter(activity_name=activity_data['name'],activity_city__name=city.name).exists())
+                if  not Activity.objects.filter(activity_name=activity_data['name'],activity_city__name=city.name).exists():
+                    activity = Activity.objects.create(
+                    category=[activity_data['category']],
+                    duration=activity_data['duration'],
+                    age_limit=activity_data['age_limit'],
+                    activity_name=activity_data['name'],
+                    sequence=i + 1,
+                    activity_desc=activity_data['desc'],
+                    activity_city_id=city.id
+                )
+                    print(f"Created activity: {activity.activity_name} in {city.name}")
+                else:
+                    print(f"Already created activity {activity_data['name']}-{city_name}  ")
+        return Response({"message": "Success creating activity"})
+    except Exception as e:
+        return Response({"error": str(e)})
+            
 
 @api_view(['GET'])
 @permission_classes([AllowAny])

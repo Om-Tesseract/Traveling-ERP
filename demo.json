@@ -14,19 +14,19 @@
   "exCityNm": "Ahmedabad",
   "travelDt": "22 Aug 2024",
   "paxData": "{\"sD\":1724265000000,\"rooms\":[{\"ad\":2,\"ch\":0,\"chAge\":[]}]}",
-  "prcpadt": 19669,
+  "prcpadt": 19668,
   "iFPrc": true,
   "fltKA": ["2690_5079"],
   "children": 0,
   "tdisc": -1737,
   "sltdFltJ": {},
-  "tmprcD": "&#x20B9; 37,600",
-  "tprc": 39337,
+  "tmprcD": "&#x20B9; 37,599",
+  "tprc": 39336,
   "pCtyDJ": [
     { "cky": "5079-0", "cin": "22/08/2024" },
     { "cky": "4949-1", "cin": "24/08/2024" }
   ],
-  "tmprc": 37600,
+  "tmprc": 37599,
   "excA": [
     "Optional enhancements like room or flight upgrades, or local camera or video fees",
     "Additional sightseeing, activities and experiences outside of the itinerary",
@@ -37,18 +37,18 @@
     "Tips for services and experiences",
     "Read useful information and terms for more on what is included and excluded"
   ],
-  "preBkgPrcKey": "pBPK172086833551688",
+  "preBkgPrcKey": "pBPK172119188523531",
   "budget": "0.0",
   "pWrnO": {
     "gen": [
       "Selected hotel in Jaipur (2 Star) offer inconsistent experience to customer."
     ]
   },
-  "tprcD": "&#x20B9; 39,337",
+  "tprcD": "&#x20B9; 39,336",
   "numRooms": 1,
   "isAllwHtlLkp": true,
   "itn": "5079~2-4949~2",
-  "prcBkA": [{ "v": "&#x20B9; 19,669", "k": "Price per adult" }],
+  "prcBkA": [{ "v": "&#x20B9; 19,668", "k": "Price per adult" }],
   "curD": "&#x20B9;",
   "exCity": 2690,
   "aCts": [
@@ -103,9 +103,132 @@
       "chkoutD": "Sat, 24 Aug",
       "nt": 2,
       "chkin": "22/08/2024",
-      "chpr": "b73c40bc6efb5bc3e6de7f9601ba5e133835fde8d23e8987",
+      "chpr": "8e05366dda205816ae531f68f13bf4d84c70d54dad10ea3f",
       "cky": "5079-0",
       "chkout": "24/08/2024",
+      "btvA": [
+        {
+          "mnT": 10,
+          "rt": 8,
+          "rtT": "",
+          "wtD": 1,
+          "mxT": 22,
+          "sn": 9,
+          "rn": 2,
+          "m": "January"
+        },
+        {
+          "mnT": 12,
+          "rt": 8,
+          "rtT": "",
+          "wtD": 1,
+          "mxT": 24,
+          "sn": 9,
+          "rn": 3,
+          "m": "February"
+        },
+        {
+          "mnT": 16,
+          "rt": 7,
+          "rtT": "",
+          "wtD": 2,
+          "mxT": 28,
+          "sn": 10,
+          "rn": 5,
+          "m": "March"
+        },
+        {
+          "mnT": 20,
+          "rt": 6,
+          "rtT": "",
+          "wtD": 3,
+          "mxT": 32,
+          "sn": 11,
+          "rn": 10,
+          "m": "April"
+        },
+        {
+          "mnT": 23,
+          "rt": 5,
+          "rtT": "Ideal",
+          "wtD": 4,
+          "mxT": 38,
+          "sn": 11,
+          "rn": 20,
+          "m": "May"
+        },
+        {
+          "mnT": 24,
+          "rt": 5,
+          "rtT": "Ideal",
+          "wtD": 8,
+          "mxT": 34,
+          "sn": 8,
+          "rn": 100,
+          "m": "June"
+        },
+        {
+          "mnT": 23,
+          "rt": 6,
+          "rtT": "",
+          "wtD": 12,
+          "mxT": 30,
+          "sn": 7,
+          "rn": 150,
+          "m": "July"
+        },
+        {
+          "mnT": 22,
+          "rt": 7,
+          "rtT": "",
+          "wtD": 10,
+          "mxT": 28,
+          "sl": true,
+          "sn": 7,
+          "rn": 120,
+          "m": "August"
+        },
+        {
+          "mnT": 20,
+          "rt": 8,
+          "rtT": "",
+          "wtD": 6,
+          "mxT": 28,
+          "sn": 8,
+          "rn": 50,
+          "m": "September"
+        },
+        {
+          "mnT": 18,
+          "rt": 9,
+          "rtT": "",
+          "wtD": 3,
+          "mxT": 26,
+          "sn": 9,
+          "rn": 20,
+          "m": "October"
+        },
+        {
+          "mnT": 15,
+          "rt": 9,
+          "rtT": "",
+          "wtD": 2,
+          "mxT": 24,
+          "sn": 9,
+          "rn": 10,
+          "m": "November"
+        },
+        {
+          "mnT": 12,
+          "rt": 8,
+          "rtT": "",
+          "wtD": 1,
+          "mxT": 22,
+          "sn": 9,
+          "rn": 5,
+          "m": "December"
+        }
+      ],
       "pos": 0,
       "caid": "5079",
       "hsqO": {
@@ -137,7 +260,7 @@
           "coutT": "10:00 AM",
           "urtO": { "rt": 6, "rtTxt": "Pleasant", "numRt": 37 },
           "_scr": 1,
-          "prIdPrc": [4944],
+          "prIdPrc": [4942],
           "id": 396193,
           "area": "Fateh Sagar Lake",
           "st": 4,
@@ -190,9 +313,132 @@
       "chkoutD": "Mon, 26 Aug",
       "nt": 2,
       "chkin": "24/08/2024",
-      "chpr": "19b38a260c2317c646a8f51366d58e304c70d54dad10ea3f",
+      "chpr": "2f2d2a805b52c4599987a95e7e4965283835fde8d23e8987",
       "cky": "4949-1",
       "chkout": "26/08/2024",
+      "btvA": [
+        {
+          "mnT": 8,
+          "rt": 8,
+          "rtT": "",
+          "wtD": 1,
+          "mxT": 22,
+          "sn": 7,
+          "rn": 11,
+          "m": "January"
+        },
+        {
+          "mnT": 10,
+          "rt": 8,
+          "rtT": "",
+          "wtD": 1,
+          "mxT": 25,
+          "sn": 8,
+          "rn": 10,
+          "m": "February"
+        },
+        {
+          "mnT": 15,
+          "rt": 7,
+          "rtT": "",
+          "wtD": 1,
+          "mxT": 30,
+          "sn": 9,
+          "rn": 5,
+          "m": "March"
+        },
+        {
+          "mnT": 20,
+          "rt": 6,
+          "rtT": "",
+          "wtD": 1,
+          "mxT": 35,
+          "sn": 10,
+          "rn": 5,
+          "m": "April"
+        },
+        {
+          "mnT": 25,
+          "rt": 5,
+          "rtT": "Ideal",
+          "wtD": 2,
+          "mxT": 40,
+          "sn": 11,
+          "rn": 10,
+          "m": "May"
+        },
+        {
+          "mnT": 28,
+          "rt": 4,
+          "rtT": "Good",
+          "wtD": 3,
+          "mxT": 42,
+          "sn": 11,
+          "rn": 20,
+          "m": "June"
+        },
+        {
+          "mnT": 25,
+          "rt": 5,
+          "rtT": "Ideal",
+          "wtD": 7,
+          "mxT": 35,
+          "sn": 7,
+          "rn": 150,
+          "m": "July"
+        },
+        {
+          "mnT": 23,
+          "rt": 6,
+          "rtT": "",
+          "wtD": 6,
+          "mxT": 32,
+          "sl": true,
+          "sn": 6,
+          "rn": 120,
+          "m": "August"
+        },
+        {
+          "mnT": 20,
+          "rt": 7,
+          "rtT": "",
+          "wtD": 3,
+          "mxT": 30,
+          "sn": 8,
+          "rn": 50,
+          "m": "September"
+        },
+        {
+          "mnT": 15,
+          "rt": 8,
+          "rtT": "",
+          "wtD": 1,
+          "mxT": 28,
+          "sn": 9,
+          "rn": 10,
+          "m": "October"
+        },
+        {
+          "mnT": 10,
+          "rt": 9,
+          "rtT": "",
+          "wtD": 1,
+          "mxT": 25,
+          "sn": 8,
+          "rn": 5,
+          "m": "November"
+        },
+        {
+          "mnT": 8,
+          "rt": 9,
+          "rtT": "",
+          "wtD": 1,
+          "mxT": 22,
+          "sn": 7,
+          "rn": 5,
+          "m": "December"
+        }
+      ],
       "pos": 1,
       "caid": "4949",
       "hsqO": {
@@ -223,7 +469,7 @@
           "coutT": "12:00 PM",
           "urtO": { "rt": 7.6, "rtTxt": "Good", "numRt": 20 },
           "_scr": 1,
-          "prIdPrc": [2547],
+          "prIdPrc": [2548],
           "id": 1031008,
           "area": "Gopalbari",
           "st": 2,
@@ -343,7 +589,7 @@
       "key": "5079-0_4949-1"
     }
   ],
-  "nprc": "5644fbdd3df66d7d690d4dd36391e2924c70d54dad10ea3f",
+  "nprc": "76bcc5332940b9660870650ac0a9fd3fd80c409080b5f6cf",
   "_cfsvD": "d6e410cfd86a6e261d6f0904d427f102b0cf1a89d4471fd6aa61d21d32126deab57534504a922a9c945b8f8c0fde405f22de9ebe5bdb82cf73f677bdebfc5558b868fbef58f680ecd48ea3b9ae0f70fddddb8bb6069ca826",
   "bookable": true,
   "iOpts": {
@@ -606,7 +852,7 @@
         "dsc": "Enjoy your early breakfast at the hotel today before we check-out from the hotel. We\u2019re going on a full-day excursion to Ajmer and Pushkar, with Ajmer comparatively bigger than Pushkar. While we\u2019re here, we\u2019re going to visit Ajmer Sharif Dargah, the dargah of Moinuddin Chishti. This is the tomb of Moinuddin Chishti from the 13th century, who was highly venerated throughout his reputation after arriving Delhi and later, Ajmer. Another site we\u2019re going visit here is the Adhai Din Ka Johnpra, Ajmer\u2019s oldest and historically rich mosque that was completed in 1192 by the commission of Qutb-ud-Din-Aibak. It was designed by Abu Bakr of Herat and is an exemplar mosque designed in Indo-Islamic style. Take a calming walk on the lakeside of Ana Sagar Lake, an artificial lake over 13km wide with an island in the center of it, made in the 12th century after a dam was built on Luni River.\r\n\r\nAjmer is the gateway to visit Pushkar, about 15km away, a famous, ancient Hindu pilgrimage city. It is home to more than 400 temples and we\u2019re not going to miss the many ghats that can be seen here. We start from the center of the temples, the sacred Pushkar Lake, that\u2019s believed to have medicinal properties for those who bath in one of the 52 bathing ghats. We\u2019ll also be visiting the number of temples out of the hundreds that dot the surrounding of the lake. Rangji Temple is a temple dedicated to Lord Vaikuntha Venkatesh or Lord Rangji, an incarnation of Lord Vishnu. One of the most visually satisfying temples is the Man Mahal which features impressive Rajasthani architecture which also have gorgeous views of another nearby sacred lake. This palace cum hotel was built by Raja Man Singh I of Amber meant to serve as a temporary stay for his guests and himself when visiting Pushkar. Finally, we\u2019re not going to miss the main attraction of Pushkar, the Temple of Lord Brahma, also known as Jagatpita Brahman Mandir, one of the rare, ancient temples dedicated to the Hindu Creator God. Then visit one last gorgeous pilgrimage site, Savitri Temple, which is dedicated to the Goddess Savitri. At the hilltop where you can get a dazzling view of Pushkar City and the surrounding mountain range when the weather is clear.\r\n\r\nAfter the tour, we\u2019ll transfer you to the airport or railway station for your departure. We know you\u2019re heading back home with smiles from the awesome experience of this trip!",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 8:00 AM", "mxt": "Jul 13, 2024 6:00 PM" }
+            { "mnt": "Jul 17, 2024 8:00 AM", "mxt": "Jul 17, 2024 6:00 PM" }
           ]
         },
         "vO": { "4949-1_26082024": { "p": 3795, "v": true } },
@@ -659,14 +905,14 @@
         "dsc": "Enjoy your breakfast today before we head out. We\u2019re going on a full-day trip to Ranthambore National Park for an afternoon jeep safari at additional cost. Don\u2019t miss out on the chance to see tigers and other wildlife at one of the finest tiger reserves in India. You can pick from a 20-seater Canter to a 6-seater Jeep to explore the place.\r\n\r\nMorning safari is available from 7AM to 10.30AM and afternoon safari is from 2PM to 5.30PM. Wintertime schedule differs with the morning safari time delayed and evening exit time preponed.\r\n\r\nInside the National Park, we can find the Ranthambore Fort, a UNESCO\u2019s Hill Forts of Rajasthan series: Ranthambore Fort. The fortress can be found within the Ranthambore National Park and houses a wide variety of tanks and temples. It remains as a wonder, archaeologically speaking, as it\u2019s held itself very well since it was built in 944, until Akbar the Great in 1568. Within the temple is the Ganesha Temple which is the oldest one of Ganesha in Rajasthan made of red Karauli stone. It was built in 1300 AD by King Hammer who also filled it with the three-eyed Ganesha idol, Riddhi Siddhi (his wife), and two sons (Shub Labh).\r\n\r\nAnother place to visit inside the park is the Padam Talao Lake which is one of the largest lakes in the city. It\u2019s also believed to be where Princess Padmavati bathe among the water lilies. It\u2019s a beautiful sight, often surrounded by local wildlife who come for the water.\r\n\r\nWe\u2019ll ride back to your hotel in Jaipur in the evening for your overnight stay.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 6:00 AM", "mxt": "Jul 13, 2024 7:00 AM" },
-            { "mnt": "Jul 13, 2024 6:30 AM", "mxt": "Jul 13, 2024 7:30 AM" },
-            { "mnt": "Jul 13, 2024 7:00 AM", "mxt": "Jul 13, 2024 8:00 AM" },
-            { "mnt": "Jul 13, 2024 7:30 AM", "mxt": "Jul 13, 2024 8:30 AM" },
-            { "mnt": "Jul 13, 2024 8:00 AM", "mxt": "Jul 13, 2024 9:00 AM" },
-            { "mnt": "Jul 13, 2024 8:30 AM", "mxt": "Jul 13, 2024 9:30 AM" },
-            { "mnt": "Jul 13, 2024 9:00 AM", "mxt": "Jul 13, 2024 10:00 AM" },
-            { "mnt": "Jul 13, 2024 9:30 AM", "mxt": "Jul 13, 2024 10:30 AM" }
+            { "mnt": "Jul 17, 2024 6:00 AM", "mxt": "Jul 17, 2024 7:00 AM" },
+            { "mnt": "Jul 17, 2024 6:30 AM", "mxt": "Jul 17, 2024 7:30 AM" },
+            { "mnt": "Jul 17, 2024 7:00 AM", "mxt": "Jul 17, 2024 8:00 AM" },
+            { "mnt": "Jul 17, 2024 7:30 AM", "mxt": "Jul 17, 2024 8:30 AM" },
+            { "mnt": "Jul 17, 2024 8:00 AM", "mxt": "Jul 17, 2024 9:00 AM" },
+            { "mnt": "Jul 17, 2024 8:30 AM", "mxt": "Jul 17, 2024 9:30 AM" },
+            { "mnt": "Jul 17, 2024 9:00 AM", "mxt": "Jul 17, 2024 10:00 AM" },
+            { "mnt": "Jul 17, 2024 9:30 AM", "mxt": "Jul 17, 2024 10:30 AM" }
           ]
         },
         "vO": { "4949-1_25082024": { "p": 5313, "v": true } },
@@ -790,12 +1036,12 @@
         "dsc": "Enjoy your breakfast at the hotel today in Jaipur. We\u2019ll get ready for a full-day sightseeing around Jaipur, starting with Amer Fort. About 11km from the city, also known as the Amber Fort, there are four levels that you can explore here. When we enter the main complexes of the fort, we\u2019ll get to explore the main hall, Diwan-i-Aam, which is meant for the gathering of the public. And the other hall, Diwan-i-Khas, is meant for private audience. There\u2019s also the gorgeous Sheesh Mahal, also known as the Mirror Palace, where you can see the beautifully carved marble panel on a pillar in the shape of a \u201cmagic flower.\u201d One can see seven beautiful forms carved: a lotus, a lion\u2019s tail, a scorpion, a hooded cobra, a fishtail, a cob or corn, and an elephant trunk. One can also see the Maota Lake from the fort.\r\n\r\nAs we leave the fort, we\u2019ll make a photo stop at Jal Mahal or Lake Palace of Jaipur where you can take beautiful pictures. Visitors can also boat around Lake Man Sagar to enjoy the view and atmosphere. Then visit the Royal Gaitor where we can see beautiful carved marble cenotaphs of the Maharaja of Jaipur. This serene scene is the perfect place where you can just take in the beauty of the place, far from the bustling city life.\r\n\r\nThen we\u2019re going to the ethnic village of Chokhi Dhani, a village resort where you can enjoy the culture, art, tradition, authentic cuisine, and many more in one place. At additional cost to enter the village, enjoy exploring the place and taste authentic Rajasthani cuisine while listening to the live folk dance and music, we\u2019ll head back.\r\n\r\nWe\u2019re going to drive back to your hotel in Jaipur for your overnight stay.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 8:00 AM", "mxt": "Jul 13, 2024 2:00 PM" },
-            { "mnt": "Jul 13, 2024 8:30 AM", "mxt": "Jul 13, 2024 2:30 PM" },
-            { "mnt": "Jul 13, 2024 9:00 AM", "mxt": "Jul 13, 2024 3:00 PM" },
-            { "mnt": "Jul 13, 2024 9:30 AM", "mxt": "Jul 13, 2024 3:30 PM" },
-            { "mnt": "Jul 13, 2024 10:00 AM", "mxt": "Jul 13, 2024 4:00 PM" },
-            { "mnt": "Jul 13, 2024 10:30 AM", "mxt": "Jul 13, 2024 4:30 PM" }
+            { "mnt": "Jul 17, 2024 8:00 AM", "mxt": "Jul 17, 2024 2:00 PM" },
+            { "mnt": "Jul 17, 2024 8:30 AM", "mxt": "Jul 17, 2024 2:30 PM" },
+            { "mnt": "Jul 17, 2024 9:00 AM", "mxt": "Jul 17, 2024 3:00 PM" },
+            { "mnt": "Jul 17, 2024 9:30 AM", "mxt": "Jul 17, 2024 3:30 PM" },
+            { "mnt": "Jul 17, 2024 10:00 AM", "mxt": "Jul 17, 2024 4:00 PM" },
+            { "mnt": "Jul 17, 2024 10:30 AM", "mxt": "Jul 17, 2024 4:30 PM" }
           ]
         },
         "vO": {
@@ -837,7 +1083,7 @@
         "dsc": "Enjoy your breakfast at the hotel today as we prepare to set out on a day excursion to historical sites around Nathdwara and Eklingji. We start with the town of Eklingji where you can find the famous Eklingji Temple. It has been dubbed as the spiritual center of Mewar, a complex that was originally finished in the 8th century with 108 temples inside. It has been attacked several times and saw several changes of sect ownership, but the architecture remains a wonder to behold. Eklingji is a form of Shiv. In close proximity is Nathdwara, a town that\u2019s very well known for its architectural feats and religious significance. It\u2019s most known for the a 14th century temple of Lord Krishna with a Shrinathji idol in 7-year-old form of Lord Krishna.\r\n\r\nWe\u2019ll ride back to Udaipur after exploring Nathdwara in the evening to visit Bhartiya Lok Kala Museum where we can see their unique collections of traditional artefacts, jewellery, ornaments, and many more traditionally important objects. Prepare for an evening trip to Lake Pichola and at an extra cost, you can even boat through the waters to enjoy the view. As the sun slowly sinks in the horizon, it turns the lakeside buildings and your surrounding golden. You can see the City Palace in the east and the gardens in the south. Head back to the hotel afterward for your overnight stay in Udaipur.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 10:30 AM", "mxt": "Jul 13, 2024 3:30 PM" }
+            { "mnt": "Jul 17, 2024 10:30 AM", "mxt": "Jul 17, 2024 3:30 PM" }
           ]
         },
         "vO": { "5079-0_23082024": { "p": 2277, "v": true } },
@@ -898,7 +1144,7 @@
         "dsc": "Upon your arrival, our representatives will greet and help with your luggage and transfer to your accommodation in Udaipur. Welcome to Udaipur, a city of royalties of ancient times known for the age-old temples, gorgeous lakes & gardens, and grandeur palaces & forts. We\u2019ll immediately check-in after arriving at the hotel in Udaipur so you can rest.\r\n\r\nGet ready for a full-day sightseeing around Udaipur to get a taste of the legacy and history of this city. We\u2019ll start from the City Palace of Udaipur, Rajasthan\u2019s largest royal complex where Kings used to call home. Visitors can explore the various mahals, courtyards and pavilions built in this complex. Up at the highest point of the complex is the Amar Vilas that\u2019s known for the beautiful hanging gardens. We\u2019ll then visit Fateh Prakash Palace as well, a breathtaking site with an amazing view. Check out the inside of the Krishna Vilas chamber that houses a collection of miniature paintings. The elegant Manak Mahal lives up to its name, adorned with many red colored glass and mosaic. The Mor Chowk is a beautiful court that was built during the reign of Rana Karan Singhji. The Sheesh Mahal is a luxurious hotel that\u2019s a pride of Udaipur. Near the edge of the City Palace is the Zenana Mahal which has been restored as a hotel. It used to serve as the palace for the royal ladies. We also won\u2019t miss out on Sheesh Mahal and Rang Bhawan that brags exquisite view. At additional cost, we\u2019ll also take you visit the Crystal Art Gallery that\u2019s inside the Fateh Prakash Palace to see their crystal collection. The collection is over hundreds of years old and include a variety of objects d\u2019art, dinner sets, perfume bottles, glasses, and more.\r\n\r\nThen we\u2019ll head over to the Jagdish Temple in Udaipur, a Hindu temple that\u2019s been worshipped since 1651. Dedicated to Lord Vishnu who\u2019s also known as the preserver of the universe. It is a Mewar dynasty\u2019s architectural achievement as the 79-feet tall structure adorn the skyline of Udaipur.\r\n\r\nThen visit Vintage Car Museum where any vintage car enthusiasts will love to check out their antique car collection. There are around 20 of them with 4 Rolls-Royce\u2019s, 2 Cadillacs, and a lot of convertibles. We\u2019ll make a photo stop at Nehru Garden which is located on an island within Fateh Sagar Lake. Enjoy the tranquil atmosphere of the artificial lake surrounded by Aravalli Hills and the calming ride to the island in the middle. Nehru Garden is a floating restaurant with garden in the shape of a boat.\r\n\r\nThen we head to the gardens on the banks of Fateh Sagar Lake, Saheliyon-Ki-Bari, the Courtyard of Maiden. These gardens are built under the embankment of the lake and has beautiful lotus pools, marble pavilions and elephants, built in 1734 for the royal ladies. It was a present from Maharana Sangram Singh for his queen and her 48 maids. The tour continues to drive pass the Sukhadia Circle and we\u2019ll then visit Bhartiya Lok Kala Museum where we can see their unique collections of traditional artefacts, jewellery, ornaments, and many more traditionally important objects.\r\n\r\nAnd then visit Maharana Pratap Memorial and see a statue of Maharana Pratap sitting on Chetak, his horse. Enjoy the view of Fateh Sagar Lake and the rest of the city from here while relaxing in the tranquil atmosphere.\r\n\r\nPrepare for an evening trip to Lake Pichola and at an extra cost, you can even boat through the waters to enjoy the view. As the sun slowly sinks in the horizon, it turns the lakeside buildings and your surrounding golden. You can see the City Palace in the east and the gardens in the south. Head back to the hotel afterward for your overnight stay in Udaipur.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 11:30 AM", "mxt": "Jul 13, 2024 7:30 PM" }
+            { "mnt": "Jul 17, 2024 11:30 AM", "mxt": "Jul 17, 2024 7:30 PM" }
           ]
         },
         "vO": { "5079-0_22082024": { "p": 0, "v": true, "skp": true } },
@@ -963,7 +1209,7 @@
         "dsc": "Enjoy your early breakfast today at the hotel and get ready for an excursion to Mount Abu which is about 3 hours away. Mount Abu is Rajasthan\u2019s only hill station known not just for the stunning architecture, but also wondrous, panoramic view ant earned it the title \u201cOasis of Rajasthan.\u201d\r\n\r\nWe\u2019ll go on a full-day sightseeing around this gorgeous mountain, starting with the Dilwara Jain Temple. It has such a stunning architectural achievement made of white marbles and feature intricate carvings of lotuses, gods, and abstract patterns. The white tone is in line with the Svetambara branch the Dilwara temple is part of. We\u2019ll get a good look of the Ranga Mandapa, the dome ceiling that has a chandelier-shaped structure where 16 stone idols of Vidya Devi are at.\r\n\r\nUp the Aravalli Range is the peak of Guru Shikhar, the highest point of the mountain range which is about 15km from Mt. Abu. Up here, we can see the Mt. Abu Observatory as well as a cave temple of Lord Vishnu, Guru Dattatreya. The observatory has a great view of the night sky, bragging about 150 cloud-free nights every year and is equipped with a 1.2m Infrared telescope. Meanwhile the temple is a famous pilgrimage destination, built on the side of the mountain.\r\n\r\nThe day grows late as we slowly make our way to Honeymoon Point, also locally known as Anadara Point to enjoy the scenery. Unwind and rest here or snap some pictures with the Nakki Lake and Old Mt. Abu Gateway as your backdrop. We\u2019ll head back to your hotel in the evening for your overnight stay in Udaipur.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 11:30 AM", "mxt": "Jul 13, 2024 5:30 PM" }
+            { "mnt": "Jul 17, 2024 11:30 AM", "mxt": "Jul 17, 2024 5:30 PM" }
           ]
         },
         "vO": {
@@ -1027,7 +1273,7 @@
         "dsc": "Enjoy your breakfast at the hotel today before we head out exploring Jaipur. We\u2019ll get ready for a half-day sightseeing around Jaipur starting with the City Palace. Today, it is still the home of Jaipur royal family and has an iconic pink façade and was built in 1732, or nearly 300 years ago after Jaipur became the capital city. We\u2019ll visit the beautiful palaces in this complex, like the majestic Chandra Palace and Mubarak Palace. The Pritam Niwas Chowk is an enclosed courtyard, a beautiful 18th century garden with four elaborately decorated gateways where royal dance performances can be observed. The carriage house, Bhaggi Khana, is one of the museums where you can learn about the people who used to live there. We\u2019re going to visit the Maharani Palace as well and finally, the 18th century Govind Dev Ji Temple which was built in the 18th century. It\u2019s dedicated to Govind Dev who\u2019s also Krishna, and his consort, Radha.\r\n\r\nVisit the observatory of the founder of Jaipur, the Jantar Mantar, where you can find 20 astronomical instruments Rajput king Sawai Jai Singh II made and used. They are examples of the king\u2019s innovations and great masonry works. We\u2019ll make a photo stop at Hawa Mahal, also known as the Palace of Breeze, which is built at the edge of the City Palace where the royal ladies typically reside for \u201cpardah\u201d where they can observe street processions and other activities without revealing their face to the public.\r\n\r\nThe ride continues to Laxminarayan Temple. The Birla Mandir in Jaipur is praised for the glimmering shade of white marble, dedicated to the Hindu Goddess Lakshmi and Narayan, Lord Vishnu. Evening will for your own leisure activity in the city by exploring local markets for their apparels and handicrafts, or just to rest in your room before you get to enjoy delightful Rajasthani dinner. \r\n\r\nWe\u2019ll head back to your hotel in the evening for your overnight stay in Jaipur.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 10:30 AM", "mxt": "Jul 13, 2024 4:30 PM" }
+            { "mnt": "Jul 17, 2024 10:30 AM", "mxt": "Jul 17, 2024 4:30 PM" }
           ]
         },
         "vO": {
@@ -1069,9 +1315,9 @@
         "dsc": "Enjoy your early breakfast at the hotel today before we check-out from the hotel. Get ready for a half-day sightseeing around Jaipur, starting with Amer Fort. About 11km from the city, also known as the Amber Fort, there are four levels that you can explore here. When we enter the main complexes of the fort, we\u2019ll get to explore the main hall, Diwan-i-Aam, which is meant for the gathering of the public. And the other hall, Diwan-i-Khas, is meant for private audience. There\u2019s also the gorgeous Sheesh Mahal, also known as the Mirror Palace, where you can see the beautifully carved marble panel on a pillar in the shape of a \u201cmagic flower.\u201d One can see seven beautiful forms carved: a lotus, a lion\u2019s tail, a scorpion, a hooded cobra, a fishtail, a cob or corn, and an elephant trunk. One can also see the Maota Lake from the fort.\r\n\r\nAs we leave the fort, we\u2019ll make a photo stop at Jal Mahal or Lake Palace of Jaipur where you can take beautiful pictures. Visitors can also boat around Lake Man Sagar to enjoy the view and atmosphere. Then visit the Royal Gaitor where we can see beautiful carved marble cenotaphs of the Maharaja of Jaipur. This serene scene is the perfect place where you can just take in the beauty of the place, far from the bustling city life. The cenotaphs were erected at the foothills of the Nahargarh Fort just 15km from Jaipur.\r\n\r\nAfter the sightseeing, we\u2019re going to transport you to the airport or railway station for your departure. We know you\u2019re heading back home with smiles from the awesome experience of this trip!",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 9:00 AM", "mxt": "Jul 13, 2024 2:00 PM" },
-            { "mnt": "Jul 13, 2024 9:30 AM", "mxt": "Jul 13, 2024 2:30 PM" },
-            { "mnt": "Jul 13, 2024 10:00 AM", "mxt": "Jul 13, 2024 3:00 PM" }
+            { "mnt": "Jul 17, 2024 9:00 AM", "mxt": "Jul 17, 2024 2:00 PM" },
+            { "mnt": "Jul 17, 2024 9:30 AM", "mxt": "Jul 17, 2024 2:30 PM" },
+            { "mnt": "Jul 17, 2024 10:00 AM", "mxt": "Jul 17, 2024 3:00 PM" }
           ]
         },
         "vO": { "4949-1_26082024": { "p": 0, "v": true, "skp": true } },
@@ -1115,7 +1361,7 @@
         "dsc": "Enjoy your breakfast today before we head out on a full-day excursion to Chittorgarh. We\u2019re going to finally be where tales sung by Bards of Rajasthan all originate from. It is hard not to know about Chittorgarh Fort which is a hilltop hill that became the symbol of Rajput culture, a massive structure that saw the history and sacrifices of heroes of Rajput times. One can also see the seven gates throughout the 700-acre fort, each with their own names: Padan Gate, Ganesh Gate, Hanuman Gate, Bhairon Gate, Jodla Gate, Lakshman Gate, and Lord Ram Gate. Also known as the Water Fort, it is often targeted due to the strategic location of the fort that made it almost impenetrable. At the same time, there are many palaces and life inside the fort is comfortable as it contains 84 bodies of water and 22 of them still exist today.\r\n\r\nThere\u2019s a lot to see inside the fort and we\u2019ll visit some of them. The Padmini Palace is a white building from the 19th century where Rani Padmini lived after marrying Rawal Ratan Singh in 1300 CE. Another palace is the Rana Kumbha Palace near the entrance gate, by the Victory Tower \u201cVijay Stambha.\u201d. The Fateh Prakash Palace inside the fort has been converted into a museum that houses a range of ancient artifacts in the form of old coins, sculptures and other crafts. The 8th century Kalika Mata Temple still stands inside the fort with new parts added much later. The Meera Bai Temple is another old Hindu temple dedicated to Meera Bai who was a devotee of Lord Krishna. Another notable tower is the Kirti Stambha from the 12th century by a Jain merchant to celebrate Jainism. It features fantastic sculptures of Hindu deities and stores from the Ramayana and Mahabharata.\r\n\r\nAfter the fort, it\u2019s time to explore the nature of this land by visiting Bassi Wildlife Sanctuary. This is a wildlife sanctuary with dry forests that are natural habitats for Dhok, Churel, Butea, wild cats, civets, hyenas, foxes, Chitals, and more. We can ride through the sanctuary to see the Bassi and Orai Dams that formed reservoirs where animals frequently visit for water.\r\n\r\nWe\u2019ll ride back to the hotel in the evening for your overnight stay in Udaipur.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 11:30 AM", "mxt": "Jul 13, 2024 7:30 PM" }
+            { "mnt": "Jul 17, 2024 11:30 AM", "mxt": "Jul 17, 2024 7:30 PM" }
           ]
         },
         "vO": { "5079-0_23082024": { "p": 4554, "v": true } },
@@ -1145,7 +1391,7 @@
         "dsc": "Enjoy your breakfast at the hotel today before we head out. Get ready for a full-day sightseeing around Udaipur to get a taste of the legacy and history of this city. We\u2019ll start from the City Palace of Udaipur, Rajasthan\u2019s largest royal complex where Kings used to call home. Visitors can explore the various mahals, courtyards and pavilions built in this complex. Up at the highest point of the complex is the Amar Vilas that\u2019s known for the beautiful hanging gardens. We\u2019ll then visit Fateh Prakash Palace as well, a breathtaking site with an amazing view. Check out the inside of the Krishna Vilas chamber that houses a collection of miniature paintings. The elegant Manak Mahal lives up to its name, adorned with many red colored glass and mosaic. The Mor Chowk is a beautiful court that was built during the reign of Rana Karan Singhji. The Sheesh Mahal is a luxurious hotel that\u2019s a pride of Udaipur. Near the edge of the City Palace is the Zenana Mahal which has been restored as a hotel. It used to serve as the palace for the royal ladies. We also won\u2019t miss out on Sheesh Mahal and Rang Bhawan that brags exquisite view.\r\n\r\nThen we\u2019ll head over to the Jagdish Temple in Udaipur, a Hindu temple that\u2019s been worshipped since 1651. Dedicated to Lord Vishnu who\u2019s also known as the preserver of the universe. It is a Mewar dynasty\u2019s architectural achievement as the 79-feet tall structure adorn the skyline of Udaipur.\r\n\r\nThen visit Vintage Car Museum where any vintage car enthusiasts will love to check out their antique car collection. There are around 20 of them with 4 Rolls-Royce\u2019s, 2 Cadillacs, and a lot of convertibles.\r\n\r\nWe\u2019ll make a photo stop at Nehru Garden which is located on an island within Fateh Sagar Lake. Enjoy the tranquil atmosphere of the artificial lake surrounded by Aravalli Hills and the calming ride to the island in the middle. Nehru Garden is a floating restaurant with garden in the shape of a boat. Then we head to the gardens on the banks of Fateh Sagar Lake, Saheliyon-Ki-Bari, the Courtyard of Maiden. These gardens are built under the embankment of the lake and has beautiful lotus pools, marble pavilions and elephants, built in 1734 for the royal ladies. It was a present from Maharana Sangram Singh for his queen and her 48 maids.\r\n\r\nVisit the craftsmen of Shilpgram where you can watch men at work, demonstrating their dexterity in handcrafting. This heritage village was established in 1989 has audio-visual centers with documentaries on the history and tradition of Indian art and craft. You can also bring home with your something to remember the trip by here!\r\n\r\nPrepare for an evening trip to Lake Pichola and at an extra cost, you can even boat through the waters to enjoy the view. As the sun slowly sinks in the horizon, it turns the lakeside buildings and your surrounding golden. You can see the City Palace in the east and the gardens in the south. Head back to the hotel afterward for your overnight stay in Udaipur.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 10:30 AM", "mxt": "Jul 13, 2024 4:30 PM" }
+            { "mnt": "Jul 17, 2024 10:30 AM", "mxt": "Jul 17, 2024 4:30 PM" }
           ]
         },
         "vO": {
@@ -1177,7 +1423,7 @@
         "dsc": "Enjoy your breakfast today before we head out on an excursion to Sanganer, a place about 12km from Jaipur. Sanganer is a place famous for the textile, papermaking, and blue pottery. And while we\u2019re here, we\u2019re going to check out all famous attractions around here. The Kaghzi Mohalla is a great place to start where we can learn about the artisans of handmade paper that has become a famous product of this place. Sanganer textiles are also popular among tourists because of the beautiful hand-printed designs and bright colors used. You\u2019ll also find the block prints here famous as well.\r\n\r\nWe\u2019ll explore the old city in the late afternoon to check out the lively markets where you can shop for the textiles and other local products and souvenirs here. You can see the craftsmen at work as you go from one shop to another. And then we\u2019re going to give one of the famous temples, Shri Digamber Jain Temple, a visit. It is built in the 10th century where you can see many intricate carvings on the walls and is known to have seven underground floors.\r\n\r\nSee all the interesting things Sanganer town has to offer on this trip before we ride back to Jaipur. You have evening for leisure to explore the place on your own or rest in your room before spending the night in Jaipur.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 1:00 PM", "mxt": "Jul 13, 2024 4:00 PM" }
+            { "mnt": "Jul 17, 2024 1:00 PM", "mxt": "Jul 17, 2024 4:00 PM" }
           ]
         },
         "vO": { "4949-1_25082024": { "p": 759, "v": true } },
@@ -1196,15 +1442,15 @@
         "dsc": "Enjoy your breakfast at the hotel today before we head out. Get ready for a half-day sightseeing around Udaipur to get a taste of the legacy and history of this city. We\u2019ll start from the City Palace of Udaipur, Rajasthan\u2019s largest royal complex where Kings used to call home. Visitors can explore the various mahals, courtyards and pavilions built in this complex. Up at the highest point of the complex is the Amarvilas that\u2019s known for the beautiful hanging gardens. We\u2019ll then visit Fateh Prakash Palace as well, a breathtaking site with an amazing view. Check out the inside of the Krishna Vilas chamber that houses a collection of miniature paintings. The elegant Manak Mahal lives up to its name, adorned with many red colored glass and mosaic. The Mor Chowk is a beautiful court that was built during the reign of Rana Karan Singhji. The Sheesh Mahal is a luxurious hotel that\u2019s a pride of Udaipur. Near the edge of the City Palace is the Zenana Mahal which has been restored as a hotel. It used to serve as the palace for the royal ladies. We also won\u2019t miss out on Sheesh Mahal and Rang Bhawan that brags exquisite view. At additional cost, we\u2019ll also take you visit the Crystal Art Gallery that\u2019s inside the Fateh Prakash Palace to see their crystal collection. The collection is over hundreds of years old and include a variety of objects d\u2019art, dinner sets, perfume bottles, glasses, and more. Next to the palace are the Dilkhush Mahal and Moti Mahal where you can see unique mosaic of peacocks, paintings, and corking mirror works.\r\n\r\nThen we\u2019ll head over to the Jagdish Temple in Udaipur, a Hindu temple that\u2019s been worshipped since 1651. Dedicated to Lord Vishnu who\u2019s also known as the preserver of the universe. It is a Mewar dynasty\u2019s architectural achievement as the 79-feet tall structure adorn the skyline of Udaipur.\r\n\r\nEvening is for you to spend at leisure to explore the area on your own or to just relax somewhere. Head back to the hotel afterward for your overnight stay in Udaipur.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 9:30 AM", "mxt": "Jul 13, 2024 1:30 PM" },
-            { "mnt": "Jul 13, 2024 10:00 AM", "mxt": "Jul 13, 2024 2:00 PM" },
-            { "mnt": "Jul 13, 2024 10:30 AM", "mxt": "Jul 13, 2024 2:30 PM" },
-            { "mnt": "Jul 13, 2024 11:00 AM", "mxt": "Jul 13, 2024 3:00 PM" },
-            { "mnt": "Jul 13, 2024 11:30 AM", "mxt": "Jul 13, 2024 3:30 PM" },
-            { "mnt": "Jul 13, 2024 12:00 PM", "mxt": "Jul 13, 2024 4:00 PM" },
-            { "mnt": "Jul 13, 2024 12:30 PM", "mxt": "Jul 13, 2024 4:30 PM" },
-            { "mnt": "Jul 13, 2024 1:00 PM", "mxt": "Jul 13, 2024 5:00 PM" },
-            { "mnt": "Jul 13, 2024 1:30 PM", "mxt": "Jul 13, 2024 5:30 PM" }
+            { "mnt": "Jul 17, 2024 9:30 AM", "mxt": "Jul 17, 2024 1:30 PM" },
+            { "mnt": "Jul 17, 2024 10:00 AM", "mxt": "Jul 17, 2024 2:00 PM" },
+            { "mnt": "Jul 17, 2024 10:30 AM", "mxt": "Jul 17, 2024 2:30 PM" },
+            { "mnt": "Jul 17, 2024 11:00 AM", "mxt": "Jul 17, 2024 3:00 PM" },
+            { "mnt": "Jul 17, 2024 11:30 AM", "mxt": "Jul 17, 2024 3:30 PM" },
+            { "mnt": "Jul 17, 2024 12:00 PM", "mxt": "Jul 17, 2024 4:00 PM" },
+            { "mnt": "Jul 17, 2024 12:30 PM", "mxt": "Jul 17, 2024 4:30 PM" },
+            { "mnt": "Jul 17, 2024 1:00 PM", "mxt": "Jul 17, 2024 5:00 PM" },
+            { "mnt": "Jul 17, 2024 1:30 PM", "mxt": "Jul 17, 2024 5:30 PM" }
           ]
         },
         "vO": {
@@ -1233,18 +1479,18 @@
         "dsc": "Enjoy your breakfast at the hotel today as we prepare to set out on a day excursion to Haldighati, Nathdwara and Eklingji. We start with the town of Eklingji where you can find the famous Eklingji Temple. It has been dubbed as the spiritual center of Mewar, a complex that was originally finished in the 8th century with 108 temples inside. It has been attacked several times and saw several changes of sect ownership, but the architecture remains a wonder to behold. Eklingji is a form of Shiv.\r\n\r\nThen head over to Haldighati, a historical mountain pass that was also the site where the Battle of Haldighati took place. Just less than 500 years ago, this was where Maharana Pratap and the Mughal Emperor Akbar fought in 1576 AD. In close proximity is Nathdwara, a town that\u2019s very well known for its architectural feats and religious significance. It\u2019s most known for the a 14th century temple of Lord Krishna with a Shrithnaji idol in 7-year-old form of Lord Krishna.\r\n\r\nWe\u2019ll ride back to Udaipur after exploring the town for your overnight stay at the hotel.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 7:00 AM", "mxt": "Jul 13, 2024 1:00 PM" },
-            { "mnt": "Jul 13, 2024 7:30 AM", "mxt": "Jul 13, 2024 1:30 PM" },
-            { "mnt": "Jul 13, 2024 8:00 AM", "mxt": "Jul 13, 2024 2:00 PM" },
-            { "mnt": "Jul 13, 2024 8:30 AM", "mxt": "Jul 13, 2024 2:30 PM" },
-            { "mnt": "Jul 13, 2024 9:00 AM", "mxt": "Jul 13, 2024 3:00 PM" },
-            { "mnt": "Jul 13, 2024 9:30 AM", "mxt": "Jul 13, 2024 3:30 PM" },
-            { "mnt": "Jul 13, 2024 10:00 AM", "mxt": "Jul 13, 2024 4:00 PM" },
-            { "mnt": "Jul 13, 2024 10:30 AM", "mxt": "Jul 13, 2024 4:30 PM" },
-            { "mnt": "Jul 13, 2024 11:00 AM", "mxt": "Jul 13, 2024 5:00 PM" },
-            { "mnt": "Jul 13, 2024 11:30 AM", "mxt": "Jul 13, 2024 5:30 PM" },
-            { "mnt": "Jul 13, 2024 12:00 PM", "mxt": "Jul 13, 2024 6:00 PM" },
-            { "mnt": "Jul 13, 2024 12:30 PM", "mxt": "Jul 13, 2024 6:30 PM" }
+            { "mnt": "Jul 17, 2024 7:00 AM", "mxt": "Jul 17, 2024 1:00 PM" },
+            { "mnt": "Jul 17, 2024 7:30 AM", "mxt": "Jul 17, 2024 1:30 PM" },
+            { "mnt": "Jul 17, 2024 8:00 AM", "mxt": "Jul 17, 2024 2:00 PM" },
+            { "mnt": "Jul 17, 2024 8:30 AM", "mxt": "Jul 17, 2024 2:30 PM" },
+            { "mnt": "Jul 17, 2024 9:00 AM", "mxt": "Jul 17, 2024 3:00 PM" },
+            { "mnt": "Jul 17, 2024 9:30 AM", "mxt": "Jul 17, 2024 3:30 PM" },
+            { "mnt": "Jul 17, 2024 10:00 AM", "mxt": "Jul 17, 2024 4:00 PM" },
+            { "mnt": "Jul 17, 2024 10:30 AM", "mxt": "Jul 17, 2024 4:30 PM" },
+            { "mnt": "Jul 17, 2024 11:00 AM", "mxt": "Jul 17, 2024 5:00 PM" },
+            { "mnt": "Jul 17, 2024 11:30 AM", "mxt": "Jul 17, 2024 5:30 PM" },
+            { "mnt": "Jul 17, 2024 12:00 PM", "mxt": "Jul 17, 2024 6:00 PM" },
+            { "mnt": "Jul 17, 2024 12:30 PM", "mxt": "Jul 17, 2024 6:30 PM" }
           ]
         },
         "vO": { "5079-0_23082024": { "p": 2277, "v": true } },
@@ -1266,7 +1512,7 @@
         "dsc": "Enjoy your early breakfast at the hotel today before we check-out from the hotel. Get ready for a half-day sightseeing around Jaipur starting with the City Palace. Today, it is still the home of Jaipur royal family and has an iconic pink façade and was built in 1732, or nearly 300 years ago after Jaipur became the capital city. \r\n\r\nVisit the observatory of the founder of Jaipur, the Jantar Mantar, where you can find 20 astronomical instruments Rajput king Sawai Jai Singh II made and used. They are examples of the king\u2019s innovations and great masonry works. We\u2019ll also visit the Hawa Mahal, also known as the Palace of Breeze, which is built at the edge of the City Palace where the royal ladies typically reside for \u201cpardah\u201d where they can observe street processions and other activities without revealing their face to the public.\r\n\r\nEnjoy your lunch before we continue our ride for Delhi where we\u2019ll drop you at the airport or railway station for your departure. We know you\u2019re heading back home with smiles from the awesome experience of this trip!",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 9:00 AM", "mxt": "Jul 13, 2024 3:00 PM" }
+            { "mnt": "Jul 17, 2024 9:00 AM", "mxt": "Jul 17, 2024 3:00 PM" }
           ]
         },
         "vO": {
@@ -1328,7 +1574,7 @@
         "dsc": "Enjoy your early breakfast at the hotel today before we head out. We\u2019re going on a full-day excursion to Ajmer and Pushkar, with Ajmer comparatively bigger than Pushkar. While we\u2019re here, we\u2019re going to visit Ajmer Sharif Dargah, the dargah of Moinuddin Chishti. This is the tomb of Moinuddin Chishti from the 13th century, who was highly venerated throughout his reputation after arriving Delhi and later, Ajmer. Another site we\u2019re going visit here is the Adhai Din Ka Jhonpra, Ajmer\u2019s oldest and historically rich mosque that was completed in 1192 by the commission of Qutb-ud-Din-Aibak. It was designed by Abu Bakr of Herat and is an exemplar mosque designed in Indo-Islamic style. Take a calming walk on the lakeside of Ana Sagar Lake, an artificial lake over 13 km wide with an island in the center of it, made in the 12th century after a dam was built on Luni River.\r\n\r\nAjmer is the gateway to visit Pushkar, about 15km away, a famous, ancient Hindu pilgrimage city. It is home to more than 400 temples and we\u2019re not going to miss the many ghats that can be seen here. We start from the center of the temples, the sacred Pushkar Lake, that\u2019s believed to have medicinal properties for those who bath in one of the 52 bathing ghats. We\u2019ll also be visiting the number of temples out of the hundreds that dot the surrounding of the lake. Rangji Temple is a temple dedicated to Lord Vaikuntha Venkatesh or Lord Rangji, an incarnation of Lord Vishnu. One of the most visually satisfying temples is the Man Mahal which features impressive Rajasthani architecture which also have gorgeous views of another nearby sacred lake. This palace cum hotel was built by Raja Man Singh I of Amber meant to serve as a temporary stay for his guests and himself when visiting Pushkar. Finally, we\u2019re not going to miss the main attraction of Pushkar, the Temple of Lord Brahma, also known as Jagatpita Brahman Mandir, one of the rare, ancient temples dedicated to the Hindu Creator God. Then visit one last gorgeous pilgrimage site, Savitri Temple, which is dedicated to the Goddess Savitri. At the hilltop where you can get a dazzling view of Pushkar City and the surrounding mountain range when the weather is clear.\r\n\r\nWe\u2019ll head back to your hotel in the evening for your overnight stay in Jaipur.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 9:00 AM", "mxt": "Jul 13, 2024 7:00 PM" }
+            { "mnt": "Jul 17, 2024 9:00 AM", "mxt": "Jul 17, 2024 7:00 PM" }
           ]
         },
         "vO": { "4949-1_25082024": { "p": 5313, "v": true } },
@@ -1368,7 +1614,7 @@
         "dsc": "Enjoy your breakfast at the hotel today before we head out exploring Jaipur. We\u2019ll get ready for a full-day sightseeing around Jaipur, starting with Amer Fort. About 11km from the city, also known as the Amber Fort, there are four levels that you can explore here. Visitors can pay for an Elephant ride experience, a unique way to explore the place. One can also see the Maota Lake from the fort. On the lake is the Kesar Kyari Garden which was created in the 1600 for the harem to enjoy the view a pulley system that transports the ladies safely here without having to meet men.\r\n\r\nWe\u2019ll head out to visit the Shila Devi Temple, housing an idol of Durga brought here in the early 1600s. Raja Man Singh I had brought the statue in as a promise for winning against King Kedar and it is now in the sanctum.\r\n\r\nThere\u2019s also the gorgeous Sheesh Mahal, also known as the Mirror Palace, where you can see the beautifully carved marble panel on a pillar in the shape of a \u201cmagic flower.\u201d One can see seven beautiful forms carved: a lotus, a lion\u2019s tail, a scorpion, a hooded cobra, a fishtail, a cob or corn, and an elephant trunk.\r\n\r\nThe Panna Meena Bawri is a stepwell meant as a bathing place for Indian Queens and you can see what would\u2019ve been a very exclusive site back in the days. Visit the Man Sagar Lake, a manmade lake which was created by raja Man Singh in 1610 after a dam was created on the Dravyavati river.\r\n\r\nAdditionally, if we weren\u2019t able to explore these places, we\u2019ll also head to the City Palace. Today, it is still the home of Jaipur royal family and has an iconic pink façade and was built in 1732, or nearly 300 years ago after Jaipur became the capital city. There\u2019s also Hawa Mahal, also known as the Palace of Breeze, which is built at the edge of the City Palace where the royal ladies typically reside for \u201cpardah\u201d where they can observe street processions and other activities without revealing their face to the public.\r\n\r\nWe\u2019ll ride back in the evening to your hotel for your overnight stay in Jaipur.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 10:30 AM", "mxt": "Jul 13, 2024 6:30 PM" }
+            { "mnt": "Jul 17, 2024 10:30 AM", "mxt": "Jul 17, 2024 6:30 PM" }
           ]
         },
         "vO": {
@@ -1404,7 +1650,7 @@
         "dsc": "Enjoy your breakfast at the hotel today as we prepare to set out on a day excursion to historical sites around Kumbhalgarh, Nathdwara and Eklingji. We start with Nathdwara, a town that\u2019s very well known for its architectural feats and religious significance. It\u2019s most known for the a 14th century temple of Lord Krishna with a Shrinathji idol in 7-year-old form of Lord Krishna. In close proximity is the town of Eklingji where you can find the famous Eklingji Temple. It has been dubbed as the spiritual center of Mewar, a complex that was originally finished in the 8th century with 108 temples inside. It has been attacked several times and saw several changes of sect ownership, but the architecture remains a wonder to behold. Eklingji is a form of Shiv.\r\n\r\nThen finally, we\u2019ll reach today\u2019s highlight: UNESCO World Heritage Site Kumbhalgarh Fort. This medieval hilltop fortress is one of Rajasthan\u2019s most beautiful and important historical sites. It has been dubbed the Great Wall of Indian and is indeed, the world\u2019s second-longest wall with seven fortified gateways. It\u2019ll take a whole day to walk and explore the inner palaces, temples, courts, while we enjoy the view on the outside. Explore Palace of the Clouds or Badal Mahal which is the fort\u2019s highest point with exquisite view of Thar Desert and Aravalli Range. It is also said the legendary warrior Maharana Pratap was born here. Before we leave, we\u2019re going to attend the 45-minute Light and Sound show at the fort that tells the history of the fort and more.\r\n\r\nWe\u2019ll ride back to Udaipur after exploring the fort for your overnight stay at the hotel.",
         "tmO": {
           "stA": [
-            { "mnt": "Jul 13, 2024 11:30 AM", "mxt": "Jul 13, 2024 5:30 PM" }
+            { "mnt": "Jul 17, 2024 11:30 AM", "mxt": "Jul 17, 2024 5:30 PM" }
           ]
         },
         "vO": { "5079-0_23082024": { "p": 3795, "v": true } },
@@ -1609,7 +1855,7 @@
   "alert": false,
   "prcCalO": {
     "fltSct": "Ahmedabad to Udaipur, Jaipur to Ahmedabad",
-    "lndPrc": 32781.44271845531
+    "lndPrc": 32780.42083578593
   },
   "currency": "INR",
   "fltQO": {
@@ -1626,3 +1872,4 @@
   "flts": {},
   "tdiscD": "&#x20B9; -1,737"
 }
+
