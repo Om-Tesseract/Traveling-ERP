@@ -37,7 +37,6 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('travelapp.urls')),
     path('api/', include('api.urls')),
     path('auth/',include('authentication.urls'),name="Authentication"),
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),

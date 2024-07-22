@@ -5,7 +5,7 @@ from .models import *
 class RoomTypeInline(admin.TabularInline):
     model = RoomType
     extra = 1  # Number of empty room types to display
-class HotelImgsInline(admin.TabularInline):
+class HotelImgsInline(admin.StackedInline):
     model = HotelImages
     extra = 1  # Number of empty room types to display
 
@@ -20,3 +20,20 @@ admin.site.register(Hotel,HotelAdmin)
 admin.site.register(Country)
 admin.site.register(RoomCategory)
 admin.site.register(RoadTransportOption)
+
+class CitiesAdmin(admin.ModelAdmin):
+    list_filter = ('name','country__name', 'state__name')  # Add fields you want to filter by
+    search_fields = ('name', 'country__name', 'state__name')  # Add fields you want to search in
+
+admin.site.register(Company)
+admin.site.register(Customer)
+admin.site.register(Package)
+admin.site.register(Employee)
+admin.site.register(Cities,CitiesAdmin)
+admin.site.register(Nationality)
+admin.site.register(CustomisedPackage)
+admin.site.register(Travel_Details)
+admin.site.register(Activity)
+admin.site.register(EmployeeAttendance)
+admin.site.register(CityNight)
+admin.site.register(Itinerary)

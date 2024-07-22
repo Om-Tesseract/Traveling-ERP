@@ -8,6 +8,8 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser,AllowAny
 from django.contrib.auth import get_user_model
 from utils.common_pagination import CustomPagination
 
+
+
 class UserListCreateView(generics.ListCreateAPIView):
     serializer_class=serializers.UserSerializer
     queryset= get_user_model().objects.all()

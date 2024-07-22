@@ -296,12 +296,14 @@ class CustomisedPackageUpdateSerializer(serializers.ModelSerializer):
                     for key, value in flight.items():
                             setattr(flight_intance, key, value)
                     flight_intance.save()
+                    print("updated flight")
                 except Flight_Details.DoesNotExist as e:
                     raise serializers.ValidationError({"error": e})
             else:
+                print("create flight")
                 Flight_Details.objects.create(package=instance,**flight)
         for travel in travel_details:
-            if travel.get('id'):
+            if travel.get('id') is not None:
                 travel_instance=Travel_Details.objects.filter(
                     id=travel.get('id')
                 )
@@ -384,11 +386,15 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
 
     def add_road_transport(self,package,destination):
         rto=RoadTransportOption.objects.filter(seats__gte=package.number_of_adults).order_by('seats').first()
+        
         travel_details=None
         
         if rto:
             print("rto==>",rto)
             travel_details=Travel_Details.objects.create(package=package,road_transport=rto,destination=destination,pickup_from=package.leaving_from)
+        else:
+            print("rto==>",rto)
+            travel_details=Travel_Details.objects.create(package=package,destination=destination,pickup_from=package.leaving_from)
         return travel_details
     def update_road_transport(self,package,destination,pickup_from):
         travel_details=Travel_Details.objects.filter(package=package).update(pickup_from=pickup_from,destination=destination)
@@ -418,10 +424,11 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
         self.add_road_transport(package,city_nights_data[0].get('city'))
        
         # Create CityNight instances
+        night_count= 1
         for city_night_data in city_nights_data:
             city_night=CityNight.objects.create(package=package, **city_night_data)
             self.add_hotel_detail(package,city_night,hotel_leaving_date)
-            self.add_itinerary(package,city_night,itin_city_change_last_date)
+            self.add_itinerary(package,city_night,itin_city_change_last_date,night_count)
                 
           
         # add last day of package
@@ -451,8 +458,7 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
         if hotel_obj.exists():
                 hotel=hotel_obj.first()
                 room_types=RoomType.objects.filter(Q(hotel=hotel)
-                                                   |
-                        Q(rnm__icontains=package.room_type)).first()
+                                                  ).first()
                 
                 per_night_price = room_types.price if room_types else 0
         
@@ -464,6 +470,8 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
                     "check_in_date":hotel_leaving_date,
                     "check_out_date":hotel_leaving_date + datetime.timedelta(days=city_night.nights),
                     "number_of_rooms":package.number_of_rooms,
+                    'room':room_types,
+                    "meal_plans":room_types.meal_plan if room_types else None,
                     "room_type":room_types.rnm if room_types else package.room_type,
                     "total_price":total_price,
                     "citynight":city_night,
@@ -473,9 +481,23 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
                 hotel_details=HotelDetails.objects.create(**hotel_detail)
                 hotel_leaving_date=hotel_details.check_out_date
                 print(hotel_details)
-                
+        else:
+                hotel_detail={
+                    "package":package,
+                    
+                    "check_in_date":hotel_leaving_date,
+                    "check_out_date":hotel_leaving_date + datetime.timedelta(days=city_night.nights),
+                    "number_of_rooms":package.number_of_rooms,
+                    
+                    "citynight":city_night,
+
+                }
+                print("hotel detail",hotel_detail)
+                hotel_details=HotelDetails.objects.create(**hotel_detail)
+                hotel_leaving_date=hotel_details.check_out_date
+               
     
-    def add_itinerary(self,package:CustomisedPackage,city_night:CityNight,itin_city_change_last_date):
+    def add_itinerary(self,package:CustomisedPackage,city_night:CityNight,itin_city_change_last_date,night_count):
             category_q = Q()
             for interest in package.interests:
                 category_q |= Q(category__icontains=interest)
@@ -511,14 +533,24 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
                     days=itinerary_date, 
                     citynight=city_night
                    
-                )   
-               
+                )  
                 print("Created itinerary",city_night.city.name,itinerary,itinerary.days)
                 if activity:
-                   
-                    print(activity.activity_city.name)
-                    # Create itinerary entry with the activity
-                    itinerary.activities.add(activity)
+                    # it_act=ItineraryActivity.objects.create(
+                    #     itinerary=itinerary,
+                    #     category=activity.category,
+                    #     duration=activity.duration,
+                    #     age_limit=activity.age_limit,
+                    #     activity_name=activity.activity_name,
+                    #     sequence=night_count,
+                    #     activity_desc=activity.activity_desc,
+                    #     activity_city=activity.activity_city
+
+                    # )
+                    # night_count= night_count+1
+               
+                    itinerary.activities.add(activity)  
+                  
                 else:
                     # Handle the case where there are fewer activities than days
                     print(f"Warning: Insufficient activities for {city_night.city}")
@@ -531,7 +563,7 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         city_nights_data = validated_data.pop('city_nights',[])
         del_city_nigths = validated_data.pop('del_city_nigths',[])
-      
+        instance.number_of_rooms=validated_data.get('number_of_rooms',instance.number_of_rooms)
         if len(del_city_nigths)>0:
             self.delete_city_nights(del_city_nigths,instance)
         
@@ -583,9 +615,9 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
                 is_change_city=True
                               
         
-        iti_count=Itinerary.objects.filter(package=instance).count()
-        nights_count=CityNight.objects.filter(package=instance).values().aggregate(total_nights=Sum('nights')).get('total_nights')
-        print(nights_count,iti_count)
+        # iti_count=Itinerary.objects.filter(package=instance).count()
+        # nights_count=CityNight.objects.filter(package=instance).values().aggregate(total_nights=Sum('nights')).get('total_nights')
+        # print(nights_count,iti_count)
         # if iti_count==nights_count:
            
         self.reschedule(instance)       
@@ -632,7 +664,8 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
             hotel_details=HotelDetails.objects.filter(package=package,citynight_id=cn.id)
             hotel_details.update(
              check_in_date=hotel_ck_in_date,
-             check_out_date=hotel_ck_in_date + datetime.timedelta(days=cn.nights)
+             check_out_date=hotel_ck_in_date + datetime.timedelta(days=cn.nights),
+             number_of_rooms=package.number_of_rooms
             )
 
             hotel_ck_in_date=hotel_details.first().check_out_date
@@ -1270,23 +1303,34 @@ class CitieSerializer(serializers.ModelSerializer):
     
 
 class HotelRoomTypeSerializer(serializers.ModelSerializer):
+
     class Meta:
         model= RoomType
         fields='__all__'
 
     def to_representation(self, instance):
         data=super().to_representation(instance)
-        try:
-            amenity_list = json.loads(instance.amenity)
-            data['amenity'] = amenity_list
-        except json.JSONDecodeError as e:
-                    # Handle JSON decoding error
-            print(f"Error decoding JSON: {e}")
+        # try:
+        #     # amenity_list = json.loads(instance.amenity)
+        #     # data['amenity'] = amenity_list
+        # except json.JSONDecodeError as e:
+        #             # Handle JSON decoding error
+        #     print(f"Error decoding JSON: {e}")
         if instance.category:
             data['category_name']=instance.category.name
        
         return data
 
+class HotelDetailsUpdateSerializer(serializers.ModelSerializer):
+    # facilities=serializers. 
+    class Meta:
+        model= HotelDetails
+        fields='__all__'
+
+    def update(self, instance, validated_data):
+
+        return super().update(instance, validated_data)
+ 
 class HotelSerializer(serializers.ModelSerializer):
     rooms_type=HotelRoomTypeSerializer(many=True)
     class Meta:
@@ -1302,6 +1346,7 @@ class HotelSerializer(serializers.ModelSerializer):
             data['state_name']=instance.city.state.name
             data['country_name']=instance.city.country.name
         return data
+    
 class ItineraryPackageSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -1375,7 +1420,44 @@ class ExpanseSerializer(serializers.ModelSerializer):
         return instance
     
 
+class InvoiceSerailizer(serializers.ModelSerializer):
+    class Meta:
+        model=InvoiceMaster
+        fields='__all__'
+        extra_kwargs={
+            "invoice_no":{"required": False}
+        }
+    def validate(self, data):
+        # Automatically generate invoice_number in the format INV<cyear><sequence>
+        req_user = self.context.get('request').user
+         
+        if req_user.role == 'Employee':
+            company = Employee.objects.filter(emp_user=req_user).first().company
+            data['company']=company
+        
+        elif req_user.role == 'Company':
+            # print(req_user.email)
+            company = Company.objects.filter(custom_user_id=req_user.id).first()
+            # print("company==>",company)
+            data['company'] = company
+        
+        company = data.get('company')
+        current_year = datetime.datetime.now().year
+        if company:
+            last_invoice = AirTicketInvoice.objects.filter(company=company).order_by('id').last()
+        else:
+            last_invoice = AirTicketInvoice.objects.all().order_by('id').last()
 
+        if last_invoice:
+            last_invoice_number = last_invoice.invoice_no
+            last_sequence = int(last_invoice_number.split('INV')[-1])
+            new_sequence = last_sequence + 1
+            data['invoice_no'] = f'INV{current_year}{new_sequence:04d}'
+        else:
+            data['invoice_no'] = f'INV{current_year}0001'
+
+        return data
+    
 
 class PassengerSerializer(serializers.ModelSerializer):
     id= serializers.IntegerField(allow_null=True,required=False)
@@ -1387,6 +1469,7 @@ class PassengerSerializer(serializers.ModelSerializer):
         extra_kwargs={
             "invoice":{"required": False}
         }
+    
 class AirTicketInvoiceSerializer(serializers.ModelSerializer):
     passengers = PassengerSerializer(many=True,write_only=True)
     del_passengers =serializers.ListField(required=False)

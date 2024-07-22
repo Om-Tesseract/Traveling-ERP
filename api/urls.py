@@ -28,10 +28,13 @@ urlpatterns = [
     path('travel_details/', views.TravelDetailsListCreateAPI.as_view(), name="TravelDetailsListCreateAPI"),
     path('travel_details/<int:pk>/', views.TravelDetailsUpdateDestroyAPI.as_view(), name="TravelDetailsUpdateDestroy"),
 
+    path('hotel_details/<int:pk>/', views.HotelDetailsUpdateView.as_view(), name="HotelDetailsUpdateView"),
+    
     #AirTicketInvoice
-     path("air_ticket_invoice/", views.AirTicketInvoiceListCreateView.as_view(), name="AirTicketInvoiceListCreate"),
-     path("air_ticket_invoice/<int:pk>/", views.AirTicketInvoiceRetrieveUpdateDestroyAPIView.as_view(), name="AirTicketInvoiceRetrieveUpdateDestroyAPIView"),
+    path("air_ticket_invoice/", views.AirTicketInvoiceListCreateView.as_view(), name="AirTicketInvoiceListCreate"),
+    path("air_ticket_invoice/<int:pk>/", views.AirTicketInvoiceRetrieveUpdateDestroyAPIView.as_view(), name="AirTicketInvoiceRetrieveUpdateDestroyAPIView"),
 
+    # path("summary/<int:package_id>/",views.SummaryTripApi.as_view(), name="SummaryView"),
     #road Transport api
     path('road_transport/',views.RoadTransportListCreateView.as_view(), name="RoadTransportListCreate"),
     path('road_transport/<int:pk>/', views.RoadTransportRetrieveUpdateDestroyView.as_view(), name="RoadTransportRetrieveUpdate"),
@@ -60,5 +63,14 @@ urlpatterns = [
     path('cities_data_entry/',views.city_data_entry,name="CitiesDataEntry"),
     path('hotel_data_entry/',views.hotel_data_entry,name="hotel_data_entry"),
     path('rt_data_entry/',views.rt_data_entry,name="rt_data_entry"),
+    
+    path('invoice/',views.InvoiceListCreateAPI.as_view(),name="InvoiceListCreate"),
+    path('invoice/<int:pk>/',views.InvoiceUpdateDestroyAPI.as_view(),name="InvoiceUpdateDestroy"),
+    
+    path('companies/', views.view_all_companies, name='view_all_companies'),
+    path('companies/create/', views.create_company, name='create_company'),
+    path('companies/<int:pk>/update/', views.update_company, name='update_company'),
+    path('companies/<int:pk>/delete/', views.delete_company, name='delete_company'),
+
     
 ]

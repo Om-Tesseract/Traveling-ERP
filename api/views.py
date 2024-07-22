@@ -18,7 +18,75 @@ from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
 from .filters import EmployeeFilters,CustomerFilter,HotelsFilter,RoadTransportFilter,ActivityFilter
 from rest_framework.response import Response
+from django.shortcuts import get_object_or_404
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def view_all_companies(request):
+    companies = Company.objects.all()
+    serializer = serializers.CompanySerializer(companies, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def create_company(request):
+    data = request.data.copy()
+    
+    # Extract user-related data
+    user_data = {
+        'username': data.get('username'),
+        'password': data.get('password'),
+        'first_name': data.get('first_name'),
+        'last_name': data.get('last_name'),
+        'nick_name': data.get('nick_name'),
+        'mobile_number': data.get('mobile_number'),
+        'address1': data.get('address1'),
+        'address2': data.get('address2'),
+        'email': data.get('email'),
+        'role': data.get('role'),
+    }
+    
+    try:
+        user = CustomUser.objects.create(**user_data)
+        user.set_password(user_data['password'])
+        user.save()
+    except Exception as e:
+        return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+    
+    data['custom_user'] = user.id
+
+    for key, value in request.FILES.items():
+        data[key] = value
+    
+    serializer = serializers.CompanySerializer(data=data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    else:
+        user.delete()
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+@api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
+def update_company(request, pk):
+    company = get_object_or_404(Company, pk=pk)
+    if request.method == "GET":
+        serializer = serializers.CompanySerializer(company)
+        return Response(serializer.data)
+    elif request.method == "POST":
+        serializer = serializers.CompanySerializer(company, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+def delete_company(request, pk):
+    company = get_object_or_404(Company, pk=pk)
+    company.custom_user.delete()
+    company.delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)
 
 #dashboard view
 class DashboardListView(APIView):
@@ -72,6 +140,12 @@ class ActivityUpdateDestroyAPI(BaseRetrieveUpdateDestroyAPIView):
     serializer_class=serializers.ActivitySerializer
 
 
+class HotelDetailsUpdateView(generics.UpdateAPIView,generics.DestroyAPIView):    
+    queryset=HotelDetails.objects.all()
+    permission_classes=[IsAuthenticated]
+    serializer_class=serializers.HotelDetailsUpdateSerializer
+
+    
 
 @api_view(['GET'])
 def RoomTypeListView(request):
@@ -86,6 +160,21 @@ class ItineraryUpdateDeleteView(BaseRetrieveUpdateDestroyAPIView):
     serializer_class=serializers.ItinerarySerializer
     permission_classes=[IsAuthenticated]
 
+class ItineraryChangeDayView(APIView):
+    permission_classes=[IsAuthenticated]
+
+    def put(self, request, *args, **kwargs):
+        
+        return super().put(request, *args, **kwargs)
+
+# class SummaryTripApi(generics.ListAPIView):
+#     permission_classes=[IsAuthenticated]
+
+#     def get(self, request, *args, **kwargs):
+            
+#         return 
+    
+
 #customised package add 
 class CustomizedPackageListCreateAPI(BaseListCreateAPIView):
     queryset=CustomisedPackage.objects.all()
@@ -93,6 +182,7 @@ class CustomizedPackageListCreateAPI(BaseListCreateAPIView):
     filter_backends=[DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
     serializer_class=serializers.CustomisedPackageSerializer
     pagination_class=CustomPagination
+
 
 class CustomizedPackageUpdateDestroyAPI(BaseRetrieveUpdateDestroyAPIView):
     queryset=CustomisedPackage.objects.all()
@@ -109,7 +199,7 @@ class CustomizePackageListView(APIView):
             package_id=self.kwargs.get('package_id')
             
             hoteldetails=HotelDetails.objects.filter(package_id=package_id).values(
-                'id','hotel',
+                'id','hotel','facilities','meal_plans','room',
                 'check_in_date','check_out_date','room_type','number_of_rooms',
                 'total_price','additional_requests',
                 hotel_name=F('hotel__name'),hotel_address=F('hotel__address'),
@@ -118,24 +208,25 @@ class CustomizePackageListView(APIView):
                 hotel_city_name=F('hotel__city__name'),hotel_star_rating=F('hotel__star_rating'),
                 image_url=F('hotel__image_url'),ln=F('hotel__ln'),lt=F('hotel__lt'),
                 contact_info=F('hotel__contact_info'),
-                review_rate=F('hotel__rate')
+                review_rate=F('hotel__rate'),
+                
             )
             for ht in hoteldetails:
                 room_types=RoomType.objects.filter(hotel_id=ht.get('hotel'))
-                ht['meal_plan']=room_types.filter(rnm=ht.get('room_type')).first().meal_plan if room_types.filter(rnm=ht.get('room_type')).first() else None
+                # ht['meal_plan']=room_types.filter(rnm=ht.get('room_type')).first().meal_plan if room_types.filter(rnm=ht.get('room_type')).first() else None
                 # ht['amenity']=json.load(room_types.filter(rnm=ht.get('room_type')).first().amenity) if room_types.filter(rnm=ht.get('room_type')).first() else None
-                try:
-                    if room_types.filter(rnm=ht.get('room_type')).first().amenity:
-                        amenity_list = json.loads(room_types.filter(rnm=ht.get('room_type')).first().amenity)
-                        ht['amenity'] = amenity_list
-                except json.JSONDecodeError as e:
-                    # Handle JSON decoding error
-                    print(f"Error decoding JSON: {e}")
-                    ht['amenity'] = None
-                except AttributeError as e:
-                    # Handle attribute error if the filter or first() fails
-                    print(f"Attribute error: {e}")
-                    ht['amenity'] = None
+                # try:
+                #     if room_types.filter(rnm=ht.get('room_type')).first().amenity:
+                #         amenity_list = json.loads(room_types.filter(rnm=ht.get('room_type')).first().amenity)
+                #         ht['amenity'] = amenity_list
+                # except json.JSONDecodeError as e:
+                #     # Handle JSON decoding error
+                #     print(f"Error decoding JSON: {e}")
+                #     ht['amenity'] = None
+                # except AttributeError as e:
+                #     # Handle attribute error if the filter or first() fails
+                #     print(f"Attribute error: {e}")
+                #     ht['amenity'] = None
                 ht['room_types']=room_types.values()
 
 
@@ -162,7 +253,7 @@ class CustomizePackageListView(APIView):
                 pickup_from_name=F('pickup_from__name'),
 
             )
-            flights_details=Flight_Details.objects.filter(package_id=package_id).values(
+            flights_details=Flight_Details.objects.filter(package_id=package_id).values('id',
                 'destination_to','ret_destination_to','pickup_from','ret_pickup_from','depart_on','return_on','flt_class','PNR','airlines','type','sequence',
                 destination_to_name=F('destination_to__name'),
                 ret_destination_to_name=F('ret_destination_to__name'),
@@ -274,7 +365,7 @@ class UpdateCustomisedPackageView(generics.UpdateAPIView):
 
 
 class RoadTransportListCreateView(BaseListCreateAPIView):
-    queryset=RoadTransportOption.objects.all()
+    queryset=RoadTransportOption.objects.all().order_by('seats')
     permission_classes=[AllowAny]
     serializer_class=serializers.RoadTransportSerializer
     filter_backends=[DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
@@ -315,6 +406,47 @@ class TravelDetailsUpdateDestroyAPI(BaseRetrieveUpdateDestroyAPIView):
     filter_backends=[DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
     serializer_class=serializers.TravelDetailsSerializer
 
+
+class InvoiceListCreateAPI(BaseListCreateAPIView):
+    queryset=InvoiceMaster.objects.all()
+    permission_classes=[IsAuthenticated]
+    filter_backends=[DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    serializer_class=serializers.InvoiceSerailizer
+    search_fields=['invoice_no']
+    
+    def get_queryset(self):
+        req_user = self.request.user
+        if req_user.role == 'Employee':
+            if Employee.objects.filter(emp_user=req_user).exists():
+                emp = Employee.objects.filter(emp_user=req_user).first()
+                return self.queryset.filter(company=emp.company)
+        elif req_user.role == 'Company':
+            return self.queryset.filter(company__custom_user_id=req_user.id)
+        elif req_user.role == 'Admin':
+            return super().get_queryset()
+        else:
+            return AirTicketInvoice.objects.none()
+
+ 
+class InvoiceUpdateDestroyAPI(BaseRetrieveUpdateDestroyAPIView):
+    queryset=InvoiceMaster.objects.all()
+    permission_classes=[IsAuthenticated]
+    filter_backends=[DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    serializer_class=serializers.InvoiceSerailizer
+    
+    def get_queryset(self):
+        req_user = self.request.user
+        if req_user.role == 'Employee':
+            if Employee.objects.filter(emp_user=req_user).exists():
+                emp = Employee.objects.filter(emp_user=req_user).first()
+                return self.queryset.filter(company=emp.company)
+        elif req_user.role == 'Company':
+            return self.queryset.filter(company__custom_user_id=req_user.id)
+        elif req_user.role == 'Admin':
+            return super().get_queryset()
+        else:
+            return AirTicketInvoice.objects.none()
+     
 
 # Customer
 class CustomerListCreateView(BaseListCreateAPIView):
@@ -751,7 +883,9 @@ def city_data_entry(request):
     
     except Exception as e:
         return Response({'status': 'error', 'message': str(e)}, status=400)
-        
+
+
+
 @api_view(['GET'])
 @permission_classes([AllowAny])
 @transaction.atomic()

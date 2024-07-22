@@ -202,7 +202,6 @@ def default_amenities():
         "Available in All Rooms": [
             "Air Conditioning",
             "Kitchenette",
-            "Coffee/Tea Maker",
             "Ironing Facilities"
         ],
         "Dining, Drinking and Snacking": [
@@ -269,13 +268,18 @@ class RoomCategory(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name}"
+    
+def get_amentiy_room():
+    return {
+        "amentiy_room": ["King size Bed", "Air Conditioning ", "Room Service", "High-speed Internet Access (Wi-Fi/Wired)", "Flat-screen TV with Cable/Satellite Channels"]
+    }
 class RoomType(models.Model):
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,related_name="rooms_type")
     rnm = models.CharField("room name",max_length=255)
     meal_plan = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     availability = models.BooleanField(default=True)
-    amenity = models.TextField()
+    amenity = models.JSONField(null=True)
     category = models.ForeignKey(RoomCategory,on_delete=models.CASCADE,related_name="cate_roomtype")
 
 
@@ -284,15 +288,17 @@ class RoomType(models.Model):
 
 
 class HotelDetails(models.Model):
-    
     package = models.ForeignKey('CustomisedPackage', on_delete=models.CASCADE, related_name='hotel_details')
-    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE)
+    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,null=True)
     citynight= models.ForeignKey(CityNight, on_delete=models.CASCADE,null=True)
     check_in_date = models.DateField()
     check_out_date = models.DateField()
-    room_type = models.CharField(max_length=100)  # e.g., Single, Double, Suite
+    room_type=models.CharField(max_length=40,null=True)
+    room=models.ForeignKey(RoomType, null=True,on_delete=models.CASCADE)
+    meal_plans=models.CharField(max_length=100,null=True)
+    facilities=MultiSelectField(null=True,blank=True)
     number_of_rooms = models.IntegerField()
-    total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    total_price = models.DecimalField(max_digits=10, decimal_places=2,default=0)
     additional_requests = models.TextField(null=True, blank=True)  # Any special requests made by the customer
 
     def __str__(self):
@@ -312,8 +318,6 @@ class Activity(models.Model):
         ('entertainment', 'Entertainment'),
         ('nightlife', 'Nightlife'),
     ]
-    
-    
     category = MultiSelectField(max_length=250, choices=category_choices)
     duration = models.CharField(max_length=30, null=True, blank=True)  
     age_limit = models.IntegerField(null=True, blank=True)
@@ -344,6 +348,29 @@ class Itinerary(models.Model):
         get_latest_by = "days"
 
 
+class ItineraryActivity(models.Model):
+    itinerary=models.ForeignKey(Itinerary,on_delete=models.CASCADE,related_name="itinerary_activity")
+    category_choices = [
+        ('honeymoon', 'Honeymoon'),
+        ('luxury', 'Luxury'),
+        ('leisure', 'Leisure'),
+        ('spa', 'Spa'),
+        ('history', 'History'),
+        ('art_and_culture', 'Art and Culture'),
+        ('adventure', 'Adventure'),
+        ('shopping', 'Shopping'),
+        ('entertainment', 'Entertainment'),
+        ('nightlife', 'Nightlife'),
+    ]
+    category = MultiSelectField(max_length=250, choices=category_choices)
+    duration = models.CharField(max_length=30, null=True, blank=True)  
+    age_limit = models.IntegerField(null=True, blank=True)
+    activity_name = models.CharField(max_length=350)
+    sequence=models.IntegerField(null=True, blank=True)
+    activity_desc = models.TextField(null=True, blank=True)
+    activity_city = models.ForeignKey(Cities, on_delete=models.CASCADE, related_name="itiner_acti_city",null=True)
+
+
 
 class ExpenseDetail(BaseModel):
     package=models.ForeignKey(CustomisedPackage,on_delete=models.CASCADE)
@@ -360,6 +387,20 @@ class ExpenseDetail(BaseModel):
         return f"{self.vendor}"
     
 # invoice tables 
+class InvoiceMaster(BaseModel):
+
+    invoice_no = models.CharField(max_length=50) #FORMAT AUTO GENERATE IN SEQUENCE INV240001 
+    invoice_type=models.CharField(max_length=100)
+    company=models.ForeignKey(Company,on_delete=models.CASCADE,null=True,blank=True)
+    package=models.ForeignKey(CustomisedPackage,on_delete=models.CASCADE,null=True,blank=True)
+    invoice_date = models.DateField()
+    tax_amt= models.DecimalField(max_digits=10, decimal_places=2,default=0)
+    discount_amt = models.DecimalField(max_digits=10, decimal_places=2,default=0)
+    gross_amt = models.DecimalField(max_digits=10, decimal_places=2)
+    net_amt = models.DecimalField(max_digits=10, decimal_places=2)
+    notes = models.TextField(blank=True, null=True)
+    narration = models.TextField(blank=True, null=True)
+
 class AirTicketInvoice(BaseModel):
     # INV TPYE
     NORMAL='Normal'
