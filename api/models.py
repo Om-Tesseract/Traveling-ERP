@@ -165,7 +165,12 @@ class CustomisedPackage(BaseModel):
     add_transfers=models.BooleanField(default=False)
     add_tours_and_travels=models.BooleanField(default=False)
     itinerary_created=models.BooleanField(default=False)
-
+    statues_choices=[
+      ("PENDING","PENDING"),
+      ("COMPLETED","COMPLETED"),
+    ]
+    status=models.CharField(max_length=60,default="PENDING",choices=statues_choices)
+  
 class CityNight(models.Model):
     city = models.ForeignKey(Cities, on_delete=models.CASCADE)
     package = models.ForeignKey(CustomisedPackage, on_delete=models.CASCADE, related_name='city_nights')
@@ -320,7 +325,7 @@ class Activity(models.Model):
     ]
     category = MultiSelectField(max_length=250, choices=category_choices)
     duration = models.CharField(max_length=30, null=True, blank=True)  
-    age_limit = models.IntegerField(null=True, blank=True)
+    age_limit = models.CharField(max_length=30,null=True, blank=True)
     activity_name = models.CharField(max_length=350)
     sequence=models.IntegerField(null=True, blank=True)
     activity_desc = models.TextField(null=True, blank=True)
@@ -333,15 +338,15 @@ class Activity(models.Model):
 
 
 class Itinerary(models.Model):
+    package=models.ForeignKey(CustomisedPackage,on_delete=models.CASCADE,)
+    citynight= models.ForeignKey(CityNight, on_delete=models.CASCADE,null=True)
+    days=models.DateField()
+    # activities=models.ManyToManyField(Activity,related_name="Itinrtary_activities",)
+    activity_input=models.TextField(null=True,blank=True)
     statues_choices=[
       ("PENDING","PENDING"),
       ("COMPLETED","COMPLETED"),
     ]
-    package=models.ForeignKey(CustomisedPackage,on_delete=models.CASCADE,)
-    citynight= models.ForeignKey(CityNight, on_delete=models.CASCADE,null=True)
-    days=models.DateField()
-    activities=models.ManyToManyField(Activity,related_name="Itinrtary_activities",)
-    activity_input=models.TextField(null=True,blank=True)
     status=models.CharField(max_length=60,default="PENDING",choices=statues_choices)
   
     class Meta:
@@ -362,9 +367,9 @@ class ItineraryActivity(models.Model):
         ('entertainment', 'Entertainment'),
         ('nightlife', 'Nightlife'),
     ]
-    category = MultiSelectField(max_length=250, choices=category_choices)
+    category = MultiSelectField(max_length=250, choices=category_choices,default='leisure')
     duration = models.CharField(max_length=30, null=True, blank=True)  
-    age_limit = models.IntegerField(null=True, blank=True)
+    age_limit = models.CharField(null=True, blank=True,max_length=30)
     activity_name = models.CharField(max_length=350)
     sequence=models.IntegerField(null=True, blank=True)
     activity_desc = models.TextField(null=True, blank=True)

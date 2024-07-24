@@ -24,6 +24,9 @@ urlpatterns = [
     
 
     path('itinerary/<int:pk>/',views.ItineraryUpdateDeleteView.as_view(),name="ItineraryUpdateDeleteView"),
+    
+
+    path('itinerary/<int:pk>/swap/',views.ItineraryChangeDayView.as_view(),name="ItineraryChangeDayView"),
     # Travel_Details
     path('travel_details/', views.TravelDetailsListCreateAPI.as_view(), name="TravelDetailsListCreateAPI"),
     path('travel_details/<int:pk>/', views.TravelDetailsUpdateDestroyAPI.as_view(), name="TravelDetailsUpdateDestroy"),

@@ -129,7 +129,7 @@ class ActivityListCreateAPI(BaseListCreateAPIView):
     filter_backends=[DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
     serializer_class=serializers.ActivitySerializer
     search_fields=['activity_name','activity_city__name']
-    pagination_class=CustomPagination
+    # pagination_class=CustomPagination
     filterset_class=ActivityFilter
     ordering='sequence'
 
@@ -155,18 +155,47 @@ def RoomTypeListView(request):
 def MealPlanListView(request):
     meal_plan=RoomType.objects.all().values('meal_plan').distinct()
     return Response(meal_plan)
+
 class ItineraryUpdateDeleteView(BaseRetrieveUpdateDestroyAPIView):
     queryset=Itinerary.objects.all()
     serializer_class=serializers.ItinerarySerializer
     permission_classes=[IsAuthenticated]
 
 class ItineraryChangeDayView(APIView):
-    permission_classes=[IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def put(self, request, *args, **kwargs):
-        
-        return super().put(request, *args, **kwargs)
+        iter_id = kwargs.get('pk')
+        swapdate = request.data.get('swapdate')
 
+        if not swapdate:
+            return Response({"error": "swapdate is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Fetch the current itinerary
+        current_itinerary = get_object_or_404(Itinerary, pk=iter_id)
+
+        try:
+            # Find the itinerary with the swapdate
+            swap_itinerary = Itinerary.objects.get(days=swapdate, package=current_itinerary.package)
+        except Itinerary.DoesNotExist:
+            return Response({"error": "Itinerary with the specified swapdate does not exist."}, status=status.HTTP_404_NOT_FOUND)
+
+        # Swap the activities
+        with transaction.atomic():
+            current_activities = list(current_itinerary.itinerary_activity.all())
+            swap_activities = list(swap_itinerary.itinerary_activity.all())
+
+            # Update current activities to point to swap itinerary
+            for activity in current_activities:
+                activity.itinerary = swap_itinerary
+                activity.save()
+
+            # Update swap activities to point to current itinerary
+            for activity in swap_activities:
+                activity.itinerary = current_itinerary
+                activity.save()
+
+        return Response({"success": "Activities swapped successfully"}, status=status.HTTP_200_OK)
 # class SummaryTripApi(generics.ListAPIView):
 #     permission_classes=[IsAuthenticated]
 
@@ -742,6 +771,490 @@ def activity_data_entry(request):
                     {'name': 'Lodhi Gardens', 'category': 'leisure', 'duration': '2 hours', 'age_limit': None, 'desc': 'Relax and enjoy nature at Lodhi Gardens.'},
                 ]
             },
+            
+  "Agra": {
+    "activities": [
+      {
+        "name": "Taj Mahal Visit",
+        "category": "Historical",
+        "duration": "3 hours",
+        "age_limit": "All ages",
+        "desc": "Explore the iconic symbol of love, one of the Seven Wonders of the World."
+      },
+      {
+        "name": "Agra Fort Tour",
+        "category": "Historical",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Discover the grand Mughal architecture and rich history of Agra Fort."
+      },
+      {
+        "name": "Fatehpur Sikri Excursion",
+        "category": "Historical",
+        "duration": "4 hours",
+        "age_limit": "All ages",
+        "desc": "Visit the abandoned Mughal city, a UNESCO World Heritage site."
+      },
+      {
+        "name": "Mohabbat the Taj Show",
+        "category": "Entertainment",
+        "duration": "2 hours",
+        "age_limit": "5+",
+        "desc": "Watch a spectacular live performance depicting the love story behind the Taj Mahal."
+      }
+    ]
+  },
+  "Varanasi": {
+    "activities": [
+      {
+        "name": "Sunrise Boat Ride on Ganges",
+        "category": "Cultural",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Witness the spiritual awakening of the holy city with a serene boat ride at dawn."
+      },
+      {
+        "name": "Evening Ganga Aarti",
+        "category": "Religious",
+        "duration": "1 hour",
+        "age_limit": "All ages",
+        "desc": "Experience the mesmerizing ritual of light and sound on the banks of the Ganges."
+      },
+      {
+        "name": "Sarnath Excursion",
+        "category": "Historical",
+        "duration": "4 hours",
+        "age_limit": "All ages",
+        "desc": "Visit the site where Buddha gave his first sermon after enlightenment."
+      },
+      {
+        "name": "Varanasi Food Walk",
+        "category": "Culinary",
+        "duration": "3 hours",
+        "age_limit": "All ages",
+        "desc": "Sample local delicacies and street food in the narrow lanes of Varanasi."
+      }
+    ]
+  },
+  "Amritsar": {
+    "activities": [
+      {
+        "name": "Golden Temple Langar Experience",
+        "category": "Cultural",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Participate in the world's largest free community kitchen at the Golden Temple."
+      },
+      {
+        "name": "Wagah Border Ceremony",
+        "category": "Cultural",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Witness the patriotic flag-lowering ceremony at the India-Pakistan border."
+      },
+      {
+        "name": "Punjabi Cooking Class",
+        "category": "Culinary",
+        "duration": "3 hours",
+        "age_limit": "12+",
+        "desc": "Learn to prepare authentic Punjabi dishes from local chefs."
+      },
+      {
+        "name": "Maharaja Ranjit Singh Panorama",
+        "category": "Historical",
+        "duration": "1.5 hours",
+        "age_limit": "All ages",
+        "desc": "Experience a 360-degree depiction of the life and times of Maharaja Ranjit Singh."
+      }
+    ]
+  },
+  "Kolkata": {
+    "activities": [
+      {
+        "name": "Tram Ride",
+        "category": "Leisure",
+        "duration": "1 hour",
+        "age_limit": "All ages",
+        "desc": "Take a nostalgic ride on Kolkata's historic tram system, one of the oldest in Asia."
+      },
+      {
+        "name": "Bengali Cooking Class",
+        "category": "Culinary",
+        "duration": "3 hours",
+        "age_limit": "12+",
+        "desc": "Learn to prepare authentic Bengali dishes from expert local chefs."
+      },
+      {
+        "name": "Sundarbans Day Trip",
+        "category": "Nature",
+        "duration": "12 hours",
+        "age_limit": "8+",
+        "desc": "Explore the world's largest mangrove forest and spot Royal Bengal tigers."
+      },
+      {
+        "name": "Kumartuli Pottery Village Tour",
+        "category": "Cultural",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Visit the traditional potters' quarter and see artisans creating clay idols."
+      }
+    ]
+  },
+  "Panaji": {
+    "activities": [
+      {
+        "name": "Cruise on Mandovi River",
+        "category": "Leisure",
+        "duration": "1 hour",
+        "age_limit": "All ages",
+        "desc": "Enjoy a relaxing cruise with live music and stunning views of Panaji's coastline."
+      },
+      {
+        "name": "Spice Plantation Tour",
+        "category": "Educational",
+        "duration": "3 hours",
+        "age_limit": "All ages",
+        "desc": "Explore a fragrant spice plantation and learn about Goa's spice trading history."
+      },
+      {
+        "name": "Old Goa Churches Tour",
+        "category": "Historical",
+        "duration": "4 hours",
+        "age_limit": "All ages",
+        "desc": "Visit the UNESCO World Heritage churches of Old Goa, including Basilica of Bom Jesus."
+      },
+      {
+        "name": "Fontainhas Heritage Walk",
+        "category": "Cultural",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Explore the charming Latin Quarter of Panaji with its colorful Portuguese-era houses."
+      }
+    ]
+  },
+  "Rishikesh": {
+    "activities": [
+      {
+        "name": "White Water Rafting",
+        "category": "Adventure",
+        "duration": "3 hours",
+        "age_limit": "12+",
+        "desc": "Experience thrilling rapids on the Ganges River with experienced guides."
+      },
+      {
+        "name": "Yoga and Meditation Session",
+        "category": "Wellness",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Participate in a traditional yoga and meditation class in the yoga capital of the world."
+      },
+      {
+        "name": "Bungee Jumping",
+        "category": "Adventure",
+        "duration": "30 minutes",
+        "age_limit": "14+",
+        "desc": "Take a leap from India's highest bungee jumping platform (83 meters)."
+      },
+      {
+        "name": "Beatles Ashram Visit",
+        "category": "Cultural",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Explore the abandoned ashram where The Beatles stayed and composed many songs."
+      }
+    ]
+  }
+
+,
+  "Mysuru": {
+    "activities": [
+      {
+        "name": "Mysore Palace Light Show",
+        "category": "Entertainment",
+        "duration": "1 hour",
+        "age_limit": "All ages",
+        "desc": "Witness the grand Mysore Palace illuminated by thousands of lights in the evening."
+      },
+      {
+        "name": "Ashtanga Yoga Class",
+        "category": "Wellness",
+        "duration": "2 hours",
+        "age_limit": "16+",
+        "desc": "Practice the traditional Ashtanga Yoga in its birthplace with experienced instructors."
+      },
+      {
+        "name": "Silk Weaving Workshop",
+        "category": "Cultural",
+        "duration": "3 hours",
+        "age_limit": "12+",
+        "desc": "Learn the art of silk weaving and create your own silk product to take home."
+      },
+      {
+        "name": "Chamundi Hill Trek",
+        "category": "Adventure",
+        "duration": "4 hours",
+        "age_limit": "10+",
+        "desc": "Climb 1000 steps to reach the Chamundeshwari Temple for panoramic views of Mysore."
+      }
+    ]
+  },
+  "Cochin": {
+    "activities": [
+      {
+        "name": "Kerala Backwaters Houseboat Cruise",
+        "category": "Leisure",
+        "duration": "8 hours",
+        "age_limit": "All ages",
+        "desc": "Enjoy a serene cruise through the backwaters on a traditional Kerala houseboat."
+      },
+      {
+        "name": "Kathakali Performance",
+        "category": "Cultural",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Watch a mesmerizing performance of Kerala's traditional dance-drama."
+      },
+      {
+        "name": "Fort Kochi Cycling Tour",
+        "category": "Adventure",
+        "duration": "3 hours",
+        "age_limit": "12+",
+        "desc": "Explore the historic Fort Kochi area on a bicycle, visiting key attractions."
+      },
+      {
+        "name": "Kochi Fishing Net Experience",
+        "category": "Cultural",
+        "duration": "1 hour",
+        "age_limit": "12+",
+        "desc": "Try your hand at operating the famous Chinese fishing nets of Kochi."
+      }
+    ]
+  },
+  "Shimla": {
+    "activities": [
+      {
+        "name": "Toy Train Ride",
+        "category": "Leisure",
+        "duration": "5 hours",
+        "age_limit": "All ages",
+        "desc": "Enjoy a scenic journey on the UNESCO World Heritage Kalka-Shimla Railway."
+      },
+      {
+        "name": "Ice Skating",
+        "category": "Adventure",
+        "duration": "2 hours",
+        "age_limit": "6+",
+        "desc": "Visit Asia's only natural ice skating rink (seasonal - winter months only)."
+      },
+      {
+        "name": "Mall Road Shopping",
+        "category": "Leisure",
+        "duration": "3 hours",
+        "age_limit": "All ages",
+        "desc": "Stroll along the famous Mall Road, shopping for local handicrafts and souvenirs."
+      },
+      {
+        "name": "Jakhu Temple Trek",
+        "category": "Adventure",
+        "duration": "4 hours",
+        "age_limit": "10+",
+        "desc": "Hike to the famous Hanuman temple at the highest point in Shimla."
+      }
+    ]
+  },
+  "Hyderabad": {
+    "activities": [
+      {
+        "name": "Charminar Night Bazaar",
+        "category": "Cultural",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Explore the bustling night market around the iconic Charminar monument."
+      },
+      {
+        "name": "Biryani Cooking Class",
+        "category": "Culinary",
+        "duration": "3 hours",
+        "age_limit": "14+",
+        "desc": "Learn to cook the famous Hyderabadi Biryani from expert local chefs."
+      },
+      {
+        "name": "Ramoji Film City Tour",
+        "category": "Entertainment",
+        "duration": "8 hours",
+        "age_limit": "All ages",
+        "desc": "Visit the world's largest film studio complex and enjoy various attractions."
+      },
+      {
+        "name": "Hussain Sagar Lake Boating",
+        "category": "Leisure",
+        "duration": "1 hour",
+        "age_limit": "All ages",
+        "desc": "Take a boat ride on Hussain Sagar Lake and visit the Buddha statue in the middle."
+      }
+    ]
+  },
+  "Darjeeling": {
+    "activities": [
+      {
+        "name": "Tiger Hill Sunrise View",
+        "category": "Nature",
+        "duration": "3 hours",
+        "age_limit": "All ages",
+        "desc": "Witness a spectacular sunrise over the Kanchenjunga mountain range."
+      },
+      {
+        "name": "Tea Estate Tour",
+        "category": "Educational",
+        "duration": "4 hours",
+        "age_limit": "All ages",
+        "desc": "Visit a tea plantation, learn about tea processing, and enjoy a tea tasting session."
+      },
+      {
+        "name": "Darjeeling Himalayan Railway Ride",
+        "category": "Leisure",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Take a joy ride on the UNESCO World Heritage 'Toy Train'."
+      },
+      {
+        "name": "Rock Climbing at Tenzing Rock",
+        "category": "Adventure",
+        "duration": "3 hours",
+        "age_limit": "12+",
+        "desc": "Try rock climbing and rappelling at the famous Tenzing Rock."
+      }
+    ]
+  },
+  "Puducherry": {
+    "activities": [
+      {
+        "name": "Auroville Visit",
+        "category": "Cultural",
+        "duration": "4 hours",
+        "age_limit": "All ages",
+        "desc": "Explore the experimental township of Auroville and visit the Matrimandir."
+      },
+      {
+        "name": "French Quarter Walking Tour",
+        "category": "Cultural",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Stroll through the charming French Quarter with its colonial architecture."
+      },
+      {
+        "name": "Scuba Diving",
+        "category": "Adventure",
+        "duration": "4 hours",
+        "age_limit": "10+",
+        "desc": "Discover the underwater world of the Bay of Bengal with a scuba diving session."
+      },
+      {
+        "name": "Seaside Promenade Cycling",
+        "category": "Leisure",
+        "duration": "2 hours",
+        "age_limit": "8+",
+        "desc": "Cycle along the beautiful seaside promenade, enjoying the sea breeze."
+      }
+    ]
+  },
+  "Ahmedabad": {
+    "activities": [
+      {
+        "name": "Heritage Walk",
+        "category": "Cultural",
+        "duration": "3 hours",
+        "age_limit": "All ages",
+        "desc": "Explore the old city's pol architecture and hidden cultural gems."
+      },
+      {
+        "name": "Kite Flying Experience",
+        "category": "Cultural",
+        "duration": "2 hours",
+        "age_limit": "6+",
+        "desc": "Learn and enjoy the art of kite flying, especially during the Uttarayan festival."
+      },
+      {
+        "name": "Sabarmati Ashram Visit",
+        "category": "Historical",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Visit Mahatma Gandhi's former residence and learn about India's independence movement."
+      },
+      {
+        "name": "Textile Museum Tour",
+        "category": "Educational",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Explore the rich textile heritage of Gujarat at the Calico Museum of Textiles."
+      }
+    ]
+  },
+  "Jodhpur": {
+    "activities": [
+      {
+        "name": "Mehrangarh Fort Audio Tour",
+        "category": "Historical",
+        "duration": "3 hours",
+        "age_limit": "All ages",
+        "desc": "Explore the majestic Mehrangarh Fort with an immersive audio guide."
+      },
+      {
+        "name": "Zip-lining over Jodhpur",
+        "category": "Adventure",
+        "duration": "2 hours",
+        "age_limit": "10+",
+        "desc": "Experience thrilling zip-lines offering panoramic views of the Blue City."
+      },
+      {
+        "name": "Desert Camping and Camel Safari",
+        "category": "Adventure",
+        "duration": "24 hours",
+        "age_limit": "All ages",
+        "desc": "Enjoy a camel ride in the Thar Desert and camp under the stars."
+      },
+      {
+        "name": "Blue City Walking Tour",
+        "category": "Cultural",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Explore the narrow lanes of the old city, famous for its blue-painted houses."
+      }
+    ]
+  },
+  "Aurangabad": {
+    "activities": [
+      {
+        "name": "Ajanta Caves Excursion",
+        "category": "Historical",
+        "duration": "8 hours",
+        "age_limit": "All ages",
+        "desc": "Visit the UNESCO World Heritage Ajanta Caves, known for Buddhist rock-cut cave monuments."
+      },
+      {
+        "name": "Ellora Caves Tour",
+        "category": "Historical",
+        "duration": "6 hours",
+        "age_limit": "All ages",
+        "desc": "Explore the Ellora Caves, showcasing Hindu, Buddhist, and Jain monuments."
+      },
+      {
+        "name": "Bibi Ka Maqbara Visit",
+        "category": "Historical",
+        "duration": "2 hours",
+        "age_limit": "All ages",
+        "desc": "Visit the 'Taj of the Deccan', a beautiful mausoleum similar to the Taj Mahal."
+      },
+      {
+        "name": "Paithani Saree Weaving Workshop",
+        "category": "Cultural",
+        "duration": "3 hours",
+        "age_limit": "12+",
+        "desc": "Learn about the intricate art of weaving Paithani sarees, famous in Maharashtra."
+      }
+    ]
+  }
+
 }
 
         # Generate cities and activities
@@ -749,14 +1262,14 @@ def activity_data_entry(request):
             city = Cities.objects.filter(
                 name=city_name, 
             ).first()
-            # print(city)
+            print(city)
             for i, activity_data in enumerate(city_data['activities']):
                 print(Activity.objects.filter(activity_name=activity_data['name'],activity_city__name=city.name).exists())
                 if  not Activity.objects.filter(activity_name=activity_data['name'],activity_city__name=city.name).exists():
                     activity = Activity.objects.create(
                     category=[activity_data['category']],
                     duration=activity_data['duration'],
-                    age_limit=activity_data['age_limit'],
+                    age_limit=activity_data['age_limit'] ,
                     activity_name=activity_data['name'],
                     sequence=i + 1,
                     activity_desc=activity_data['desc'],

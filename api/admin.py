@@ -9,6 +9,14 @@ class HotelImgsInline(admin.StackedInline):
     model = HotelImages
     extra = 1  # Number of empty room types to display
 
+class ItineraryActivityInline(admin.TabularInline):
+    model = ItineraryActivity
+    extra = 1 # Number of empty 
+
+class ItineraryAdmin(admin.ModelAdmin):
+    inlines = [ItineraryActivityInline]
+
+
 class HotelAdmin(admin.ModelAdmin):
     inlines = [RoomTypeInline,HotelImgsInline]
     search_fields=['name','city__name']
@@ -36,4 +44,4 @@ admin.site.register(Travel_Details)
 admin.site.register(Activity)
 admin.site.register(EmployeeAttendance)
 admin.site.register(CityNight)
-admin.site.register(Itinerary)
+admin.site.register(Itinerary,ItineraryAdmin)
