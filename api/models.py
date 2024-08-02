@@ -24,7 +24,8 @@ class States(models.Model):
     name= models.CharField(max_length=60)
     country=models.ForeignKey(Country,on_delete=models.CASCADE,related_name="country_states_set")
     state_code=models.CharField(max_length=20,null=True)
-
+    def __str__(self) -> str:
+        return f"{self.name}"
 class Cities(models.Model):
     name=models.CharField(max_length=60, )
     state= models.ForeignKey(States,on_delete=models.CASCADE,related_name="state_city_set")
@@ -126,7 +127,7 @@ class CustomisedPackage(BaseModel):
     number_of_adults = models.IntegerField(default=0)
     number_of_children = models.IntegerField(default=0)
     company=models.ForeignKey(Company,null=True,on_delete=models.CASCADE)
-
+    is_final=models.BooleanField(default=False)
 
     INTEREST_CHOICES = [
         ('Honeymoon', 'Honeymoon'), 
@@ -248,15 +249,17 @@ class Hotel(models.Model):
     name = models.CharField(max_length=255)
     address = models.TextField(null=True)
     area=models.CharField(max_length=50,null=True,blank=True)
+    link=models.URLField(null=True)
     city = models.ForeignKey('Cities', on_delete=models.CASCADE, related_name='hotels')
     star_rating = models.IntegerField(null=True, blank=True)
     rate=models.CharField(max_length=20,null=True)
+    review_count=models.CharField(max_length=20,null=True)
     desc=models.TextField(null=True,blank=True)
     contact_info = models.JSONField(null=True, blank=True)  # Contact details like phone, email, etc.
     image_url = models.URLField(max_length=200,null=True,blank=True)
     ln=models.FloatField(null=True, blank=True)
     lt=models.FloatField(null=True, blank=True)
-    amenities =models.JSONField(default=default_amenities)
+    amenities =models.JSONField()
     cleaniless_rate = models.FloatField(default=3.8)
     service_rate = models.FloatField(default=3.9)
     comfort_rate = models.FloatField(default=3.6)
@@ -276,7 +279,7 @@ class RoomCategory(models.Model):
     
 def get_amentiy_room():
     return {
-        "amentiy_room": ["King size Bed", "Air Conditioning ", "Room Service", "High-speed Internet Access (Wi-Fi/Wired)", "Flat-screen TV with Cable/Satellite Channels"]
+        "amentiy_room": ["Bed", "Air Conditioning", "Room Service"]
     }
 class RoomType(models.Model):
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,related_name="rooms_type")
@@ -470,3 +473,16 @@ class AirTicketPassenger(models.Model):
     gross_total=models.DecimalField(decimal_places=2,max_digits=50,default=0)
     def __str__(self):
         return f"{self.name}"
+    
+
+class Contact(models.Model):
+    name= models.CharField(max_length=70)
+    company_name= models.CharField(max_length=70)
+    country= models.CharField(max_length=70)
+    email= models.EmailField(max_length=60)
+
+    mobile_no= models.CharField(max_length=20)
+    service= models.CharField(max_length=20)
+    comments= models.TextField(null=True,blank=True)
+
+

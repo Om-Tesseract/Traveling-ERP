@@ -59,6 +59,7 @@ urlpatterns = [
     path('city/<str:search>/',views.CitiesListView.as_view(),name="CitiesSearchListView"),
     path('city/',views.CitiesListView.as_view(),name="CitiesSearchListView"),
     path('city/<int:pk>/',views.CitiesListView.as_view(),name="CitiesSearchListView"),
+    path('city/update_delete/<int:pk>/',views.CitiesUpdateDestroyView.as_view(),name="CitiesUpdateDestroyView"),
     # data entry 
     path('activity_data_entry/',views.activity_data_entry,name="CountriesDataEntry"),
     path('countries_data_entry/',views.countries_data_entry,name="CountriesDataEntry"),
@@ -75,5 +76,10 @@ urlpatterns = [
     path('companies/<int:pk>/update/', views.update_company, name='update_company'),
     path('companies/<int:pk>/delete/', views.delete_company, name='delete_company'),
 
-    
+    path('contact/create/', views.ContactCreateView.as_view(), name="create_contact"),
+    path('contact/list/',views.ContactListView.as_view(), name="list_contact"),
+    path('contact/<int:pk>/',views.ContactUpdateDeleteView.as_view(),name="update_contact"),
+
+    path('flightsdata/',views.FlightsDataApi.as_view(),name="flight"),
+
 ]

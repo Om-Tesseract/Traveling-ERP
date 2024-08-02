@@ -9,15 +9,16 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from bs4 import BeautifulSoup
-
+chromedriver_path = r'./chromedriver/chromedriver.exe'
 
 # Set up Chrome options if needed (e.g., headless mode, specific settings)
 chrome_options = webdriver.ChromeOptions()
 # Uncomment the next line if you want to run Chrome in headless mode
-chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--headless")
 # chrome_options.add_experimental_option('detach',True)
 # Set up the Chrome WebDriver using the webdriver_manager
-service = ChromeService(ChromeDriverManager().install())
+# service = ChromeService(ChromeDriverManager().install())
+service = ChromeService(chromedriver_path)
 
 # Initialize the Chrome WebDriver
 driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -47,11 +48,11 @@ select_to_city=driver.find_element(By.XPATH, '/html/body/c-wiz[2]/div/div[2]/c-w
 select_to_city.click()
 
 # Wait for some time to see the results (optional)
-time.sleep(1)
+time.sleep(2)
 
 # select date
 select_departure_date=driver.find_element(By.XPATH,'//*[@id="yDmH0d"]/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[1]/div/div[1]/div/input[@aria-label="Departure"]')
-select_departure_date.send_keys('Wed, Jul 24')
+select_departure_date.send_keys('Wed, Jul 31')
 select_departure_date.click()
 time.sleep(2)
 

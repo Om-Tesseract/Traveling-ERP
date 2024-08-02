@@ -9,6 +9,7 @@ from django.contrib.auth import get_user_model
 from django.db import transaction
 from django.db.models import Q,F,Sum,Count,Exists, OuterRef, Subquery
 
+
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
@@ -799,6 +800,13 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
         Itinerary.objects.filter(id__in=itineraries_to_delete).delete()
 
 
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Contact
+        fields='__all__'
+
+    
+
 
 # only update trip detail 
 # class CustomisedPackageSerializer(serializers.ModelSerializer):
@@ -1354,6 +1362,10 @@ class ActivitySerializer(serializers.ModelSerializer):
         return data
 
 
+class FlightsDataSerializer(serializers.Serializer):
+    from_city= serializers.CharField()
+    to_city= serializers.CharField()
+    departure_date=serializers.DateField()
 
 
 class CountriesSerializer(serializers.ModelSerializer):
@@ -1426,6 +1438,7 @@ class HotelSerializer(serializers.ModelSerializer):
 
 class ItineraryActivitiesSerializer(serializers.ModelSerializer):
     id=serializers.IntegerField(required=False)
+    category = serializers.MultipleChoiceField(choices=Activity.category_choices)
 
     class Meta:
         model= ItineraryActivity
@@ -1435,6 +1448,7 @@ class ItineraryActivitiesSerializer(serializers.ModelSerializer):
         }
 class ItinerarySerializer(serializers.ModelSerializer):
     activities= ItineraryActivitiesSerializer(many=True,write_only=True)
+
     class Meta:
         model = Itinerary
         fields = '__all__'
@@ -1453,7 +1467,15 @@ class ItinerarySerializer(serializers.ModelSerializer):
         activities_data = validated_data.pop('activities', None)
         
         instance = super().update(instance, validated_data)
-        
+        current_activity_ids = set(instance.itinerary_activity.values_list('id', flat=True))
+            # Get the new activity IDs from the request data
+        new_activity_ids = set(activity_data.get('id') for activity_data in activities_data if activity_data.get('id'))
+            
+            # Determine which activities need to be deleted
+        activity_ids_to_delete = current_activity_ids - new_activity_ids
+            
+            # Delete activities that are not in the new activity list
+        ItineraryActivity.objects.filter(id__in=activity_ids_to_delete).delete()
         if activities_data is not None:
             for activity_data in activities_data:
                 activity_id = activity_data.get('id')

@@ -1,0 +1,872 @@
+[
+    {
+        "data": {
+            "rnm": "Uttar Pradesh, India",
+            "id": 5931,
+            "idst": true,
+            "nm": "Agra"
+        },
+        "value": "Agra, Uttar Pradesh, India",
+        "_scr": 5.986
+    },
+    {
+        "data": {
+            "rnm": "Delhi NCR, India",
+            "id": 2624,
+            "idst": true,
+            "nm": "Delhi"
+        },
+        "value": "Delhi, Delhi NCR, India",
+        "_scr": 5.276
+    },
+    {
+        "data": {
+            "rnm": "Rajasthan, India",
+            "id": 4949,
+            "idst": true,
+            "nm": "Jaipur"
+        },
+        "value": "Jaipur, Rajasthan, India",
+        "_scr": 5.441
+    },
+    {
+        "data": {
+            "rnm": "Maharashtra, India",
+            "id": 4320,
+            "idst": true,
+            "nm": "Mumbai"
+        },
+        "value": "Mumbai, Maharashtra, India",
+        "_scr": 5.512
+    },
+    {
+        "data": {
+            "rnm": "Tamil Nadu, India",
+            "id": 5196,
+            "idst": true,
+            "nm": "Chennai"
+        },
+        "value": "Chennai, Tamil Nadu, India",
+        "_scr": 5.815
+    },
+    {
+        "data": {
+            "rnm": "West Bengal, India",
+            "id": 6903,
+            "idst": true,
+            "nm": "Kolkata"
+        },
+        "value": "Kolkata, West Bengal, India",
+        "_scr": 6.041
+    },
+    {
+        "data": {
+            "rnm": "Karnataka, India",
+            "id": 3581,
+            "idst": true,
+            "nm": "Bangalore"
+        },
+        "value": "Bangalore, Karnataka, India",
+        "_scr": 5.88
+    },
+    {
+        "data": {
+            "rnm": "Telangana\u00a0, India",
+            "id": 2060,
+            "idst": true,
+            "nm": "Hyderabad"
+        },
+        "value": "Hyderabad, Telangana\u00a0, India",
+        "_scr": 5.899
+    },
+    {
+        "data": {
+            "rnm": "Maharashtra, India",
+            "id": 4378,
+            "idst": true,
+            "nm": "Pune"
+        },
+        "value": "Pune, Maharashtra, India",
+        "_scr": 5.817
+    },
+    {
+        "data": {
+            "rnm": "Gujarat, India",
+            "id": 2690,
+            "idst": true,
+            "nm": "Ahmedabad"
+        },
+        "value": "Ahmedabad, Gujarat, India",
+        "_scr": 6.065
+    },
+    {
+        "data": {
+            "rnm": "Liguria, Italy",
+            "id": 1729,
+            "idst": true,
+            "nm": "Genoa"
+        },
+        "value": "Genoa, Liguria, Italy",
+        "_scr": 6.031
+    },
+    {
+        "data": {
+            "rnm": "Rajasthan, India",
+            "id": 5079,
+            "idst": true,
+            "nm": "Udaipur"
+        },
+        "value": "Udaipur, Rajasthan, India",
+        "_scr": 6.057
+    },
+    {
+        "data": {
+            "rnm": "Rajasthan, India",
+            "id": 1100612,
+            "idst": true,
+            "nm": "Jaisalmer"
+        },
+        "value": "Jaisalmer, Rajasthan, India",
+        "_scr": 6.655
+    },
+    {
+        "data": {
+            "rnm": "Rajasthan, India",
+            "id": 1100617,
+            "idst": true,
+            "nm": "Jodhpur"
+        },
+        "value": "Jodhpur, Rajasthan, India",
+        "_scr": 6.504
+    },
+    {
+        "data": {
+            "rnm": "Uttar Pradesh, India",
+            "id": 6586,
+            "idst": true,
+            "nm": "Varanasi"
+        },
+        "value": "Varanasi, Uttar Pradesh, India",
+        "_scr": 6.915
+    },
+    {
+        "data": {
+            "rnm": "Uttarakhand, India",
+            "id": 7075,
+            "idst": true,
+            "nm": "Rishikesh"
+        },
+        "value": "Rishikesh, Uttarakhand, India",
+        "_scr": 6.736
+    },
+    {
+        "data": {
+            "rnm": "Uttarakhand, India",
+            "id": 6625,
+            "idst": true,
+            "nm": "Haridwar"
+        },
+        "value": "Haridwar, Uttarakhand, India",
+        "_scr": 6.983
+    },
+    {
+        "data": {
+            "rnm": "Punjab, India",
+            "id": 4724,
+            "idst": true,
+            "nm": "Amritsar"
+        },
+        "value": "Amritsar, Punjab, India",
+        "_scr": 6.335
+    },
+    {
+        "data": {
+            "rnm": "Himachal Pradesh, India",
+            "id": 3074,
+            "idst": true,
+            "nm": "Shimla"
+        },
+        "value": "Shimla, Himachal Pradesh, India",
+        "_scr": 6.315
+    },
+    {
+        "data": {
+            "rnm": "Himachal Pradesh, India",
+            "id": 3052,
+            "idst": true,
+            "nm": "Manali"
+        },
+        "value": "Manali, Himachal Pradesh, India",
+        "_scr": 5.766
+    },
+    {
+        "data": {
+            "rnm": "Himachal Pradesh, India",
+            "id": 1100566,
+            "idst": true,
+            "nm": "Dharamshala"
+        },
+        "value": "Dharamshala, Himachal Pradesh, India",
+        "_scr": 6.665
+    },
+    {
+        "data": {
+            "rnm": "Tamil Nadu, India",
+            "id": 7059,
+            "idst": true,
+            "nm": "Ooty"
+        },
+        "value": "Ooty, Tamil Nadu, India",
+        "_scr": 6.99
+    },
+    {
+        "data": {
+            "rnm": "Kerala, India",
+            "id": 1100596,
+            "idst": true,
+            "nm": "Munnar"
+        },
+        "value": "Munnar, Kerala, India",
+        "_scr": 6.62
+    },
+    {
+        "data": {
+            "rnm": "Tamil Nadu, India",
+            "id": 5420,
+            "idst": true,
+            "nm": "Madurai"
+        },
+        "value": "Madurai, Tamil Nadu, India",
+        "_scr": 7.327
+    },
+    {
+        "data": {
+            "rnm": "Tamil Nadu, India",
+            "id": 1100554,
+            "idst": true,
+            "nm": "Mahabalipuram"
+        },
+        "value": "Mahabalipuram, Tamil Nadu, India",
+        "_scr": 8.282
+    },
+    {
+        "data": {
+            "rnm": "Karnataka, India",
+            "id": 1101075,
+            "idst": true,
+            "nm": "Hampi"
+        },
+        "value": "Hampi, Karnataka, India",
+        "_scr": 7.536
+    },
+    {
+        "data": {
+            "rnm": "Karnataka, India",
+            "id": 1100938,
+            "idst": true,
+            "nm": "Badami"
+        },
+        "value": "Badami, Karnataka, India",
+        "_scr": 7.78
+    },
+    {
+        "data": {
+            "rnm": "Karnataka, India",
+            "id": 1130130,
+            "idst": true,
+            "nm": "Bijapur"
+        },
+        "value": "Bijapur, Karnataka, India",
+        "_scr": 9.103
+    },
+    {
+        "data": {
+            "rnm": "Jammu and Kashmir, India",
+            "id": 3161,
+            "idst": true,
+            "nm": "Gulmarg"
+        },
+        "value": "Gulmarg, Jammu and Kashmir, India",
+        "_scr": 7.516
+    },
+    {
+        "data": {
+            "rnm": "Jammu and Kashmir, India",
+            "id": 3126,
+            "idst": true,
+            "nm": "Leh"
+        },
+        "value": "Leh, Jammu and Kashmir, India",
+        "_scr": 5.963
+    },
+    {
+        "data": {
+            "rnm": "Jammu and Kashmir, India",
+            "id": 6669,
+            "idst": true,
+            "nm": "Srinagar"
+        },
+        "value": "Srinagar, Jammu and Kashmir, India",
+        "_scr": 6.508
+    },
+    {
+        "data": {
+            "rnm": "Jammu and Kashmir, India",
+            "id": 3162,
+            "idst": true,
+            "nm": "Pahalgam"
+        },
+        "value": "Pahalgam, Jammu and Kashmir, India",
+        "_scr": 7.089
+    },
+    {
+        "data": {
+            "rnm": "Abu Zaby, United Arab Emirates",
+            "id": 23,
+            "idst": true,
+            "nm": "Abu Dhabi"
+        },
+        "value": "Abu Dhabi, Abu Zaby, United Arab Emirates",
+        "_scr": 5.446
+    },
+    {
+        "data": {
+            "rnm": "Rajasthan, India",
+            "id": 1101059,
+            "idst": true,
+            "nm": "Bikaner"
+        },
+        "value": "Bikaner, Rajasthan, India",
+        "_scr": 7.088
+    },
+    {
+        "data": {
+            "rnm": "Rajasthan, India",
+            "id": 5032,
+            "idst": true,
+            "nm": "Pushkar"
+        },
+        "value": "Pushkar, Rajasthan, India",
+        "_scr": 6.701
+    },
+    {
+        "data": {
+            "rnm": "Madhya Pradesh, India",
+            "id": 1101083,
+            "idst": true,
+            "nm": "Khajuraho"
+        },
+        "value": "Khajuraho, Madhya Pradesh, India",
+        "_scr": 7.262
+    },
+    {
+        "data": {
+            "rnm": "Madhya Pradesh, India",
+            "id": 3808,
+            "idst": true,
+            "nm": "Bhopal"
+        },
+        "value": "Bhopal, Madhya Pradesh, India",
+        "_scr": 6.859
+    },
+    {
+        "data": {
+            "rnm": "Madhya Pradesh, India",
+            "id": 3886,
+            "idst": true,
+            "nm": "Indore"
+        },
+        "value": "Indore, Madhya Pradesh, India",
+        "_scr": 6.604
+    },
+    {
+        "data": {
+            "rnm": "Maharashtra, India",
+            "id": 4327,
+            "idst": true,
+            "nm": "Nagpur"
+        },
+        "value": "Nagpur, Maharashtra, India",
+        "_scr": 7.899
+    },
+    {
+        "data": {
+            "rnm": "Maharashtra, India",
+            "id": 4139,
+            "idst": true,
+            "nm": "Aurangabad"
+        },
+        "value": "Aurangabad, Maharashtra, India",
+        "_scr": 7.031
+    },
+    {
+        "data": {
+            "rnm": "Maharashtra, India",
+            "id": 7074,
+            "idst": true,
+            "nm": "Shirdi"
+        },
+        "value": "Shirdi, Maharashtra, India",
+        "_scr": 7.587
+    },
+    {
+        "data": {
+            "rnm": "Maharashtra, India",
+            "id": 1100965,
+            "idst": true,
+            "nm": "Lonavala"
+        },
+        "value": "Lonavala, Maharashtra, India",
+        "_scr": 6.758
+    },
+    {
+        "data": {
+            "rnm": "Maharashtra, India",
+            "id": 4292,
+            "idst": true,
+            "nm": "Mahabaleshwar"
+        },
+        "value": "Mahabaleshwar, Maharashtra, India",
+        "_scr": 7.488
+    },
+    {
+        "data": {
+            "rnm": "Maharashtra, India",
+            "id": 1100968,
+            "idst": true,
+            "nm": "Panchgani"
+        },
+        "value": "Panchgani, Maharashtra, India",
+        "_scr": 7.589
+    },
+    {
+        "data": {
+            "rnm": "Orissa, India",
+            "id": 4684,
+            "idst": true,
+            "nm": "Puri"
+        },
+        "value": "Puri, Orissa, India",
+        "_scr": 5.154
+    },
+    {
+        "data": {
+            "rnm": "Orissa, India",
+            "id": 1131008,
+            "idst": true,
+            "nm": "Konark"
+        },
+        "value": "Konark, Orissa, India",
+        "_scr": 7.472
+    },
+    {
+        "data": {
+            "rnm": "Bihar, India",
+            "id": 1130156,
+            "idst": true,
+            "nm": "Gaya"
+        },
+        "value": "Gaya, Bihar, India",
+        "_scr": 6.677
+    },
+    {
+        "data": {
+            "rnm": "Bihar, India",
+            "id": 1101108,
+            "idst": true,
+            "nm": "Patna"
+        },
+        "value": "Patna, Bihar, India",
+        "_scr": 7.043
+    },
+    {
+        "data": {
+            "rnm": "West Bengal, India",
+            "id": 6786,
+            "idst": true,
+            "nm": "Darjeeling"
+        },
+        "value": "Darjeeling, West Bengal, India",
+        "_scr": 6.804
+    },
+    {
+        "data": {
+            "rnm": "Sikkim, India",
+            "id": 5087,
+            "idst": true,
+            "nm": "Gangtok"
+        },
+        "value": "Gangtok, Sikkim, India",
+        "_scr": 6.554
+    },
+    {
+        "data": {
+            "rnm": "West Bengal, India",
+            "id": 1103813,
+            "idst": true,
+            "nm": "Kalimpong"
+        },
+        "value": "Kalimpong, West Bengal, India",
+        "_scr": 8.212
+    },
+    {
+        "data": {
+            "rnm": "Meghalaya, India",
+            "id": 4533,
+            "idst": true,
+            "nm": "Shillong"
+        },
+        "value": "Shillong, Meghalaya, India",
+        "_scr": 7.73
+    },
+    {
+        "data": {
+            "rnm": "Arunachal pradesh, India",
+            "id": 2225,
+            "idst": true,
+            "nm": "Tawang"
+        },
+        "value": "Tawang, Arunachal pradesh, India",
+        "_scr": 8.92
+    },
+    {
+        "data": {
+            "rnm": "Assam, India",
+            "id": 1100905,
+            "idst": true,
+            "nm": "Kaziranga"
+        },
+        "value": "Kaziranga, Assam, India",
+        "_scr": 8.673
+    },
+    {
+        "data": {
+            "rnm": "Assam, India",
+            "id": 1130898,
+            "idst": true,
+            "nm": "Majuli"
+        },
+        "value": "Majuli, Assam, India",
+        "_scr": 9.741
+    },
+    {
+        "data": {
+            "rnm": "Assam, India",
+            "id": 2280,
+            "idst": true,
+            "nm": "Guwahati"
+        },
+        "value": "Guwahati, Assam, India",
+        "_scr": 7.35
+    },
+    {
+        "data": {
+            "rnm": "Manipur, India",
+            "id": 4536,
+            "idst": true,
+            "nm": "Imphal"
+        },
+        "value": "Imphal, Manipur, India",
+        "_scr": 9.744
+    },
+    {
+        "data": {
+            "rnm": "Nagaland, India",
+            "id": 4561,
+            "idst": true,
+            "nm": "Kohima"
+        },
+        "value": "Kohima, Nagaland, India",
+        "_scr": 8.417
+    },
+    {
+        "data": {
+            "rnm": "Mizoram\u00a0, India",
+            "id": 1101050,
+            "idst": true,
+            "nm": "Aizawl"
+        },
+        "value": "Aizawl, Mizoram\u00a0, India",
+        "_scr": 8.552
+    },
+    {
+        "data": {
+            "rnm": "Tripura, India",
+            "id": 5901,
+            "idst": true,
+            "nm": "Agartala"
+        },
+        "value": "Agartala, Tripura, India",
+        "_scr": 7.635
+    },
+    {
+        "data": {
+            "rnm": "Jharkhand, India",
+            "id": 1101116,
+            "idst": true,
+            "nm": "Ranchi"
+        },
+        "value": "Ranchi, Jharkhand, India",
+        "_scr": 7.364
+    },
+    {
+        "data": {
+            "rnm": "Jharkhand, India",
+            "id": 1101077,
+            "idst": true,
+            "nm": "Jamshedpur"
+        },
+        "value": "Jamshedpur, Jharkhand, India",
+        "_scr": 8.461
+    },
+    {
+        "data": {
+            "rnm": "Bihar, India",
+            "id": 1160064,
+            "idst": true,
+            "nm": "Bodh Gaya"
+        },
+        "value": "Bodh Gaya, Bihar, India",
+        "_scr": 10.586
+    },
+    {
+        "data": {
+            "rnm": "Madhya Pradesh, India",
+            "id": 1101076,
+            "idst": true,
+            "nm": "Jabalpur"
+        },
+        "value": "Jabalpur, Madhya Pradesh, India",
+        "_scr": 7.772
+    },
+    {
+        "data": {
+            "rnm": "Chhattisgarh\u00a0, India",
+            "id": 1101115,
+            "idst": true,
+            "nm": "Raipur"
+        },
+        "value": "Raipur, Chhattisgarh\u00a0, India",
+        "_scr": 6.74
+    },
+    {
+        "data": {
+            "rnm": "Chhattisgarh\u00a0, India",
+            "id": 1131434,
+            "idst": true,
+            "nm": "Bilaspur"
+        },
+        "value": "Bilaspur, Chhattisgarh\u00a0, India",
+        "_scr": 8.553
+    },
+    {
+        "data": {
+            "rnm": "Chhattisgarh\u00a0, India",
+            "id": 1131260,
+            "idst": true,
+            "nm": "Jagdalpur"
+        },
+        "value": "Jagdalpur, Chhattisgarh\u00a0, India",
+        "_scr": 9.082
+    },
+    {
+        "data": {
+            "rnm": "West Bengal, India",
+            "id": 1100620,
+            "idst": true,
+            "nm": "Durgapur"
+        },
+        "value": "Durgapur, West Bengal, India",
+        "_scr": 7.957
+    },
+    {
+        "data": {
+            "rnm": "West Bengal, India",
+            "id": 7013,
+            "idst": true,
+            "nm": "Siliguri"
+        },
+        "value": "Siliguri, West Bengal, India",
+        "_scr": 7.525
+    },
+    {
+        "data": {
+            "rnm": "West Bengal, India",
+            "id": 1101067,
+            "idst": true,
+            "nm": "Digha"
+        },
+        "value": "Digha, West Bengal, India",
+        "_scr": 7.48
+    },
+    {
+        "data": {
+            "rnm": "West Bengal, India",
+            "id": 1102413,
+            "idst": true,
+            "nm": "Kharagpur"
+        },
+        "value": "Kharagpur, West Bengal, India",
+        "_scr": 9.061
+    },
+    {
+        "data": {
+            "rnm": "West Bengal, India",
+            "id": 1130139,
+            "idst": true,
+            "nm": "Asansol"
+        },
+        "value": "Asansol, West Bengal, India",
+        "_scr": 8.171
+    },
+    {
+        "data": {
+            "rnm": "Daman and Diu, India",
+            "id": 1101069,
+            "idst": true,
+            "nm": "Diu"
+        },
+        "value": "Diu, Daman and Diu, India",
+        "_scr": 7.548
+    },
+    {
+        "data": {
+            "rnm": "Daman and Diu, India",
+            "id": 1101065,
+            "idst": true,
+            "nm": "Daman"
+        },
+        "value": "Daman, Daman and Diu, India",
+        "_scr": 6.212
+    },
+    {
+        "data": {
+            "rnm": "Dadra and Nagar Haveli, India",
+            "id": 2580,
+            "idst": true,
+            "nm": "Silvassa"
+        },
+        "value": "Silvassa, Dadra and Nagar Haveli, India",
+        "_scr": 8.455
+    },
+    {
+        "data": {
+            "rnm": "India",
+            "id": 1100954,
+            "idst": true,
+            "nm": "Lakshadweep"
+        },
+        "value": "Lakshadweep, India",
+        "_scr": 9.754
+    },
+    {
+        "data": {
+            "rnm": "Andamans, India",
+            "id": 1101112,
+            "idst": true,
+            "nm": "Port Blair"
+        },
+        "value": "Port Blair, Andamans, India",
+        "_scr": 8.232
+    },
+    {
+        "data": {
+            "rnm": "Maharashtra, India",
+            "id": 1100966,
+            "idst": true,
+            "nm": "Matheran"
+        },
+        "value": "Matheran, Maharashtra, India",
+        "_scr": 9.311
+    },
+    {
+        "data": {
+            "rnm": "Maharashtra, India",
+            "id": 1100964,
+            "idst": true,
+            "nm": "Khandala"
+        },
+        "value": "Khandala, Maharashtra, India",
+        "_scr": 8.919
+    },
+    {
+        "data": {
+            "rnm": "Uttarakhand, India",
+            "id": 6654,
+            "idst": true,
+            "nm": "Nainital"
+        },
+        "value": "Nainital, Uttarakhand, India",
+        "_scr": 6.631
+    },
+    {
+        "data": {
+            "rnm": "Uttarakhand, India",
+            "id": 6652,
+            "idst": true,
+            "nm": "Mussoorie"
+        },
+        "value": "Mussoorie, Uttarakhand, India",
+        "_scr": 6.791
+    },
+    {
+        "data": {
+            "rnm": "Uttarakhand, India",
+            "id": 6662,
+            "idst": true,
+            "nm": "Ranikhet"
+        },
+        "value": "Ranikhet, Uttarakhand, India",
+        "_scr": 8.006
+    },
+    {
+        "data": {
+            "rnm": "Uttarakhand, India",
+            "id": 1100593,
+            "idst": true,
+            "nm": "Corbett"
+        },
+        "value": "Corbett, Uttarakhand, India",
+        "_scr": 8.683
+    },
+    {
+        "data": {
+            "rnm": "Uttarakhand, India",
+            "id": 1100559,
+            "idst": true,
+            "nm": "Badrinath"
+        },
+        "value": "Badrinath, Uttarakhand, India",
+        "_scr": 8.922
+    },
+    {
+        "data": {
+            "rnm": "Uttarakhand, India",
+            "id": 3158,
+            "idst": true,
+            "nm": "Kedarnath"
+        },
+        "value": "Kedarnath, Uttarakhand, India",
+        "_scr": 9.558
+    },
+    {
+        "data": {
+            "rnm": "Uttarakhand, India",
+            "id": 1100574,
+            "idst": true,
+            "nm": "Gangotri"
+        },
+        "value": "Gangotri, Uttarakhand, India",
+        "_scr": 8.212
+    },
+    {
+        "data": {
+            "rnm": "Uttarakhand, India",
+            "id": 1104846,
+            "idst": true,
+            "nm": "Yamunotri"
+        },
+        "value": "Yamunotri, Uttarakhand, India",
+        "_scr": 8.864
+    }
+]
