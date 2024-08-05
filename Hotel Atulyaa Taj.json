@@ -1,0 +1,775 @@
+{
+    "shwPrcDiff": false,
+    "hId": 494355,
+    "srchO": {
+        "cnm": "Agra",
+        "chkOut": "12/08/2024",
+        "chkIn": "04/08/2024",
+        "paxD": "1 room, 2 adults",
+        "ntn": 2597,
+        "nts": 8,
+        "paxes": {
+            "rooms": [
+                {
+                    "ad": 2,
+                    "ch": 0,
+                    "chAge": []
+                }
+            ]
+        },
+        "cid": "5931",
+        "ntnD": "India"
+    },
+    "iBfstPf": true,
+    "rmA": [
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Air Conditioning",
+                "Ceiling Fan",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk",
+                "Hair Dryer"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;1 Double Bed&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;250-sq-foot room with city views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Layout&lt;/b&gt; - Separate sitting area&lt;/p&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi &lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - Plasma TV with satellite channels&lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Kitchen with refrigerator and coffee/tea maker&lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, deep soaking bathtub &lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and iron/ironing board; rollaway/extra beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Air conditioning and daily housekeeping&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Wheelchair accessible&lt;/p&gt;&lt;p&gt;&lt;b&gt;Need to Know&lt;/b&gt; - No cribs (infant beds) or rollaway/extra beds available&lt;/p&gt;&lt;p&gt;Smoking&lt;/p&gt;&lt;p&gt;Connecting/adjoining rooms can be requested, subject to availability &lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5226,
+                    "prD": "&amp;#x20B9; 41,808",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088631",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 41808,
+                    "uId": "0",
+                    "rtcd": "EP-NR",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Package rate",
+                        "Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5244,
+                    "prD": "&amp;#x20B9; 41,955",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20393487216",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 41955,
+                    "uId": "1",
+                    "rtcd": "EP-RF",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "Room Only",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5405,
+                    "prD": "&amp;#x20B9; 43,236",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088629",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 43236,
+                    "uId": "2",
+                    "rtcd": "CP-NR",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Package rate",
+                        "Free breakfast, Free self parking, Free WiFi",
+                        "Private sale",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5853,
+                    "prD": "&amp;#x20B9; 46,821",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20393487212",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 46821,
+                    "uId": "3",
+                    "rtcd": "CP-RF",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "Breakfast",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6077,
+                    "prD": "&amp;#x20B9; 48,617",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088635",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 48617,
+                    "uId": "6",
+                    "rtcd": "CP-NR",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Free breakfast, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6116,
+                    "prD": "&amp;#x20B9; 48,927",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088969",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 48927,
+                    "uId": "8",
+                    "rtcd": "EP-NR",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "Room Only",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6368,
+                    "prD": "&amp;#x20B9; 50,946",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088964",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 50946,
+                    "uId": "9",
+                    "rtcd": "CP-NR",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "Bed and Breakfast",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8846,
+                    "prD": "&amp;#x20B9; 70,768",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20390088630",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 70768,
+                    "uId": "14",
+                    "rtcd": "MAP-NR",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Package rate",
+                        "Half board, Free self parking, Free WiFi",
+                        "Private sale",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 9576,
+                    "prD": "&amp;#x20B9; 76,610",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20393487210",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 76610,
+                    "uId": "15",
+                    "rtcd": "MAP-RF",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "Breakfast and Dinner",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 9683,
+                    "prD": "&amp;#x20B9; 77,466",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20393487218",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 77466,
+                    "uId": "17",
+                    "rtcd": "MAP-RF",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "Breakfast and Dinner",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 10195,
+                    "prD": "&amp;#x20B9; 81,562",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20390088636",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 81562,
+                    "uId": "19",
+                    "rtcd": "MAP-NR",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Half board, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 10674,
+                    "prD": "&amp;#x20B9; 85,388",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20390088966",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 85388,
+                    "uId": "21",
+                    "rtcd": "MAP-NR",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "Half Board",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 10793,
+                    "prD": "&amp;#x20B9; 86,344",
+                    "mp": "AP",
+                    "mlD": "Meals included - Breakfast, Lunch, Dinner",
+                    "prId": "hp20393487211",
+                    "mpN": "Full Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 86344,
+                    "uId": "22",
+                    "rtcd": "AP-RF",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "All Meals",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 11644,
+                    "prD": "&amp;#x20B9; 93,150",
+                    "mp": "AP",
+                    "mlD": "Meals included - Breakfast, Lunch, Dinner",
+                    "prId": "hp20390088628",
+                    "mpN": "Full Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 93150,
+                    "uId": "25",
+                    "rtcd": "AP-NR",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Package rate",
+                        "Full board, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 13295,
+                    "prD": "&amp;#x20B9; 106,363",
+                    "mp": "AP",
+                    "mlD": "Meals included - Breakfast, Lunch, Dinner",
+                    "prId": "hp20390088968",
+                    "mpN": "Full Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 106363,
+                    "uId": "28",
+                    "rtcd": "AP-NR",
+                    "name": "Deluxe Double Room",
+                    "key": [
+                        "Full Board",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                }
+            ],
+            "id": 1230029,
+            "szD": "23 sqm",
+            "vwN": "City View",
+            "bedD": "1 Double Bed",
+            "nm": "Deluxe Room",
+            "imgA": [
+                "https://i.travelapi.com/hotels/8000000/7840000/7835800/7835798/43af3b72_z.jpg",
+                "https://i.travelapi.com/hotels/8000000/7840000/7835800/7835798/51f9defd_z.jpg",
+                "https://i.travelapi.com/hotels/8000000/7840000/7835800/7835798/b22475bf_z.jpg",
+                "https://i.travelapi.com/hotels/8000000/7840000/7835800/7835798/b59bb5fd_z.jpg",
+                "https://i.travelapi.com/hotels/8000000/7840000/7835800/7835798/e893e520_z.jpg",
+                "https://i.travelapi.com/hotels/8000000/7840000/7835800/7835798/c5aba2af_z.jpg",
+                "https://i.travelapi.com/hotels/8000000/7840000/7835800/7835798/9eb747b2_z.jpg"
+            ]
+        },
+        {
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5853,
+                    "prD": "&amp;#x20B9; 46,821",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20393487214",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 46821,
+                    "uId": "4",
+                    "rtcd": "EP-RF",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "Room Only",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5967,
+                    "prD": "&amp;#x20B9; 47,733",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088626",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 47733,
+                    "uId": "5",
+                    "rtcd": "CP-NR",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Package rate",
+                        "Free breakfast, Free self parking, Free WiFi",
+                        "Private sale",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6077,
+                    "prD": "&amp;#x20B9; 48,617",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088632",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 48617,
+                    "uId": "7",
+                    "rtcd": "EP-NR",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6368,
+                    "prD": "&amp;#x20B9; 50,946",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088970",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 50946,
+                    "uId": "10",
+                    "rtcd": "EP-NR",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "Room Only",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6461,
+                    "prD": "&amp;#x20B9; 51,685",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20393487219",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 51685,
+                    "uId": "11",
+                    "rtcd": "CP-RF",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "Breakfast",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6720,
+                    "prD": "&amp;#x20B9; 53,762",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088633",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 53762,
+                    "uId": "12",
+                    "rtcd": "CP-NR",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Free breakfast, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7039,
+                    "prD": "&amp;#x20B9; 56,310",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088967",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 56310,
+                    "uId": "13",
+                    "rtcd": "CP-NR",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "Bed and Breakfast",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 9600,
+                    "prD": "&amp;#x20B9; 76,802",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20390088627",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 76802,
+                    "uId": "16",
+                    "rtcd": "MAP-NR",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Package rate",
+                        "Half board, Free self parking, Free WiFi",
+                        "Private sale",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 10185,
+                    "prD": "&amp;#x20B9; 81,480",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20393487213",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 81480,
+                    "uId": "18",
+                    "rtcd": "MAP-RF",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "Breakfast and Dinner",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 10509,
+                    "prD": "&amp;#x20B9; 84,071",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20393487215",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 84071,
+                    "uId": "20",
+                    "rtcd": "MAP-RF",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "Breakfast and Dinner",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 11139,
+                    "prD": "&amp;#x20B9; 89,108",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20390088634",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 89108,
+                    "uId": "23",
+                    "rtcd": "MAP-NR",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Half board, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 11401,
+                    "prD": "&amp;#x20B9; 91,210",
+                    "mp": "AP",
+                    "mlD": "Meals included - Breakfast, Lunch, Dinner",
+                    "prId": "hp20393487217",
+                    "mpN": "Full Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 91210,
+                    "uId": "24",
+                    "rtcd": "AP-RF",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "All Meals",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 11673,
+                    "prD": "&amp;#x20B9; 93,385",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20390088965",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 93385,
+                    "uId": "26",
+                    "rtcd": "MAP-NR",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "Half Board",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 12299,
+                    "prD": "&amp;#x20B9; 98,395",
+                    "mp": "AP",
+                    "mlD": "Meals included - Breakfast, Lunch, Dinner",
+                    "prId": "hp20390088625",
+                    "mpN": "Full Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 98395,
+                    "uId": "27",
+                    "rtcd": "AP-NR",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Package rate",
+                        "Full board, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 14044,
+                    "prD": "&amp;#x20B9; 112,355",
+                    "mp": "AP",
+                    "mlD": "Meals included - Breakfast, Lunch, Dinner",
+                    "prId": "hp20390088963",
+                    "mpN": "Full Board",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 112355,
+                    "uId": "29",
+                    "rtcd": "AP-NR",
+                    "name": "Superior Double Room",
+                    "key": [
+                        "Full Board",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                }
+            ],
+            "id": 3070705,
+            "nm": "Superior Room"
+        }
+    ]
+}

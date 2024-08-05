@@ -1406,11 +1406,14 @@ class HotelRoomTypeSerializer(serializers.ModelSerializer):
         #     print(f"Error decoding JSON: {e}")
         if instance.category:
             data['category_name']=instance.category.name
-       
+        data['room_img']=instance.category.rooms_category_img.all().values()
+        if instance.category:
+            room_category=RoomCategory.objects.filter(id=instance.category.id).values().first()
+            data['room_category']=room_category
         return data
 
 class HotelDetailsUpdateSerializer(serializers.ModelSerializer):
-    # facilities=serializers. 
+
     class Meta:
         model= HotelDetails
         fields='__all__'
@@ -1542,7 +1545,7 @@ class InvoiceSerailizer(serializers.ModelSerializer):
     def validate(self, data):
         # Automatically generate invoice_number in the format INV<cyear><sequence>
         req_user = self.context.get('request').user
-         
+        instance = self.instance
         if req_user.role == 'Employee':
             company = Employee.objects.filter(emp_user=req_user).first().company
             data['company']=company
@@ -1553,23 +1556,62 @@ class InvoiceSerailizer(serializers.ModelSerializer):
             # print("company==>",company)
             data['company'] = company
         
-        company = data.get('company')
-        current_year = datetime.datetime.now().year
-        if company:
-            last_invoice = AirTicketInvoice.objects.filter(company=company).order_by('id').last()
-        else:
-            last_invoice = AirTicketInvoice.objects.all().order_by('id').last()
-
-        if last_invoice:
-            last_invoice_number = last_invoice.invoice_no
-            last_sequence = int(last_invoice_number.split('INV')[-1])
-            new_sequence = last_sequence + 1
-            data['invoice_no'] = f'INV{current_year}{new_sequence:04d}'
-        else:
-            data['invoice_no'] = f'INV{current_year}0001'
+         # Only generate a new invoice_no if this is a new instance
+        if instance is None:
+            company = data.get('company')
+            current_year = datetime.datetime.now().year
+            last_invoice=None
+            if company:
+                last_invoice = InvoiceMaster.objects.filter(company=company).order_by('id').last()
+           
+            if last_invoice:
+                last_invoice_number = last_invoice.invoice_no
+                last_sequence = int(last_invoice_number.split('/')[-1])
+                new_sequence = last_sequence + 1
+                data['invoice_no'] = f'INV{current_year}/{new_sequence:04d}'
+            else:
+                data['invoice_no'] = f'INV{current_year}/0001'
 
         return data
-    
+
+class PaymentReceiptSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=PaymentReceipt
+        fields='__all__'
+        extra_kwargs={
+            "receipt_no":{"required": False }
+        }
+    def validate(self, data):
+        req_user = self.context.get('request').user
+        instance = self.instance
+        if req_user.role == 'Employee':
+            company = Employee.objects.filter(emp_user=req_user).first().company
+            # data['company']=company
+        
+        elif req_user.role == 'Company':
+            # print(req_user.email)
+            company = Company.objects.filter(custom_user_id=req_user.id).first()
+            # print("company==>",company)
+            # data['company'] = company
+        
+         # Only generate a new invoice_no if this is a new instance
+        if instance is None:
+          
+            current_year = datetime.datetime.now().year
+            last_receipt=None
+            if company:
+                last_receipt = PaymentReceipt.objects.filter(invoice__company=company).order_by('id').last()
+           
+            if last_receipt:
+                last_receipt_no = last_receipt.receipt_no
+                last_sequence = int(last_receipt_no.split('/')[-1])
+                new_sequence = last_sequence + 1
+                data['receipt_no'] = f'REC{current_year}/{new_sequence:04d}'
+            else:
+                data['receipt_no'] = f'REC{current_year}/0001'
+
+        return data
+     
 
 class PassengerSerializer(serializers.ModelSerializer):
     id= serializers.IntegerField(allow_null=True,required=False)
@@ -1600,6 +1642,7 @@ class AirTicketInvoiceSerializer(serializers.ModelSerializer):
     def validate(self, data):
         # Automatically generate invoice_number in the format INV<cyear><sequence>
         req_user = self.context.get('request').user
+        instance = self.instance
          
         if req_user.role == 'Employee':
             company = Employee.objects.filter(emp_user=req_user).first().company
@@ -1610,21 +1653,21 @@ class AirTicketInvoiceSerializer(serializers.ModelSerializer):
             company = Company.objects.filter(custom_user_id=req_user.id).first()
             # print("company==>",company)
             data['company'] = company
-        
-        company = data.get('company')
-        current_year = datetime.datetime.now().year
-        if company:
-            last_invoice = AirTicketInvoice.objects.filter(company=company).order_by('id').last()
-        else:
-            last_invoice = AirTicketInvoice.objects.all().order_by('id').last()
+        if instance is None:
+            company = data.get('company')
+            current_year = datetime.datetime.now().year
+            if company:
+                last_invoice = AirTicketInvoice.objects.filter(company=company).order_by('id').last()
+            else:
+                last_invoice = AirTicketInvoice.objects.all().order_by('id').last()
 
-        if last_invoice:
-            last_invoice_number = last_invoice.invoice_no
-            last_sequence = int(last_invoice_number.split('INV')[-1])
-            new_sequence = last_sequence + 1
-            data['invoice_no'] = f'INV{current_year}{new_sequence:04d}'
-        else:
-            data['invoice_no'] = f'INV{current_year}0001'
+            if last_invoice:
+                last_invoice_number = last_invoice.invoice_no
+                last_sequence = int(last_invoice_number.split('/')[-1])
+                new_sequence = last_sequence + 1
+                data['invoice_no'] = f'INV{current_year}/{new_sequence:04d}'
+            else:
+                data['invoice_no'] = f'INV{current_year}/0001'
 
         return data
     def to_representation(self, instance):

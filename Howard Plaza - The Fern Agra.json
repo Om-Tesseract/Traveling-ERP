@@ -1,0 +1,781 @@
+{
+    "shwPrcDiff": false,
+    "hId": 428450,
+    "srchO": {
+        "cnm": "Agra",
+        "chkOut": "12/08/2024",
+        "chkIn": "04/08/2024",
+        "paxD": "1 room, 2 adults",
+        "ntn": 2597,
+        "nts": 8,
+        "paxes": {
+            "rooms": [
+                {
+                    "ad": 2,
+                    "ch": 0,
+                    "chAge": []
+                }
+            ]
+        },
+        "cid": "5931",
+        "ntnD": "India"
+    },
+    "iBfstPf": true,
+    "rmA": [
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk",
+                "Hair Dryer"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;1 King Bed or 2 Twin Beds&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;264-sq-foot room with city views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi &lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - Flat-screen TV with premium channels&lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding and turndown service &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, deep soaking bathtub &lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and desk; rollaway/extra beds and free cribs/infant beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Climate-controlled air conditioning and daily housekeeping&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Wheelchair accessible, grab bar near toilet, and low-height counter and sink&lt;/p&gt;&lt;p&gt;Smoking And Non-Smoking&lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3359,
+                    "prD": "&amp;#x20B9; 26,874",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "splTxtA": [
+                        "Bed type in the room is on request basis and may not be honored at the hotel in case of no availability"
+                    ],
+                    "prId": "hp20390088719",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 26874,
+                    "uId": "0",
+                    "rtcd": "EP-RF-Tw",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free self parking, Free WiFi",
+                        "Member\u2019s exclusive price"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3359,
+                    "prD": "&amp;#x20B9; 26,874",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "splTxtA": [
+                        "Bed type in the room is on request basis and may not be honored at the hotel in case of no availability"
+                    ],
+                    "prId": "hp20390088720",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 26874,
+                    "uId": "1",
+                    "rtcd": "EP-RF",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free self parking, Free WiFi",
+                        "Member\u2019s exclusive price"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3732,
+                    "prD": "&amp;#x20B9; 29,853",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "splTxtA": [
+                        "Bed type in the room is on request basis and may not be honored at the hotel in case of no availability"
+                    ],
+                    "prId": "hp20390088717",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 29853,
+                    "uId": "5",
+                    "rtcd": "CP-RF-Tw",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free breakfast, Free self parking, Free WiFi",
+                        "Member\u2019s exclusive price"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3732,
+                    "prD": "&amp;#x20B9; 29,853",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "splTxtA": [
+                        "Bed type in the room is on request basis and may not be honored at the hotel in case of no availability"
+                    ],
+                    "prId": "hp20390088718",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 29853,
+                    "uId": "6",
+                    "rtcd": "CP-RF",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free breakfast, Free self parking, Free WiFi",
+                        "Member\u2019s exclusive price"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3880,
+                    "prD": "&amp;#x20B9; 31,043",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "pk539182_pr67691585_of347",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 31043,
+                    "uId": "8",
+                    "offrA": [
+                        {
+                            "tn": "Promotion Offer",
+                            "oid": 347,
+                            "ttl": "Last Minute Deal 2 Days - &amp;#x20B9; 7,699"
+                        }
+                    ],
+                    "rtcd": "EP-RF",
+                    "name": "Winter Green Room (Room Only)",
+                    "key": [
+                        "Winter Green Room EP",
+                        "Winter Green Room EP",
+                        "Room Only"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4311,
+                    "prD": "&amp;#x20B9; 34,486",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "pk539183_pr67691671_of347",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 34486,
+                    "uId": "17",
+                    "offrA": [
+                        {
+                            "tn": "Promotion Offer",
+                            "oid": 347,
+                            "ttl": "Last Minute Deal 2 Days - &amp;#x20B9; 8,553"
+                        }
+                    ],
+                    "rtcd": "CP-RF",
+                    "name": "Winter Green Room (Breakfast)",
+                    "key": [
+                        "Winter Green Room CP",
+                        "Winter Green Room CP",
+                        "Breakfast"
+                    ],
+                    "isNR": true
+                }
+            ],
+            "id": 1230217,
+            "szD": "25 sqm",
+            "vwN": "City View",
+            "bedD": "Twin or 1 King Bed",
+            "nm": "Winter Green Room",
+            "imgA": [
+                "https://i.travelapi.com/hotels/1000000/60000/54000/53997/63477446_z.jpg",
+                "https://i.travelapi.com/hotels/1000000/60000/54000/53997/be8c8eb3_z.jpg",
+                "https://i.travelapi.com/hotels/1000000/60000/54000/53997/9764477a_z.jpg"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Free Bottled Water",
+                "Tea/Coffee Maker",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Hair Dryer",
+                "Work Desk"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;1 King Bed or 2 Twin Beds&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;264-sq-foot room with city views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi &lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - Flat-screen TV with premium channels&lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding and turndown service &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, deep soaking bathtub &lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and desk; rollaway/extra beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Climate-controlled air conditioning and daily housekeeping&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Wheelchair accessible, grab bar near toilet, and low-height counter and sink&lt;/p&gt;&lt;p&gt;&lt;b&gt;Need to Know&lt;/b&gt; - No cribs (infant beds) available&lt;/p&gt;&lt;p&gt;Smoking And Non-Smoking&lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3668,
+                    "prD": "&amp;#x20B9; 29,343",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20393487092",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 29343,
+                    "uId": "2",
+                    "rtcd": "EP-RF",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "Room Only",
+                        "1 Double or 1 Twin"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3734,
+                    "prD": "&amp;#x20B9; 29,872",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20393487090",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 29872,
+                    "uId": "7",
+                    "rtcd": "EP-RF",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "Room Only",
+                        "1 Double or 1 Twin"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4075,
+                    "prD": "&amp;#x20B9; 32,600",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20393487094",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 32600,
+                    "uId": "12",
+                    "rtcd": "CP-RF",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "Breakfast",
+                        "1 Double or 1 Twin"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4124,
+                    "prD": "&amp;#x20B9; 32,990",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088901",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 32990,
+                    "uId": "13",
+                    "rtcd": "EP-RF",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4149,
+                    "prD": "&amp;#x20B9; 33,195",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20393487095",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 33195,
+                    "uId": "14",
+                    "rtcd": "CP-RF",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "Breakfast",
+                        "1 Double or 1 Twin"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4581,
+                    "prD": "&amp;#x20B9; 36,647",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088896",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 36647,
+                    "uId": "19",
+                    "rtcd": "CP-RF",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "Bed and Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4863,
+                    "prD": "&amp;#x20B9; 38,906",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088898",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 38906,
+                    "uId": "22",
+                    "rtcd": "EP-NR",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "Room Only",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5402,
+                    "prD": "&amp;#x20B9; 43,219",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088899",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 43219,
+                    "uId": "24",
+                    "rtcd": "CP-NR",
+                    "name": "Winter Green Room",
+                    "key": [
+                        "Bed and Breakfast",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                }
+            ],
+            "id": 1230216,
+            "szD": "25 sqm",
+            "vwN": "City View",
+            "bedD": "Twin or 1 King Bed",
+            "nm": "Winter Green single Room",
+            "imgA": [
+                "https://i.travelapi.com/hotels/1000000/60000/54000/53997/ec19efe4_z.jpg",
+                "https://i.travelapi.com/hotels/1000000/60000/54000/53997/b1d8ff5d_z.jpg"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk",
+                "Hair Dryer"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;1 King Bed or 2 Twin Beds&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;264-sq-foot room with city views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi &lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - Flat-screen TV with premium channels&lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding and turndown service &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, deep soaking bathtub &lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and desk; rollaway/extra beds and free cribs/infant beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Climate-controlled air conditioning and daily housekeeping&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Wheelchair accessible, grab bar near toilet, and low-height counter and sink&lt;/p&gt;&lt;p&gt;Smoking And Non-Smoking&lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3687,
+                    "prD": "&amp;#x20B9; 29,497",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "splTxtA": [
+                        "Bed type in the room is on request basis and may not be honored at the hotel in case of no availability"
+                    ],
+                    "prId": "hp20390088713",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 29497,
+                    "uId": "3",
+                    "rtcd": "EP-RF-Tw",
+                    "name": "Fern Club Room",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free self parking, Free WiFi",
+                        "Member\u2019s exclusive price"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3687,
+                    "prD": "&amp;#x20B9; 29,497",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "splTxtA": [
+                        "Bed type in the room is on request basis and may not be honored at the hotel in case of no availability"
+                    ],
+                    "prId": "hp20390088714",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 29497,
+                    "uId": "4",
+                    "rtcd": "EP-RF",
+                    "name": "Fern Club Room",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free self parking, Free WiFi",
+                        "Member\u2019s exclusive price"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3989,
+                    "prD": "&amp;#x20B9; 31,915",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "splTxtA": [
+                        "Bed type in the room is on request basis and may not be honored at the hotel in case of no availability"
+                    ],
+                    "prId": "hp20390088715",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 31915,
+                    "uId": "9",
+                    "rtcd": "CP-RF-Tw",
+                    "name": "Fern Club Room",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free breakfast, Free self parking, Free WiFi",
+                        "Member\u2019s exclusive price"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3989,
+                    "prD": "&amp;#x20B9; 31,915",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "splTxtA": [
+                        "Bed type in the room is on request basis and may not be honored at the hotel in case of no availability"
+                    ],
+                    "prId": "hp20390088716",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 31915,
+                    "uId": "10",
+                    "rtcd": "CP-RF",
+                    "name": "Fern Club Room",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free breakfast, Free self parking, Free WiFi",
+                        "Member\u2019s exclusive price"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4258,
+                    "prD": "&amp;#x20B9; 34,065",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "pk539184_pr67691634_of347",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 34065,
+                    "uId": "15",
+                    "offrA": [
+                        {
+                            "tn": "Promotion Offer",
+                            "oid": 347,
+                            "ttl": "Last Minute Deal 2 Days - &amp;#x20B9; 8,449"
+                        }
+                    ],
+                    "rtcd": "EP-RF",
+                    "name": "Fern Club Room (Room Only)",
+                    "key": [
+                        "Fern Club Room EP",
+                        "Fern Club Room EP",
+                        "Room Only"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4462,
+                    "prD": "&amp;#x20B9; 35,693",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088895",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 35693,
+                    "uId": "18",
+                    "rtcd": "EP-RF",
+                    "name": "Fern Club Room",
+                    "key": [
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4607,
+                    "prD": "&amp;#x20B9; 36,859",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "pk539185_pr67691685_of347",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 36859,
+                    "uId": "20",
+                    "offrA": [
+                        {
+                            "tn": "Promotion Offer",
+                            "oid": 347,
+                            "ttl": "Last Minute Deal 2 Days - &amp;#x20B9; 9,142"
+                        }
+                    ],
+                    "rtcd": "CP-RF",
+                    "name": "Fern Club Room (Breakfast)",
+                    "key": [
+                        "Fern Club Room CP",
+                        "Fern Club Room CP",
+                        "Breakfast"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4828,
+                    "prD": "&amp;#x20B9; 38,621",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088897",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 38621,
+                    "uId": "21",
+                    "rtcd": "CP-RF",
+                    "name": "Fern Club Room",
+                    "key": [
+                        "Bed and Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5337,
+                    "prD": "&amp;#x20B9; 42,693",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088894",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 42693,
+                    "uId": "23",
+                    "rtcd": "EP-NR",
+                    "name": "Fern Club Room",
+                    "key": [
+                        "Room Only",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5774,
+                    "prD": "&amp;#x20B9; 46,193",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088900",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 46193,
+                    "uId": "25",
+                    "rtcd": "CP-NR",
+                    "name": "Fern Club Room",
+                    "key": [
+                        "Bed and Breakfast",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                }
+            ],
+            "id": 1230215,
+            "szD": "25 sqm",
+            "vwN": "City View",
+            "bedD": "Twin or 1 King Bed",
+            "nm": "Fern Club Room",
+            "imgA": [
+                "https://i.travelapi.com/hotels/1000000/60000/54000/53997/489abd9b_z.jpg",
+                "https://i.travelapi.com/hotels/1000000/60000/54000/53997/854dbe8b_z.jpg"
+            ]
+        },
+        {
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4033,
+                    "prD": "&amp;#x20B9; 32,267",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20393487093",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 32267,
+                    "uId": "11",
+                    "rtcd": "EP-RF",
+                    "name": "Club Room",
+                    "key": [
+                        "Room Only",
+                        "1 Double 1 Twin"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4367,
+                    "prD": "&amp;#x20B9; 34,935",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20393487091",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 34935,
+                    "uId": "16",
+                    "rtcd": "CP-RF",
+                    "name": "Club Room",
+                    "key": [
+                        "Breakfast",
+                        "1 Double 1 Twin"
+                    ],
+                    "isNR": true
+                }
+            ],
+            "nm": "Club Room"
+        }
+    ]
+}

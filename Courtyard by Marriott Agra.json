@@ -1,0 +1,3539 @@
+{
+    "shwPrcDiff": false,
+    "hId": 497873,
+    "srchO": {
+        "cnm": "Agra",
+        "chkOut": "12/08/2024",
+        "chkIn": "04/08/2024",
+        "paxD": "1 room, 2 adults",
+        "ntn": 2597,
+        "nts": 8,
+        "paxes": {
+            "rooms": [
+                {
+                    "ad": 2,
+                    "ch": 0,
+                    "chAge": []
+                }
+            ]
+        },
+        "cid": "5931",
+        "ntnD": "India"
+    },
+    "iBfstPf": true,
+    "rmA": [
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Bathrobes",
+                "iPod docking station",
+                "Slippers",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk",
+                "Hair Dryer"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;2 Twin Beds&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;345-sq-foot room with city views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Layout&lt;/b&gt; - Bedroom &lt;/p&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi and wired Internet access&lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - Cable channels and iPod dock &lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding, blackout drapes/curtains, turndown service, and bed sheets &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, bathtub or shower, bathrobes, and slippers&lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and iron/ironing board; rollaway/extra beds and free cribs/infant beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Climate-controlled air conditioning and daily housekeeping&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Transfer shower, wheelchair accessible, height-adjustable showerhead, grab bar near toilet, closed-captioned TV, low-height view port in door, low-height counter and sink, and lever door handles&lt;/p&gt;&lt;p&gt;Smoking&lt;/p&gt;&lt;p&gt;Connecting/adjoining rooms can be requested, subject to availability &lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 4982,
+                    "prD": "&amp;#x20B9; 39,854",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088638",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 39854,
+                    "uId": "0",
+                    "rtcd": "EP-NR-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, City View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5113,
+                    "prD": "&amp;#x20B9; 40,907",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088551",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 40907,
+                    "uId": "1",
+                    "rtcd": "EP-RF-Tw",
+                    "name": "Twin Room, Guest room, 2 Twin, City view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dynamic Leisure Bundld Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5356,
+                    "prD": "&amp;#x20B9; 42,845",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088640",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 42845,
+                    "uId": "2",
+                    "rtcd": "EP-RF-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, City View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5625,
+                    "prD": "&amp;#x20B9; 44,999",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088549",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 44999,
+                    "uId": "5",
+                    "rtcd": "EP-RF-Tw",
+                    "name": "Twin Room, Guest room, 2 Twin, City view",
+                    "key": [
+                        "Refundable",
+                        "Dynamic Leisure Net Rt Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5750,
+                    "prD": "&amp;#x20B9; 45,998",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088526",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 45998,
+                    "uId": "8",
+                    "rtcd": "CP-NR-Tw",
+                    "name": "Twin Room, Guest room, 2 Twin, City view",
+                    "key": [
+                        "Non-refundable",
+                        "Special Rate",
+                        "Tour Op Dyn Bkfst For2 Rate, Tour Operator Dynamic Program, see Rate details",
+                        "Breakfast"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5756,
+                    "prD": "&amp;#x20B9; 46,051",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088639",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 46051,
+                    "uId": "9",
+                    "rtcd": "CP-NR-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, City View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free valet parking, Breakfast for 2, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5856,
+                    "prD": "&amp;#x20B9; 46,845",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088637",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 46845,
+                    "uId": "10",
+                    "rtcd": "CP-NR-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, City View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6133,
+                    "prD": "&amp;#x20B9; 49,065",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088525",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 49065,
+                    "uId": "13",
+                    "rtcd": "CP-RF-Tw",
+                    "name": "Twin Room, Guest room, 2 Twin, City view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dyn Bdld Brkfast For 2 Rate",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6457,
+                    "prD": "&amp;#x20B9; 51,660",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005431",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 51660,
+                    "uId": "25",
+                    "rtcd": "CP-RF-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, City View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6599,
+                    "prD": "&amp;#x20B9; 52,788",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088647",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 52788,
+                    "uId": "26",
+                    "rtcd": "CP-RF-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, City View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6746,
+                    "prD": "&amp;#x20B9; 53,972",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088528",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 53972,
+                    "uId": "30",
+                    "rtcd": "CP-RF-Tw",
+                    "name": "Twin Room, Guest room, 2 Twin, City view",
+                    "key": [
+                        "Refundable",
+                        "Breakfast is included for 2 persons, additional persons will need to pay locally for their breakfast",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6880,
+                    "prD": "&amp;#x20B9; 55,036",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005433",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 55036,
+                    "uId": "32",
+                    "rtcd": "CP-NR-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, City View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7363,
+                    "prD": "&amp;#x20B9; 58,901",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088562",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 58901,
+                    "uId": "42",
+                    "rtcd": "EP-RF-Tw",
+                    "name": "Twin Room, Guest room, 2 Twin, City view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Resort Fees and extra person charges for 3 adults",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8292,
+                    "prD": "&amp;#x20B9; 66,339",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005432",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 66339,
+                    "uId": "56",
+                    "rtcd": "EP-NR-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, City View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free dinner, Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8757,
+                    "prD": "&amp;#x20B9; 70,059",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088560",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 70059,
+                    "uId": "58",
+                    "rtcd": "CP-RF-Tw",
+                    "name": "Twin Room, Guest room, 2 Twin, City view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Rates include meals and Extra beds charges for 3 persons",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8975,
+                    "prD": "&amp;#x20B9; 71,797",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005434",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 71797,
+                    "uId": "61",
+                    "rtcd": "EP-RF-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, City View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free dinner, Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                }
+            ],
+            "id": 1230023,
+            "szD": "32 sqm",
+            "vwN": "City View",
+            "bedD": "Twin Bed",
+            "nm": "Room, 2 Twin Beds",
+            "imgA": [
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/dbc231e4_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/41466a9b_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/bf0fc4e3_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/372f285c_z.jpg"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Bathrobes",
+                "iPod docking station",
+                "Slippers",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk",
+                "Hair Dryer"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;2 Twin Beds&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;345-sq-foot room with pool views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Layout&lt;/b&gt; - Bedroom &lt;/p&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi and wired Internet access&lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - Cable channels and iPod dock &lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding, blackout drapes/curtains, turndown service, and bed sheets &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, bathtub or shower, bathrobes, and slippers&lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and iron/ironing board; rollaway/extra beds and free cribs/infant beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Climate-controlled air conditioning and daily housekeeping&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Transfer shower, wheelchair accessible, height-adjustable showerhead, grab bar near toilet, closed-captioned TV, low-height view port in door, low-height counter and sink, and lever door handles&lt;/p&gt;&lt;p&gt;Smoking&lt;/p&gt;&lt;p&gt;Connecting/adjoining rooms can be requested, subject to availability &lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5562,
+                    "prD": "&amp;#x20B9; 44,499",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088646",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 44499,
+                    "uId": "4",
+                    "rtcd": "EP-NR-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, Pool View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5984,
+                    "prD": "&amp;#x20B9; 47,873",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088645",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 47873,
+                    "uId": "12",
+                    "rtcd": "EP-RF-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, Pool View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6320,
+                    "prD": "&amp;#x20B9; 50,557",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005457",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 50557,
+                    "uId": "21",
+                    "rtcd": "CP-NR-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, Pool View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free valet parking, Breakfast for 2, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6429,
+                    "prD": "&amp;#x20B9; 51,429",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005459",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 51429,
+                    "uId": "23",
+                    "rtcd": "CP-NR-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, Pool View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7089,
+                    "prD": "&amp;#x20B9; 56,714",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005458",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 56714,
+                    "uId": "39",
+                    "rtcd": "CP-RF-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, Pool View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7244,
+                    "prD": "&amp;#x20B9; 57,953",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088651",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 57953,
+                    "uId": "40",
+                    "rtcd": "CP-RF-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, Pool View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7451,
+                    "prD": "&amp;#x20B9; 59,609",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005455",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 59609,
+                    "uId": "46",
+                    "rtcd": "CP-NR-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, Pool View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8872,
+                    "prD": "&amp;#x20B9; 70,979",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005460",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 70979,
+                    "uId": "60",
+                    "rtcd": "EP-NR-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, Pool View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free dinner, Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 9603,
+                    "prD": "&amp;#x20B9; 76,823",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005456",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 76823,
+                    "uId": "67",
+                    "rtcd": "EP-RF-Tw",
+                    "name": "Room, 2 Twin Beds, Smoking, Pool View",
+                    "key": [
+                        "2 Twin Beds",
+                        "Package rate",
+                        "Free dinner, Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                }
+            ],
+            "id": 1230016,
+            "szD": "32 sqm",
+            "vwN": "Pool View",
+            "bedD": "Twin Bed",
+            "nm": "Room, 2 Twin Beds, Pool View",
+            "imgA": [
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/dbc231e4_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/41466a9b_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/f0cbae5b_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/bf0fc4e3_z.jpg"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Bathrobes",
+                "iPod docking station",
+                "Slippers",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk",
+                "Hair Dryer"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;1 King Bed&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;345-sq-foot room with city views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi and wired Internet access&lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - Cable channels and iPod dock &lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding, blackout drapes/curtains, turndown service, and bed sheets &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, bathtub or shower, bathrobes, and slippers&lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and iron/ironing board; rollaway/extra beds and free cribs/infant beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Climate-controlled air conditioning and daily housekeeping&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Visual fire alarm, height-adjustable showerhead, transfer shower, lever door handles, low-height counter and sink, raised toilet seat, wheelchair accessible, closed-captioned TV, grab bar near toilet, and low-height view port in door&lt;/p&gt;&lt;p&gt;Smoking&lt;/p&gt;&lt;p&gt;Connecting/adjoining rooms can be requested, subject to availability &lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5562,
+                    "prD": "&amp;#x20B9; 44,499",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088643",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 44499,
+                    "uId": "3",
+                    "rtcd": "EP-NR",
+                    "name": "Room, 1 King Bed, Smoking, City View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5984,
+                    "prD": "&amp;#x20B9; 47,873",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088642",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 47873,
+                    "uId": "11",
+                    "rtcd": "EP-RF",
+                    "name": "Room, 1 King Bed, Smoking, City View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6320,
+                    "prD": "&amp;#x20B9; 50,557",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088641",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 50557,
+                    "uId": "22",
+                    "rtcd": "CP-NR",
+                    "name": "Room, 1 King Bed, Smoking, City View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Breakfast for 2, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6429,
+                    "prD": "&amp;#x20B9; 51,429",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088649",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 51429,
+                    "uId": "24",
+                    "rtcd": "CP-NR",
+                    "name": "Room, 1 King Bed, Smoking, City View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7052,
+                    "prD": "&amp;#x20B9; 56,418",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088648",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 56418,
+                    "uId": "38",
+                    "rtcd": "CP-RF",
+                    "name": "Room, 1 King Bed, Smoking, City View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7451,
+                    "prD": "&amp;#x20B9; 59,609",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005437",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 59609,
+                    "uId": "45",
+                    "rtcd": "CP-NR",
+                    "name": "Room, 1 King Bed, Smoking, City View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8872,
+                    "prD": "&amp;#x20B9; 70,979",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005435",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 70979,
+                    "uId": "59",
+                    "rtcd": "EP-NR",
+                    "name": "Room, 1 King Bed, Smoking, City View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free dinner, Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 9603,
+                    "prD": "&amp;#x20B9; 76,823",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005436",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 76823,
+                    "uId": "66",
+                    "rtcd": "EP-RF",
+                    "name": "Room, 1 King Bed, Smoking, City View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free dinner, Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                }
+            ],
+            "id": 1230021,
+            "szD": "32 sqm",
+            "vwN": "City View",
+            "bedD": "1 King Bed",
+            "nm": "Room, 1 King Bed",
+            "imgA": [
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/4153a1ba_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/3f6cfabc_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/dbc231e4_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/835b156f_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/41466a9b_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/bf0fc4e3_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/372f285c_z.jpg"
+            ]
+        },
+        {
+            "amA": [
+                "Flatscreen TV",
+                "Newspaper",
+                "Tea/Coffee Maker",
+                "Mini Bar",
+                "Free Wi-Fi",
+                "Telephone",
+                "Hair Dryer",
+                "Iron"
+            ],
+            "dsc": "Each air-conditioned room here will provide you with a flat-screen satellite TV and a minibar. Featuring a bath or shower, private bathroom also comes with a hairdryer and bathrobes.",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5713,
+                    "prD": "&amp;#x20B9; 45,706",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088534",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 45706,
+                    "uId": "6",
+                    "rtcd": "EP-RF",
+                    "name": "Guest room, 1 King, City view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dynamic Leisure Bundld Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6285,
+                    "prD": "&amp;#x20B9; 50,277",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088538",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 50277,
+                    "uId": "16",
+                    "rtcd": "EP-RF",
+                    "name": "Guest room, 1 King, City view",
+                    "key": [
+                        "Refundable",
+                        "Dynamic Leisure Net Rt Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6312,
+                    "prD": "&amp;#x20B9; 50,497",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088554",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 50497,
+                    "uId": "18",
+                    "rtcd": "CP-NR",
+                    "name": "Guest room, 1 King, City view",
+                    "key": [
+                        "Non-refundable",
+                        "Special Rate",
+                        "Breakfast is included for 2 persons, additional persons will need ot pay locally for their breakfast",
+                        "Breakfast"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6733,
+                    "prD": "&amp;#x20B9; 53,863",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088543",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 53863,
+                    "uId": "29",
+                    "rtcd": "CP-RF",
+                    "name": "Guest room, 1 King, City view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Breakfast is included for 2 persons, additional persons will need ot pay locally for their breakfast",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7406,
+                    "prD": "&amp;#x20B9; 59,250",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088535",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 59250,
+                    "uId": "43",
+                    "rtcd": "CP-RF",
+                    "name": "Guest room, 1 King, City view",
+                    "key": [
+                        "Refundable",
+                        "Breakfast is included for 2 persons, additional persons will need to pay locally for their breakfast",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7963,
+                    "prD": "&amp;#x20B9; 63,701",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088547",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 63701,
+                    "uId": "51",
+                    "rtcd": "EP-RF",
+                    "name": "Guest room, 1 King, City view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Resort Fees and extra person charges for 3 adults",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 9357,
+                    "prD": "&amp;#x20B9; 74,857",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088524",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 74857,
+                    "uId": "63",
+                    "rtcd": "CP-RF",
+                    "name": "Guest room, 1 King, City view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Rates include meals and Extra beds charges for 3 persons",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 10512,
+                    "prD": "&amp;#x20B9; 84,094",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088529",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 84094,
+                    "uId": "72",
+                    "rtcd": "EP-RF",
+                    "name": "Terrace Room, Guest room, 1 King, Terrace",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dynamic Leisure Bundld Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 10811,
+                    "prD": "&amp;#x20B9; 86,486",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088567",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 86486,
+                    "uId": "73",
+                    "rtcd": "CP-NR",
+                    "name": "Terrace Room, Guest room, 1 King, Terrace",
+                    "key": [
+                        "Non-refundable",
+                        "Special Rate",
+                        "Tour Op Dyn Bkfst For2 Rate, Tour Operator Dynamic Program, see Rate details",
+                        "Breakfast"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 11531,
+                    "prD": "&amp;#x20B9; 92,251",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088536",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 92251,
+                    "uId": "76",
+                    "rtcd": "CP-RF",
+                    "name": "Terrace Room, Guest room, 1 King, Terrace",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dyn Bdld Brkfast For 2 Rate",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 11563,
+                    "prD": "&amp;#x20B9; 92,504",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088520",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 92504,
+                    "uId": "77",
+                    "rtcd": "EP-RF",
+                    "name": "Terrace Room, Guest room, 1 King, Terrace",
+                    "key": [
+                        "Refundable",
+                        "Dynamic Leisure Net Rt Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 12685,
+                    "prD": "&amp;#x20B9; 101,477",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088533",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 101477,
+                    "uId": "79",
+                    "rtcd": "CP-RF",
+                    "name": "Terrace Room, Guest room, 1 King, Terrace",
+                    "key": [
+                        "Refundable",
+                        "Breakfast is included for 2 persons, additional persons will need to pay locally for their breakfast",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 12761,
+                    "prD": "&amp;#x20B9; 102,089",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088518",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 102089,
+                    "uId": "80",
+                    "rtcd": "EP-RF",
+                    "name": "Terrace Room, Guest room, 1 King, Terrace",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Resort Fees and extra person charges for 3 adults",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 12872,
+                    "prD": "&amp;#x20B9; 102,974",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392008718",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 102974,
+                    "uId": "81",
+                    "rtcd": "EP-RF",
+                    "name": "Terrace Room, Guest room, 1 King, Terrace",
+                    "key": [
+                        "Room Only",
+                        "1 Double"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 13967,
+                    "prD": "&amp;#x20B9; 111,733",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20390088523",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 111733,
+                    "uId": "83",
+                    "rtcd": "MAP-RF",
+                    "name": "Terrace Room, Guest room, 1 King, Terrace",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Breakfast and Evening Meal for 2 Adults",
+                        "Breakfast and Dinner"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 14120,
+                    "prD": "&amp;#x20B9; 112,961",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392008721",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 112961,
+                    "uId": "84",
+                    "rtcd": "CP-RF",
+                    "name": "Terrace Room, Guest room, 1 King, Terrace",
+                    "key": [
+                        "Breakfast",
+                        "1 Double"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 14156,
+                    "prD": "&amp;#x20B9; 113,245",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088565",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 113245,
+                    "uId": "85",
+                    "rtcd": "CP-RF",
+                    "name": "Terrace Room, Guest room, 1 King, Terrace",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Rates include meals and Extra beds charges for 3 persons",
+                        "Breakfast"
+                    ]
+                }
+            ],
+            "id": 502792,
+            "vwN": "City View",
+            "nm": "Standard Room",
+            "imgA": [
+                "//cdn.yourholiday.me/static/dynimg/hotel/2/600x300/1661845-1661844_12jpg.jpg"
+            ]
+        },
+        {
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 5713,
+                    "prD": "&amp;#x20B9; 45,706",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088557",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 45706,
+                    "uId": "7",
+                    "rtcd": "EP-RF",
+                    "name": "Premium Room, Guest room, 2 Twin, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dynamic Leisure Bundld Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6285,
+                    "prD": "&amp;#x20B9; 50,277",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088542",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 50277,
+                    "uId": "17",
+                    "rtcd": "EP-RF",
+                    "name": "Premium Room, Guest room, 2 Twin, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Dynamic Leisure Net Rt Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6312,
+                    "prD": "&amp;#x20B9; 50,497",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088561",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 50497,
+                    "uId": "19",
+                    "rtcd": "CP-NR",
+                    "name": "Premium Room, Guest room, 2 Twin, Pool view",
+                    "key": [
+                        "Non-refundable",
+                        "Special Rate",
+                        "Tour Op Dyn Bkfst For2 Rate, Tour Operator Dynamic Program, see Rate details",
+                        "Breakfast"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6733,
+                    "prD": "&amp;#x20B9; 53,863",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088521",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 53863,
+                    "uId": "28",
+                    "rtcd": "CP-RF",
+                    "name": "Premium Room, Guest room, 2 Twin, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dyn Bdld Brkfast For 2 Rate",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7406,
+                    "prD": "&amp;#x20B9; 59,250",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088550",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 59250,
+                    "uId": "44",
+                    "rtcd": "CP-RF",
+                    "name": "Premium Room, Guest room, 2 Twin, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Breakfast is included for 2 persons, additional persons will need to pay locally for their breakfast",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7963,
+                    "prD": "&amp;#x20B9; 63,701",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088544",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 63701,
+                    "uId": "50",
+                    "rtcd": "EP-RF",
+                    "name": "Premium Room, Guest room, 2 Twin, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Resort Fees and extra person charges for 3 adults",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 9357,
+                    "prD": "&amp;#x20B9; 74,857",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088563",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 74857,
+                    "uId": "64",
+                    "rtcd": "CP-RF",
+                    "name": "Premium Room, Guest room, 2 Twin, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Rates include meals and Extra beds charges for 3 persons",
+                        "Breakfast"
+                    ]
+                }
+            ],
+            "id": 1124339,
+            "szD": "32 sqm",
+            "bedD": "Twin Bed",
+            "nm": "Premium Twin Room",
+            "imgA": [
+                "https://pix8.agoda.net/hotelImages/804990/-1/141576ed665f327198790fbd7ef577b0.jpg?s=936x"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Bathrobes",
+                "iPod docking station",
+                "Slippers",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk",
+                "Hair Dryer"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;1 King Bed&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;345-sq-foot room with pool views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi and wired Internet access&lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - Cable channels and iPod dock &lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding, blackout drapes/curtains, turndown service, and bed sheets &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, bathtub or shower, bathrobes, and slippers&lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and iron/ironing board; rollaway/extra beds and free cribs/infant beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Climate-controlled air conditioning and daily housekeeping&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Transfer shower, wheelchair accessible, height-adjustable showerhead, grab bar near toilet, closed-captioned TV, low-height view port in door, low-height counter and sink, and lever door handles&lt;/p&gt;&lt;p&gt;Smoking&lt;/p&gt;&lt;p&gt;Connecting/adjoining rooms can be requested, subject to availability &lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6142,
+                    "prD": "&amp;#x20B9; 49,136",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088644",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 49136,
+                    "uId": "14",
+                    "rtcd": "EP-NR",
+                    "name": "Room, 1 King Bed, Smoking, Pool View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6612,
+                    "prD": "&amp;#x20B9; 52,899",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088650",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 52899,
+                    "uId": "27",
+                    "rtcd": "EP-RF",
+                    "name": "Room, 1 King Bed, Smoking, Pool View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6883,
+                    "prD": "&amp;#x20B9; 55,061",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005427",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 55061,
+                    "uId": "33",
+                    "rtcd": "CP-NR",
+                    "name": "Room, 1 King Bed, Smoking, Pool View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Breakfast for 2, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7001,
+                    "prD": "&amp;#x20B9; 56,011",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005425",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 56011,
+                    "uId": "37",
+                    "rtcd": "CP-NR",
+                    "name": "Room, 1 King Bed, Smoking, Pool View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7680,
+                    "prD": "&amp;#x20B9; 61,443",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005429",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 61443,
+                    "uId": "48",
+                    "rtcd": "CP-RF",
+                    "name": "Room, 1 King Bed, Smoking, Pool View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8023,
+                    "prD": "&amp;#x20B9; 64,185",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005428",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 64185,
+                    "uId": "52",
+                    "rtcd": "CP-NR",
+                    "name": "Room, 1 King Bed, Smoking, Pool View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 9450,
+                    "prD": "&amp;#x20B9; 75,603",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005430",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 75603,
+                    "uId": "65",
+                    "rtcd": "EP-NR",
+                    "name": "Room, 1 King Bed, Smoking, Pool View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free dinner, Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 10231,
+                    "prD": "&amp;#x20B9; 81,848",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005426",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 81848,
+                    "uId": "71",
+                    "rtcd": "EP-RF",
+                    "name": "Room, 1 King Bed, Smoking, Pool View",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free dinner, Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                }
+            ],
+            "id": 1230020,
+            "szD": "32 sqm",
+            "vwN": "Pool View",
+            "bedD": "1 King Bed",
+            "nm": "Room, 1 King Bed, Pool View",
+            "imgA": [
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/3f6cfabc_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/d88f1418_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/99b9a970_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/41466a9b_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/9871a520_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/f0cbae5b_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/bf0fc4e3_z.jpg"
+            ]
+        },
+        {
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6262,
+                    "prD": "&amp;#x20B9; 50,095",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392008719",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 50095,
+                    "uId": "15",
+                    "rtcd": "EP-RF",
+                    "name": "Deluxe Guest room, 2 Twin/Single Bed(s)",
+                    "key": [
+                        "Room Only",
+                        "1 Twin"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7510,
+                    "prD": "&amp;#x20B9; 60,077",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392008734",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 60077,
+                    "uId": "47",
+                    "rtcd": "CP-RF",
+                    "name": "Deluxe Guest room, 2 Twin/Single Bed(s)",
+                    "key": [
+                        "Breakfast",
+                        "1 Twin"
+                    ]
+                }
+            ],
+            "nm": "Deluxe Guest room, 2 Twin/Single Bed(s)"
+        },
+        {
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6313,
+                    "prD": "&amp;#x20B9; 50,505",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088546",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 50505,
+                    "uId": "20",
+                    "rtcd": "EP-RF",
+                    "name": "Premium Room, Guest room, 1 King, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dynamic Leisure Bundld Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6874,
+                    "prD": "&amp;#x20B9; 54,996",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088537",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 54996,
+                    "uId": "31",
+                    "rtcd": "CP-NR",
+                    "name": "Premium Room, Guest room, 1 King, Pool view",
+                    "key": [
+                        "Non-refundable",
+                        "Special Rate",
+                        "Tour Op Dyn Bkfst For2 Rate, Tour Operator Dynamic Program, see Rate details",
+                        "Breakfast"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6944,
+                    "prD": "&amp;#x20B9; 55,555",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088564",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 55555,
+                    "uId": "34",
+                    "rtcd": "EP-RF",
+                    "name": "Premium Room, Guest room, 1 King, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Dynamic Leisure Net Rt Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7333,
+                    "prD": "&amp;#x20B9; 58,662",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088531",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 58662,
+                    "uId": "41",
+                    "rtcd": "CP-RF",
+                    "name": "Premium Room, Guest room, 1 King, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dyn Bdld Brkfast For 2 Rate",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 7730,
+                    "prD": "&amp;#x20B9; 61,843",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392008728",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 61843,
+                    "uId": "49",
+                    "rtcd": "EP-RF",
+                    "name": "Premium Room, Guest room, 1 King, Pool view",
+                    "key": [
+                        "Room Only",
+                        "1 Double"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8066,
+                    "prD": "&amp;#x20B9; 64,528",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088545",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 64528,
+                    "uId": "53",
+                    "rtcd": "CP-RF",
+                    "name": "Premium Room, Guest room, 1 King, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Breakfast is included for 2 persons, additional persons will need to pay locally for their breakfast",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8562,
+                    "prD": "&amp;#x20B9; 68,499",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088568",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 68499,
+                    "uId": "57",
+                    "rtcd": "EP-RF",
+                    "name": "Premium Room, Guest room, 1 King, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Resort Fees and extra person charges for 3 adults",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8979,
+                    "prD": "&amp;#x20B9; 71,834",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392008729",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 71834,
+                    "uId": "62",
+                    "rtcd": "CP-RF",
+                    "name": "Premium Room, Guest room, 1 King, Pool view",
+                    "key": [
+                        "Breakfast",
+                        "1 Double"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 9768,
+                    "prD": "&amp;#x20B9; 78,144",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20390088556",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 78144,
+                    "uId": "68",
+                    "rtcd": "MAP-RF",
+                    "name": "Premium Room, Guest room, 1 King, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Breakfast and Evening Meal for 2 Adults",
+                        "Breakfast and Dinner"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 9957,
+                    "prD": "&amp;#x20B9; 79,655",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088530",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 79655,
+                    "uId": "69",
+                    "rtcd": "CP-RF",
+                    "name": "Premium Room, Guest room, 1 King, Pool view",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Rates include meals and Extra beds charges for 3 persons",
+                        "Breakfast"
+                    ]
+                }
+            ],
+            "id": 1124340,
+            "szD": "32 sqm",
+            "bedD": "1 King Bed",
+            "nm": "Premium King Room",
+            "imgA": [
+                "https://pix8.agoda.net/hotelImages/804990/-1/141576ed665f327198790fbd7ef577b0.jpg?s=936x"
+            ]
+        },
+        {
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6996,
+                    "prD": "&amp;#x20B9; 55,969",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392008730",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 55969,
+                    "uId": "35",
+                    "rtcd": "EP-RF",
+                    "name": "Premium Room, Guest room, 2 Twin/Single Bed(s), Pool view",
+                    "key": [
+                        "Room Only",
+                        "1 Twin"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8245,
+                    "prD": "&amp;#x20B9; 65,960",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392008735",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 65960,
+                    "uId": "55",
+                    "rtcd": "CP-RF",
+                    "name": "Premium Room, Guest room, 2 Twin/Single Bed(s), Pool view",
+                    "key": [
+                        "Breakfast",
+                        "1 Twin"
+                    ]
+                }
+            ],
+            "nm": "Premium Room, Guest room, 2 Twin/Single Bed(s), Pool view"
+        },
+        {
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 6996,
+                    "prD": "&amp;#x20B9; 55,969",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392008732",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 55969,
+                    "uId": "36",
+                    "rtcd": "EP-RF",
+                    "name": "Deluxe Guest room, 1 King",
+                    "key": [
+                        "Room Only",
+                        "1 Double 1 Twin"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 8245,
+                    "prD": "&amp;#x20B9; 65,960",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392008733",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 65960,
+                    "uId": "54",
+                    "rtcd": "CP-RF",
+                    "name": "Deluxe Guest room, 1 King",
+                    "key": [
+                        "Breakfast",
+                        "1 Double 1 Twin"
+                    ]
+                }
+            ],
+            "nm": "Deluxe Room, 1 King Bed"
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Bathrobes",
+                "iPod docking station",
+                "Slippers",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk",
+                "Outdoor Terrace",
+                "Hair Dryer"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;1 King Bed&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi and wired Internet access&lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - Cable channels and iPod dock &lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding, blackout drapes/curtains, turndown service, and bed sheets &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, bathtub or shower, bathrobes, and slippers&lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and iron/ironing board; rollaway/extra beds and free cribs/infant beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Climate-controlled air conditioning and daily housekeeping&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Transfer shower, wheelchair accessible, height-adjustable showerhead, grab bar near toilet, closed-captioned TV, low-height view port in door, low-height counter and sink, and lever door handles&lt;/p&gt;&lt;p&gt;Non-Smoking&lt;/p&gt;&lt;p&gt;Connecting/adjoining rooms can be requested, subject to availability &lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 10099,
+                    "prD": "&amp;#x20B9; 80,793",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005444",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 80793,
+                    "uId": "70",
+                    "rtcd": "EP-NR",
+                    "name": "Room, 1 King Bed, Non Smoking, Terrace",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 11010,
+                    "prD": "&amp;#x20B9; 88,081",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005446",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 88081,
+                    "uId": "74",
+                    "rtcd": "EP-RF",
+                    "name": "Room, 1 King Bed, Non Smoking, Terrace",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 11010,
+                    "prD": "&amp;#x20B9; 88,083",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005448",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 88083,
+                    "uId": "75",
+                    "rtcd": "CP-NR",
+                    "name": "Room, 1 King Bed, Non Smoking, Terrace",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 12078,
+                    "prD": "&amp;#x20B9; 96,625",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005443",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 96625,
+                    "uId": "78",
+                    "rtcd": "CP-RF",
+                    "name": "Room, 1 King Bed, Non Smoking, Terrace",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 13463,
+                    "prD": "&amp;#x20B9; 107,703",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005447",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 107703,
+                    "uId": "82",
+                    "rtcd": "EP-NR",
+                    "name": "Room, 1 King Bed, Non Smoking, Terrace",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free dinner, Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 14629,
+                    "prD": "&amp;#x20B9; 117,032",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005445",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 117032,
+                    "uId": "87",
+                    "rtcd": "EP-RF",
+                    "name": "Room, 1 King Bed, Non Smoking, Terrace",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free dinner, Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                }
+            ],
+            "id": 1230019,
+            "bedD": "1 King Bed",
+            "nm": "Room, 1 King Bed, Non Smoking, Terrace",
+            "imgA": [
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/41466a9b_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/ea4e9b82_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/bf0fc4e3_z.jpg"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Bathrobes",
+                "iPod docking station",
+                "Slippers",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk",
+                "Hair Dryer"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;1 King Bed&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;517-sq-foot room with garden views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi and wired Internet access&lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - Cable channels and iPod dock &lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding, blackout drapes/curtains, turndown service, and bed sheets &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, bathtub or shower, bathrobes, and slippers&lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and iron/ironing board; rollaway/extra beds and free cribs/infant beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Climate-controlled air conditioning and daily housekeeping&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Transfer shower, wheelchair accessible, height-adjustable showerhead, grab bar near toilet, closed-captioned TV, low-height view port in door, low-height counter and sink, and lever door handles&lt;/p&gt;&lt;p&gt;Non-Smoking&lt;/p&gt;&lt;p&gt;Connecting/adjoining rooms can be requested, subject to availability &lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 14614,
+                    "prD": "&amp;#x20B9; 116,911",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005454",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 116911,
+                    "uId": "86",
+                    "rtcd": "EP-NR",
+                    "name": "Junior Suite, 1 King Bed, Non Smoking",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 15328,
+                    "prD": "&amp;#x20B9; 122,621",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005453",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 122621,
+                    "uId": "90",
+                    "rtcd": "CP-NR",
+                    "name": "Junior Suite, 1 King Bed, Non Smoking",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Breakfast for 2, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 15592,
+                    "prD": "&amp;#x20B9; 124,736",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005452",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 124736,
+                    "uId": "92",
+                    "rtcd": "CP-NR",
+                    "name": "Junior Suite, 1 King Bed, Non Smoking",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 16036,
+                    "prD": "&amp;#x20B9; 128,289",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005451",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 128289,
+                    "uId": "93",
+                    "rtcd": "EP-RF",
+                    "name": "Junior Suite, 1 King Bed, Non Smoking",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 17104,
+                    "prD": "&amp;#x20B9; 136,832",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005450",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 136832,
+                    "uId": "98",
+                    "rtcd": "CP-RF",
+                    "name": "Junior Suite, 1 King Bed, Non Smoking",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Food/beverage credit, Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 17211,
+                    "prD": "&amp;#x20B9; 137,686",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005449",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 137686,
+                    "uId": "99",
+                    "rtcd": "CP-NR",
+                    "name": "Junior Suite, 1 King Bed, Non Smoking",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                }
+            ],
+            "id": 1230018,
+            "szD": "48 sqm",
+            "vwN": "Garden View",
+            "bedD": "1 King Bed",
+            "nm": "Suite, 1 Bedroom, Non Smoking",
+            "imgA": [
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/edd5c7a6_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/e2961897_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/41466a9b_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/611aad08_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/76860d20_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/122fb077_z.jpg"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Satellite/Cable Channels",
+                "Air Conditioning",
+                "Slippers",
+                "Mini Bar",
+                "Safe Box",
+                "Telephone",
+                "Wardrobe",
+                "Hair Dryer",
+                "Work Desk"
+            ],
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 15309,
+                    "prD": "&amp;#x20B9; 122,475",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088552",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 122475,
+                    "uId": "88",
+                    "rtcd": "CP-NR",
+                    "name": "Junior Suite, 1 King",
+                    "key": [
+                        "Non-refundable",
+                        "Special Rate",
+                        "Tour Op Dyn Bkfst For2 Rate, Tour Operator Dynamic Program, see Rate details",
+                        "Breakfast"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 15310,
+                    "prD": "&amp;#x20B9; 122,482",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088519",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 122482,
+                    "uId": "89",
+                    "rtcd": "EP-RF",
+                    "name": "Junior Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dynamic Leisure Bundld Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 15493,
+                    "prD": "&amp;#x20B9; 123,944",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392008724",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 123944,
+                    "uId": "91",
+                    "rtcd": "EP-RF",
+                    "name": "Junior Suite, 1 King",
+                    "key": [
+                        "Room Only",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 16330,
+                    "prD": "&amp;#x20B9; 130,640",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088558",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 130640,
+                    "uId": "94",
+                    "rtcd": "CP-RF",
+                    "name": "Junior Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dyn Bdld Brkfast For 2 Rate",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 16556,
+                    "prD": "&amp;#x20B9; 132,446",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392008723",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 132446,
+                    "uId": "95",
+                    "rtcd": "CP-RF",
+                    "name": "Junior Suite, 1 King",
+                    "key": [
+                        "Breakfast",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 16841,
+                    "prD": "&amp;#x20B9; 134,730",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088527",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 134730,
+                    "uId": "96",
+                    "rtcd": "EP-RF",
+                    "name": "Junior Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Dynamic Leisure Net Rt Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 17560,
+                    "prD": "&amp;#x20B9; 140,476",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088541",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 140476,
+                    "uId": "101",
+                    "rtcd": "EP-RF",
+                    "name": "Junior Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Resort Fees and extra person charges for 3 adults",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 17963,
+                    "prD": "&amp;#x20B9; 143,704",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088559",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 143704,
+                    "uId": "106",
+                    "rtcd": "CP-RF",
+                    "name": "Junior Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Breakfast is included for 2 persons, additional persons will need to pay locally for their breakfast",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 18742,
+                    "prD": "&amp;#x20B9; 149,940",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20390088553",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 149940,
+                    "uId": "109",
+                    "rtcd": "MAP-RF",
+                    "name": "Junior Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Breakfast and Evening Meal for 2 Adults",
+                        "Breakfast and Dinner"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 18954,
+                    "prD": "&amp;#x20B9; 151,634",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088539",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 151634,
+                    "uId": "111",
+                    "rtcd": "CP-RF",
+                    "name": "Junior Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Rates include meals and Extra beds charges for 3 persons",
+                        "Breakfast"
+                    ]
+                }
+            ],
+            "id": 1124335,
+            "szD": "48 sqm",
+            "bedD": "1 King Bed",
+            "nm": "Junior Suite",
+            "imgA": [
+                "https://pix8.agoda.net/hotelImages/804990/-1/141576ed665f327198790fbd7ef577b0.jpg?s=936x"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Bathrobes",
+                "iPod docking station",
+                "Slippers",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk",
+                "Hair Dryer"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;1 King Bed&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;1034-sq-foot room with garden views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi and wired Internet access&lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - Cable channels and iPod dock &lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding, blackout drapes/curtains, turndown service, and bed sheets &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, bathtub or shower, bathrobes, and slippers&lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and iron/ironing board; rollaway/extra beds and free cribs/infant beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Climate-controlled air conditioning and daily housekeeping&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Transfer shower, wheelchair accessible, height-adjustable showerhead, grab bar near toilet, closed-captioned TV, low-height view port in door, low-height counter and sink, and lever door handles&lt;/p&gt;&lt;p&gt;Non-Smoking&lt;/p&gt;&lt;p&gt;Connecting/adjoining rooms can be requested, subject to availability &lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 16873,
+                    "prD": "&amp;#x20B9; 134,985",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005442",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 134985,
+                    "uId": "97",
+                    "rtcd": "EP-NR",
+                    "name": "Executive Suite, 1 King Bed, Non Smoking",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 17579,
+                    "prD": "&amp;#x20B9; 140,636",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005438",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 140636,
+                    "uId": "102",
+                    "rtcd": "CP-NR",
+                    "name": "Executive Suite, 1 King Bed, Non Smoking",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Breakfast for 2, Free self parking, Free WiFi",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 17883,
+                    "prD": "&amp;#x20B9; 143,062",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005441",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 143062,
+                    "uId": "104",
+                    "rtcd": "CP-NR",
+                    "name": "Executive Suite, 1 King Bed, Non Smoking",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage",
+                        "Non-refundable"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 18549,
+                    "prD": "&amp;#x20B9; 148,391",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392005440",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 148391,
+                    "uId": "107",
+                    "rtcd": "EP-RF",
+                    "name": "Executive Suite, 1 King Bed, Non Smoking",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi",
+                        "15% off food and beverage"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 19617,
+                    "prD": "&amp;#x20B9; 156,937",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392005439",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 156937,
+                    "uId": "114",
+                    "rtcd": "CP-RF",
+                    "name": "Executive Suite, 1 King Bed, Non Smoking",
+                    "key": [
+                        "1 King Bed",
+                        "Package rate",
+                        "Breakfast buffet, Free valet parking, Free self parking, Free WiFi"
+                    ]
+                }
+            ],
+            "id": 1230022,
+            "szD": "96 sqm",
+            "vwN": "Garden View",
+            "bedD": "1 King Bed",
+            "nm": "Suite, 1 Bedroom, Non Smoking",
+            "imgA": [
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/3f6cfabc_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/4074518f_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/e2961897_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/47680fc1_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/41466a9b_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/611aad08_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/36ba5f66_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/76860d20_z.jpg",
+                "https://i.travelapi.com/hotels/10000000/9700000/9693800/9693776/122fb077_z.jpg"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Air Conditioning",
+                "Wardrobe",
+                "Free Bottled Water",
+                "Satellite/Cable Channels",
+                "iPod docking station",
+                "Slippers",
+                "Mini Bar",
+                "Safe Box",
+                "Telephone",
+                "Hair Dryer",
+                "Work Desk"
+            ],
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 17559,
+                    "prD": "&amp;#x20B9; 140,469",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088555",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 140469,
+                    "uId": "100",
+                    "rtcd": "CP-NR",
+                    "name": "Executive Suite, 1 King",
+                    "key": [
+                        "Non-refundable",
+                        "Special Rate",
+                        "Tour Op Dyn Bkfst For2 Rate, Tour Operator Dynamic Program, see Rate details",
+                        "Breakfast"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 17710,
+                    "prD": "&amp;#x20B9; 141,676",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088566",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 141676,
+                    "uId": "103",
+                    "rtcd": "EP-RF",
+                    "name": "Executive Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dynamic Leisure Bundld Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 17912,
+                    "prD": "&amp;#x20B9; 143,296",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392008725",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 143296,
+                    "uId": "105",
+                    "rtcd": "EP-RF",
+                    "name": "Executive Suite, 1 King",
+                    "key": [
+                        "Room Only",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 18729,
+                    "prD": "&amp;#x20B9; 149,834",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088569",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 149834,
+                    "uId": "108",
+                    "rtcd": "CP-RF",
+                    "name": "Executive Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Dyn Bdld Brkfast For 2 Rate",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 18988,
+                    "prD": "&amp;#x20B9; 151,905",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392008727",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you change or cancel your booking you will not get a refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Non-refundable",
+                    "absPrc": 151905,
+                    "uId": "112",
+                    "rtcd": "CP-RF",
+                    "name": "Executive Suite, 1 King",
+                    "key": [
+                        "Breakfast",
+                        "1 Double"
+                    ],
+                    "isNR": true
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 19480,
+                    "prD": "&amp;#x20B9; 155,844",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088548",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 155844,
+                    "uId": "113",
+                    "rtcd": "EP-RF",
+                    "name": "Executive Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Dynamic Leisure Net Rt Rate",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 19959,
+                    "prD": "&amp;#x20B9; 159,671",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088540",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 159671,
+                    "uId": "115",
+                    "rtcd": "EP-RF",
+                    "name": "Executive Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Resort Fees and extra person charges for 3 adults",
+                        "Room Only"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 20602,
+                    "prD": "&amp;#x20B9; 164,818",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088570",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 164818,
+                    "uId": "117",
+                    "rtcd": "CP-RF",
+                    "name": "Executive Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Breakfast is included for 2 persons, additional persons will need to pay locally for their breakfast",
+                        "Breakfast"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 21164,
+                    "prD": "&amp;#x20B9; 169,316",
+                    "mp": "MAP",
+                    "mlD": "Meals included - Breakfast, Dinner",
+                    "prId": "hp20390088532",
+                    "mpN": "Half Board",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 169316,
+                    "uId": "118",
+                    "rtcd": "MAP-RF",
+                    "name": "Executive Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Breakfast and Evening Meal for 2 Adults",
+                        "Breakfast and Dinner"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 21353,
+                    "prD": "&amp;#x20B9; 170,828",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20390088522",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "If you cancel your booking after 03 Aug, you&apos;ll get a refund of 87% of your total",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 170828,
+                    "uId": "119",
+                    "rtcd": "CP-RF",
+                    "name": "Executive Suite, 1 King",
+                    "key": [
+                        "Refundable",
+                        "Special Rate",
+                        "Rates include meals and Extra beds charges for 3 persons",
+                        "Breakfast"
+                    ]
+                }
+            ],
+            "id": 1124333,
+            "szD": "96 sqm",
+            "bedD": "1 King Bed",
+            "nm": "Executive Suite",
+            "imgA": [
+                "https://pix8.agoda.net/hotelImages/804990/-1/141576ed665f327198790fbd7ef577b0.jpg?s=936x"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Air Conditioning",
+                "Ceiling Fan",
+                "Wardrobe",
+                "Free Bottled Water",
+                "Satellite/Cable Channels",
+                "Bathrobes",
+                "iPod docking station",
+                "Slippers",
+                "Mini Bar",
+                "Heating",
+                "Safe Box",
+                "Telephone",
+                "Seating Area",
+                "Hair Dryer",
+                "Work Desk"
+            ],
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 18748,
+                    "prD": "&amp;#x20B9; 149,984",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392008726",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 149984,
+                    "uId": "110",
+                    "rtcd": "EP-RF",
+                    "name": "1 Bedroom Junior Suite, 1 King",
+                    "key": [
+                        "Room Only",
+                        "1 Double"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 19996,
+                    "prD": "&amp;#x20B9; 159,970",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392008722",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 159970,
+                    "uId": "116",
+                    "rtcd": "CP-RF",
+                    "name": "1 Bedroom Junior Suite, 1 King",
+                    "key": [
+                        "Breakfast",
+                        "1 Double"
+                    ]
+                }
+            ],
+            "id": 1124345,
+            "szD": "48 sqm",
+            "vwN": "City View",
+            "bedD": "1 King Bed",
+            "nm": "1 Bedroom Junior Suite, 1 King",
+            "imgA": [
+                "https://pix8.agoda.net/hotelImages/5499175/131481835/d55070390f944b7928b3ff58ae15b113.jpg?s=936x"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Air Conditioning",
+                "Wardrobe",
+                "Free Bottled Water",
+                "Satellite/Cable Channels",
+                "Bathrobes",
+                "iPod docking station",
+                "Slippers",
+                "Mini Bar",
+                "Heating",
+                "Safe Box",
+                "Telephone",
+                "Seating Area",
+                "Hair Dryer",
+                "Work Desk"
+            ],
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 21686,
+                    "prD": "&amp;#x20B9; 173,484",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20392008731",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 173484,
+                    "uId": "120",
+                    "rtcd": "EP-RF",
+                    "name": "1 Bedroom Executive Suite, 1 King, Away from elevator",
+                    "key": [
+                        "Room Only",
+                        "1 Double"
+                    ]
+                },
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 22934,
+                    "prD": "&amp;#x20B9; 183,475",
+                    "mp": "CP",
+                    "mlD": "Meals included - Breakfast",
+                    "prId": "hp20392008720",
+                    "mpN": "Bed and Breakfast",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 183475,
+                    "uId": "121",
+                    "rtcd": "CP-RF",
+                    "name": "1 Bedroom Executive Suite, 1 King, Away from elevator",
+                    "key": [
+                        "Breakfast",
+                        "1 Double"
+                    ]
+                }
+            ],
+            "id": 1124342,
+            "szD": "96 sqm",
+            "vwN": "City View",
+            "bedD": "1 King Bed",
+            "nm": "1 Bedroom Executive Suite, 1 King, Away from elevator",
+            "imgA": [
+                "https://pix8.agoda.net/hotelImages/5499175/131481837/d55070390f944b7928b3ff58ae15b113.jpg?ca=20&amp;ce=1&amp;s=936x"
+            ]
+        }
+    ]
+}

@@ -18,10 +18,6 @@ urlpatterns = [
     path('customized_package/itinerary/<int:package_id>/',views.CustomizePackageListView.as_view(), name="ItineraryPackageListView"),
     path('customized_package/update/<int:pk>/',views.UpdateCustomisedPackageView.as_view(), name="UpdateCustomisedPackageView"),
   
-    # Expanse api
-    path('expense/',views.ExpanseListCreateView.as_view(), name="ExpanseListCreateView"),
-    path('expense/<int:pk>/',views.ExpanseRetrieveUpdateDestroyAPIView.as_view(), name="ExpanseRetrieveUpdateDestroyAPIView"),
-    
 
     path('itinerary/<int:pk>/',views.ItineraryUpdateDeleteView.as_view(),name="ItineraryUpdateDeleteView"),
     
@@ -67,10 +63,7 @@ urlpatterns = [
     path('cities_data_entry/',views.city_data_entry,name="CitiesDataEntry"),
     path('hotel_data_entry/',views.hotel_data_entry,name="hotel_data_entry"),
     path('rt_data_entry/',views.rt_data_entry,name="rt_data_entry"),
-    
-    path('invoice/',views.InvoiceListCreateAPI.as_view(),name="InvoiceListCreate"),
-    path('invoice/<int:pk>/',views.InvoiceUpdateDestroyAPI.as_view(),name="InvoiceUpdateDestroy"),
-    
+ 
     path('companies/', views.view_all_companies, name='view_all_companies'),
     path('companies/create/', views.create_company, name='create_company'),
     path('companies/<int:pk>/update/', views.update_company, name='update_company'),
@@ -81,5 +74,18 @@ urlpatterns = [
     path('contact/<int:pk>/',views.ContactUpdateDeleteView.as_view(),name="update_contact"),
 
     path('flightsdata/',views.FlightsDataApi.as_view(),name="flight"),
+
+    
+    # Expanse api
+    path('expense/',views.ExpanseListCreateView.as_view(), name="ExpanseListCreateView"),
+    path('expense/<int:pk>/',views.ExpanseRetrieveUpdateDestroyAPIView.as_view(), name="ExpanseRetrieveUpdateDestroyAPIView"),
+    
+    # Invoice Api   
+    path('invoice/',views.InvoiceListCreateAPI.as_view(),name="InvoiceListCreate"),
+    path('invoice/<int:pk>/',views.InvoiceUpdateDestroyAPI.as_view(),name="InvoiceUpdateDestroy"),
+    
+    # payment receipt
+    path('payment_receipt/',views.PaymentReceiptListCreateAPI.as_view(),name="PaymentReceiptListCreate"),
+    path('payment_receipt/<int:pk>/',views.PaymentReceiptUpdateDestroyAPI.as_view(),name="PaymentReceiptUpdateDestroy")
 
 ]

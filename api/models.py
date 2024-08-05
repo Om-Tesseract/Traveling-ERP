@@ -243,7 +243,9 @@ def default_amenities():
         ]
     }
 
-
+def hotel_image_upload_path(instance, filename):
+    # Construct the path based on city and hotel name
+    return f"hotel_uploads/{instance.city.name}-{instance.city.state.name}-{instance.city.country.name}/{instance.name}/{filename}"
 
 class Hotel(models.Model):
     name = models.CharField(max_length=255)
@@ -257,26 +259,43 @@ class Hotel(models.Model):
     desc=models.TextField(null=True,blank=True)
     contact_info = models.JSONField(null=True, blank=True)  # Contact details like phone, email, etc.
     image_url = models.URLField(max_length=200,null=True,blank=True)
+    img = models.ImageField(upload_to=hotel_image_upload_path,null=True,blank=True)
     ln=models.FloatField(null=True, blank=True)
     lt=models.FloatField(null=True, blank=True)
     amenities =models.JSONField()
-    cleaniless_rate = models.FloatField(default=3.8)
-    service_rate = models.FloatField(default=3.9)
-    comfort_rate = models.FloatField(default=3.6)
-    amenities_rate = models.FloatField(default=3.7)
+    cleaniless_rate = models.FloatField()
+    service_rate = models.FloatField()
+    comfort_rate = models.FloatField()
+    amenities_rate = models.FloatField()
     def __str__(self):
         return self.name
+
+def hotel_images_upload_path(instance, filename):
+    # Construct the path based on city and hotel name
+    return f"hotel_uploads/{instance.hotel.city.name}-{instance.hotel.city.state.name}-{instance.hotel.city.country.name}/{instance.hotel.name}/{filename}"
 class HotelImages(models.Model):
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,related_name="hotel_images")
-    image=models.ImageField(upload_to="hotel_images")
-
+    image=models.ImageField(upload_to=hotel_images_upload_path)
+    img_url=models.URLField(null=True, blank=True)
 
 class RoomCategory(models.Model):
-    name=models.CharField(max_length=150,unique=True)
+    hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,related_name="rooms_category",null=True)
+    name=models.CharField(max_length=150)
+    desc = models.TextField(null=True, blank=True)
+    view_name=models.CharField(max_length=150,null=True, blank=True)
+    room_size=models.CharField(max_length=150,null=True, blank=True)
+    bed_type=models.CharField(max_length=150,null=True, blank=True)
 
     def __str__(self) -> str:
         return f"{self.name}"
-    
+
+def hotel_room_img_upload_path(instance, filename):
+    # Construct the path based on city and hotel name
+    return f"hotel_uploads/{instance.room_category.hotel.city.name}-{instance.room_category.hotel.city.state.name}-{instance.room_category.hotel.city.country.name}/{instance.room_category.hotel.name}/rooms/{filename}"
+class RoomsImg(models.Model):
+    room_category = models.ForeignKey(RoomCategory,on_delete=models.CASCADE,related_name="rooms_category_img")
+    img=models.ImageField(upload_to=hotel_room_img_upload_path)
+    img_url=models.URLField(null=True, blank=True)
 def get_amentiy_room():
     return {
         "amentiy_room": ["Bed", "Air Conditioning", "Room Service"]
@@ -284,10 +303,13 @@ def get_amentiy_room():
 class RoomType(models.Model):
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,related_name="rooms_type")
     rnm = models.CharField("room name",max_length=255)
+    cur=models.CharField(max_length=70,null=True, blank=True)
     meal_plan = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     availability = models.BooleanField(default=True)
     amenity = models.JSONField(null=True)
+    key=models.JSONField(null=True, blank=True)
+    meal_includes =models.CharField(null=True, blank=True,max_length=100)
     category = models.ForeignKey(RoomCategory,on_delete=models.CASCADE,related_name="cate_roomtype")
 
 
@@ -402,12 +424,25 @@ class InvoiceMaster(BaseModel):
     company=models.ForeignKey(Company,on_delete=models.CASCADE,null=True,blank=True)
     package=models.ForeignKey(CustomisedPackage,on_delete=models.CASCADE,null=True,blank=True)
     invoice_date = models.DateField()
+    gst=models.DecimalField(max_digits=10, decimal_places=2,default=0)
     tax_amt= models.DecimalField(max_digits=10, decimal_places=2,default=0)
     discount_amt = models.DecimalField(max_digits=10, decimal_places=2,default=0)
     gross_amt = models.DecimalField(max_digits=10, decimal_places=2)
     net_amt = models.DecimalField(max_digits=10, decimal_places=2)
     notes = models.TextField(blank=True, null=True)
     narration = models.TextField(blank=True, null=True)
+
+class PaymentReceipt(BaseModel):
+    receipt_no = models.CharField(max_length=50,)  # Unique receipt number REP
+    invoice = models.ForeignKey(InvoiceMaster, on_delete=models.CASCADE, related_name='payment_receipts')
+    payment_date = models.DateField()
+    payment_mode = models.CharField(max_length=50)  # e.g., Cash, Credit Card, Bank Transfer, etc.
+    payment_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    payment_reference = models.CharField(max_length=100, blank=True, null=True)  # e.g., Cheque number, Transaction ID
+    notes = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.receipt_no
 
 class AirTicketInvoice(BaseModel):
     # INV TPYE

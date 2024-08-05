@@ -474,7 +474,7 @@ class InvoiceListCreateAPI(BaseListCreateAPIView):
         elif req_user.role == 'Admin':
             return super().get_queryset()
         else:
-            return AirTicketInvoice.objects.none()
+            return InvoiceMaster.objects.none()
 
  
 class InvoiceUpdateDestroyAPI(BaseRetrieveUpdateDestroyAPIView):
@@ -495,6 +495,46 @@ class InvoiceUpdateDestroyAPI(BaseRetrieveUpdateDestroyAPIView):
             return super().get_queryset()
         else:
             return InvoiceMaster.objects.none()
+
+class PaymentReceiptListCreateAPI(BaseListCreateAPIView):
+    queryset=PaymentReceipt.objects.all()
+    permission_classes=[IsAuthenticated]
+    filter_backends=[DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    serializer_class=serializers.PaymentReceiptSerializer
+    search_fields=['receipt_no']
+    
+    def get_queryset(self):
+        req_user = self.request.user
+        if req_user.role == 'Employee':
+            if Employee.objects.filter(emp_user=req_user).exists():
+                emp = Employee.objects.filter(emp_user=req_user).first()
+                return self.queryset.filter(invoice__company=emp.company)
+        elif req_user.role == 'Company':
+            return self.queryset.filter(invoice__company__custom_user_id=req_user.id)
+        elif req_user.role == 'Admin':
+            return super().get_queryset()
+        else:
+            return PaymentReceipt.objects.none()
+
+ 
+class PaymentReceiptUpdateDestroyAPI(BaseRetrieveUpdateDestroyAPIView):
+    queryset=PaymentReceipt.objects.all()
+    permission_classes=[IsAuthenticated]
+    filter_backends=[DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter]
+    serializer_class=serializers.PaymentReceiptSerializer
+    
+    def get_queryset(self):
+        req_user = self.request.user
+        if req_user.role == 'Employee':
+            if Employee.objects.filter(emp_user=req_user).exists():
+                emp = Employee.objects.filter(emp_user=req_user).first()
+                return self.queryset.filter(invoice__company=emp.company)
+        elif req_user.role == 'Company':
+            return self.queryset.filter(invoice__company__custom_user_id=req_user.id)
+        elif req_user.role == 'Admin':
+            return super().get_queryset()
+        else:
+            return PaymentReceipt.objects.none()
      
 class ContactCreateView(generics.CreateAPIView):
     queryset=Contact.objects.all()
@@ -1601,6 +1641,7 @@ def hotel_data_entry(request):
                     name=resort.get('nm')
                     star=resort.get('st')
                     rate=resort.get('urtO').get('rt') if resort.get('urtO') else None
+                    numRt=resort.get('urtO').get('numRt') if resort.get('urtO') else None
                     price=resort.get('pr')
                     meal_plan=resort.get('mpN')
                     ln=resort.get('ln') if resort.get('ln') else None

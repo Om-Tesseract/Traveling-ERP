@@ -1,0 +1,125 @@
+{
+    "shwPrcDiff": false,
+    "hId": 492865,
+    "srchO": {
+        "cnm": "Agra",
+        "chkOut": "12/08/2024",
+        "chkIn": "04/08/2024",
+        "paxD": "1 room, 2 adults",
+        "ntn": 2597,
+        "nts": 8,
+        "paxes": {
+            "rooms": [
+                {
+                    "ad": 2,
+                    "ch": 0,
+                    "chAge": []
+                }
+            ]
+        },
+        "cid": "5931",
+        "ntnD": "India"
+    },
+    "iBfstPf": true,
+    "rmA": [
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Air Conditioning",
+                "Ceiling Fan",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;1 Double Bed&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;151-sq-foot room with city views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Relax&lt;/b&gt; - Fireplace&lt;/p&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi and wired Internet access&lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - LCD television with premium channels&lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, shower/tub combination, free toiletries, and a hair dryer (on request)&lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and iron/ironing board; rollaway/extra beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Air conditioning&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Raised toilet seat, wheelchair accessible, low-height counter and sink, and bathroom emergency pull cord&lt;/p&gt;&lt;p&gt;Non-Smoking&lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3159,
+                    "prD": "&amp;#x20B9; 25,275",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088609",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, 1 night charges will be deducted as cancellation fee",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 25275,
+                    "uId": "0",
+                    "rtcd": "EP-RF",
+                    "name": "Deluxe Room",
+                    "key": [
+                        "1 Double Bed",
+                        "Package rate",
+                        "Free valet parking, Free self parking, Free WiFi"
+                    ]
+                }
+            ],
+            "id": 1230317,
+            "szD": "14 sqm",
+            "vwN": "City View",
+            "bedD": "1 Double Bed",
+            "nm": "Standard Room",
+            "imgA": [
+                "https://i.travelapi.com/hotels/9000000/8320000/8318800/8318789/e5441649_z.jpg",
+                "https://i.travelapi.com/hotels/9000000/8320000/8318800/8318789/7b4bea8c_z.jpg",
+                "https://i.travelapi.com/hotels/9000000/8320000/8318800/8318789/d358e9ba_z.jpg"
+            ]
+        },
+        {
+            "amA": [
+                "Refrigerator",
+                "Tea/Coffee Maker",
+                "Free Bottled Water",
+                "Air Conditioning",
+                "Ceiling Fan",
+                "Free Wi-Fi",
+                "Free Toiletries",
+                "Work Desk"
+            ],
+            "dsc": "&lt;p&gt;&lt;strong&gt;1 Double Bed&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;183-sq-foot room with garden views &lt;/p&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Relax&lt;/b&gt; - Fireplace&lt;/p&gt;&lt;p&gt;&lt;b&gt;Internet&lt;/b&gt; - Free WiFi and wired Internet access&lt;/p&gt;&lt;p&gt;&lt;b&gt;Entertainment&lt;/b&gt; - LCD television with premium channels&lt;/p&gt;&lt;p&gt;&lt;b&gt;Food &amp; Drink&lt;/b&gt; - Refrigerator, minibar, coffee/tea maker, and 24-hour room service&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sleep&lt;/b&gt; - Premium bedding &lt;/p&gt;&lt;p&gt;&lt;b&gt;Bathroom&lt;/b&gt; - Private bathroom, shower/tub combination, free toiletries, and a hair dryer (on request)&lt;/p&gt;&lt;p&gt;&lt;b&gt;Practical&lt;/b&gt; - Safe, free newspaper, and iron/ironing board; rollaway/extra beds available on request&lt;/p&gt;&lt;p&gt;&lt;b&gt;Comfort&lt;/b&gt; - Air conditioning&lt;/p&gt;&lt;p&gt;&lt;b&gt;Accessibility&lt;/b&gt; - Raised toilet seat, wheelchair accessible, low-height counter and sink, and bathroom emergency pull cord&lt;/p&gt;&lt;p&gt;Non-Smoking&lt;/p&gt;",
+            "roptA": [
+                {
+                    "cur": "&amp;#x20B9;",
+                    "pr": 3447,
+                    "prD": "&amp;#x20B9; 27,574",
+                    "mp": "EP",
+                    "mlD": "No meals included",
+                    "prId": "hp20390088912",
+                    "mpN": "Room Only",
+                    "xpDtlA": [
+                        "If you cancel your booking before 03 Aug, you&apos;ll get a full refund",
+                        "If you cancel your booking after 03 Aug, you won&apos;t get a refund",
+                        "On no-show, there will be no refund."
+                    ],
+                    "prQ": "total price",
+                    "xpSmry": "Fully refundable before 03 Aug",
+                    "absPrc": 27574,
+                    "uId": "1",
+                    "rtcd": "EP-RF",
+                    "name": "Deluxe Room",
+                    "key": [
+                        "Room Only"
+                    ]
+                }
+            ],
+            "id": 1230315,
+            "szD": "17 sqm",
+            "vwN": "Garden View",
+            "bedD": "1 Double Bed",
+            "nm": "Deluxe Room",
+            "imgA": [
+                "https://i.travelapi.com/hotels/9000000/8320000/8318800/8318789/5d16e690_z.jpg",
+                "https://i.travelapi.com/hotels/9000000/8320000/8318800/8318789/af4771c8_z.jpg",
+                "https://i.travelapi.com/hotels/9000000/8320000/8318800/8318789/7b4bea8c_z.jpg",
+                "https://i.travelapi.com/hotels/9000000/8320000/8318800/8318789/d358e9ba_z.jpg"
+            ]
+        }
+    ]
+}
