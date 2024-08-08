@@ -72,11 +72,21 @@ for data in popular_cities_in_india:
             city_dict=r_json[0]
             city_dict["state"]=data.get('state')
             # print(city_dict.get('data').get('nm'),"=====>",Cities.objects.filter(name=city_dict.get('data').get('nm')).exists())
-            if not Cities.objects.filter(name=city_dict.get('data').get('nm')).exists():
-                states=States.objects.filter(name=data.get('state')).first()
-                if states:
-                    Cities.objects.create(name=city_dict.get('data').get('nm'),state=states,country=states.country)
-                # print(states.name)
+            # if not Cities.objects.filter(name=city_dict.get('data').get('nm')).exists():
+            #     states=States.objects.filter(name=data.get('state')).first()
+            #     if states:
+            #         Cities.objects.create(name=city_dict.get('data').get('nm'),state=states,country=states.country)
+            print(city_dict.get('data').get('nm'))
+   
             city_list.append(city_dict)
 with open('./scraping/city_list.json','w',encoding='utf-8') as f:
     json.dump(city_list, f, indent=4)
+
+
+
+# a=4
+# b=2
+# a=a-b #4-2 =2
+# b=a+b #2+2 = 4
+# a=b-a #4-2 = 2
+# print(a,b)

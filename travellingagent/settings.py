@@ -68,7 +68,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "corsheaders.middleware.CorsMiddleware",
-    
+      "django.middleware.gzip.GZipMiddleware",
 ]
 
 ROOT_URLCONF = 'travellingagent.urls'

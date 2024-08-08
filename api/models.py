@@ -259,7 +259,7 @@ class Hotel(models.Model):
     desc=models.TextField(null=True,blank=True)
     contact_info = models.JSONField(null=True, blank=True)  # Contact details like phone, email, etc.
     image_url = models.URLField(max_length=200,null=True,blank=True)
-    img = models.ImageField(upload_to=hotel_image_upload_path,null=True,blank=True)
+    img = models.ImageField(upload_to=hotel_image_upload_path,null=True,blank=True,max_length=500)
     ln=models.FloatField(null=True, blank=True)
     lt=models.FloatField(null=True, blank=True)
     amenities =models.JSONField()
@@ -275,7 +275,7 @@ def hotel_images_upload_path(instance, filename):
     return f"hotel_uploads/{instance.hotel.city.name}-{instance.hotel.city.state.name}-{instance.hotel.city.country.name}/{instance.hotel.name}/{filename}"
 class HotelImages(models.Model):
     hotel = models.ForeignKey(Hotel, on_delete=models.CASCADE,related_name="hotel_images")
-    image=models.ImageField(upload_to=hotel_images_upload_path)
+    image=models.ImageField(upload_to=hotel_images_upload_path,max_length=500)
     img_url=models.URLField(null=True, blank=True)
 
 class RoomCategory(models.Model):
@@ -294,7 +294,7 @@ def hotel_room_img_upload_path(instance, filename):
     return f"hotel_uploads/{instance.room_category.hotel.city.name}-{instance.room_category.hotel.city.state.name}-{instance.room_category.hotel.city.country.name}/{instance.room_category.hotel.name}/rooms/{filename}"
 class RoomsImg(models.Model):
     room_category = models.ForeignKey(RoomCategory,on_delete=models.CASCADE,related_name="rooms_category_img")
-    img=models.ImageField(upload_to=hotel_room_img_upload_path)
+    img=models.ImageField(upload_to=hotel_room_img_upload_path,max_length=500)
     img_url=models.URLField(null=True, blank=True)
 def get_amentiy_room():
     return {
@@ -334,6 +334,8 @@ class HotelDetails(models.Model):
     def __str__(self):
         return f'{self.hotel.name} - {self.room_type}'
 
+def get_activity_img(instance,filename):
+    return f"uploads_activity/{instance.activity_city.name}-{instance.activity_city.state.name}/{filename}"
 
 class Activity(models.Model):
     category_choices = [
@@ -347,12 +349,81 @@ class Activity(models.Model):
         ('shopping', 'Shopping'),
         ('entertainment', 'Entertainment'),
         ('nightlife', 'Nightlife'),
+        ('temple', 'Temple'),
+        ('cave', 'Cave'),
+        ('museum', 'Museum'),
+        ('garden & park', 'Garden & Park'),
+        ('beach', 'Beach'),
+        ('zoo', 'Zoo'),
+        ('island', 'Island'),
+        ('temple', 'Temple'),  # Note: This is a duplicate and should be removed
+        ('forts & palaces', 'Forts & Palaces'),
+        ('dam', 'Dam'),
+        ('historical site', 'Historical Site'),
+        ('bird sanctuary', 'Bird Sanctuary'),
+        ('hills & valleys', 'Hills & Valleys'),
+        ('monument', 'Monument'),
+        ('landmark', 'Landmark'),
+        ('fairs & festivals', 'Fairs & Festivals'),
+        ('waterfall', 'Waterfall'),
+        ('lake', 'Lake'),
+        ('national park', 'National Park'),
+        ('buddhist temple', 'Buddhist Temple'),
+        ('wildlife', 'Wildlife'),
+        ('rafting', 'Rafting'),
+        ('boating & cruises', 'Boating & Cruises'),
+        ('shopping market', 'Shopping Market'),
+        ('waterfront', 'Waterfront'),
+        ('gurudwara', 'Gurudwara'),
+        ('planetarium', 'Planetarium'),
+        ('bridge', 'Bridge'),
+        ('aquarium', 'Aquarium'),
+        ('art gallery', 'Art Gallery'),
+        ('amusement & theme park', 'Amusement & Theme Park'),
+        ('mosque', 'Mosque'),
+        ('lighthouse', 'Lighthouse'),
+        ('commercial street', 'Commercial Street'),
+        ('stay experience', 'Stay Experience'),
+        ('shopping', 'Shopping'),  # Note: This is a duplicate and should be removed
+        ('church & cathedral', 'Church & Cathedral'),
+        ('viewpoint', 'Viewpoint'),
+        ('shows & theatres', 'Shows & Theatres'),
+        ('religious pond', 'Religious Pond'),
+        ('paragliding & parasailing', 'Paragliding & Parasailing'),
+        ('trekking', 'Trekking'),
+        ('trekking & hiking', 'Trekking & Hiking'),
+        ('golf course', 'Golf Course'),
+        ('elephant camp', 'Elephant Camp'),
+        ('river', 'River'),
+        ('nature', 'Nature'),
+        ('adventure sports', 'Adventure Sports'),
+        ('tombs & mausoleums', 'Tombs & Mausoleums'),
+        ('rocks & canyons', 'Rocks & Canyons'),
+        ('ashram', 'Ashram'),
+        ('forest', 'Forest'),
+        ('nightmarket', 'Nightmarket'),
+        ('village', 'Village'),
+        ('shopping mall', 'Shopping Mall'),
+        ('cultural village', 'Cultural Village'),
+        ('adventure zone', 'Adventure Zone'),
+        ('desert', 'Desert'),
+        ('animal rides', 'Animal Rides'),
+        ('town', 'Town'),
+        ('things to do', 'Things To Do'),
+        ('sky diving', 'Sky Diving'),
+        ('sporting events & stadiums', 'Sporting Events & Stadiums'),
+        ('deer park', 'Deer Park'),
+        ('cable car', 'Cable Car'),
+        ('adventure sport', 'Adventure Sport'),
+        ('factories & industries', 'Factories & Industries'),
     ]
-    category = MultiSelectField(max_length=250, choices=category_choices)
+    category = MultiSelectField(max_length=250, choices=category_choices,null=True, blank=True)
     duration = models.CharField(max_length=30, null=True, blank=True)  
     age_limit = models.CharField(max_length=30,null=True, blank=True)
     activity_name = models.CharField(max_length=350)
+    entry_fee= models.CharField(max_length=250, null=True, blank=True)
     sequence=models.IntegerField(null=True, blank=True)
+    activity_img=models.ImageField(null=True, blank=True,upload_to=get_activity_img)
     activity_desc = models.TextField(null=True, blank=True)
     activity_city = models.ForeignKey(Cities, on_delete=models.CASCADE, related_name="activities_in_city",null=True)
 

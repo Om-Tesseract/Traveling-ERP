@@ -4,3 +4,5 @@ migrations
 media
 static
 venv
+
+scraping/results.json

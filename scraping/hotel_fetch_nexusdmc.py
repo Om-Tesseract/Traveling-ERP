@@ -214,6 +214,7 @@ with open('./scraping/city_list.json', 'r', encoding="utf-8") as f:
                                     amenities_rate=amenities_rate,
 
                                 )
+                                
                                 count = 0
                                 for img in hotel_detail.get('images', [])[:7]:
                                     count = count + 1
@@ -303,7 +304,8 @@ with open('./scraping/city_list.json', 'r', encoding="utf-8") as f:
                                 main_hotel_dic["hotels"] = hotels_main_list
                                 city_hotels.append(main_hotel_dic)
                                 print('url==>', hotel.get('url'))
-
+                            else:
+                                print("==> already exists",name)
         except Exception as e:
             print("Error======>", e)
 

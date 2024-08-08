@@ -21,6 +21,7 @@ from .filters import EmployeeFilters,CustomerFilter,HotelsFilter,RoadTransportFi
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 import re
+from django.db.models.functions import TruncMonth
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
@@ -119,17 +120,38 @@ class DashboardListView(APIView):
                 company = Employee.objects.filter(emp_user=req_user).first().company
                 
         elif req_user.role == 'Company':
-            company= Company.objects.filter(company__custom_user_id=req_user.id)
+            company= Company.objects.filter(custom_user_id=req_user.id).first()
         if company is not None:
             total_customer= Customer.objects.filter(company=company).count()
-            total_pending_itinerary= Itinerary.objects.filter(package__company=company,status="PENDING").count()
-            total_completed_itinerary= Itinerary.objects.filter(package__company=company,status="COMPLETED").count()
+            total_pending_itinerary= CustomisedPackage.objects.filter(company=company,status="PENDING").count()
+            total_completed_itinerary= CustomisedPackage.objects.filter(company=company,status="COMPLETED").count()
+            total_itinerary= CustomisedPackage.objects.filter(company=company).count()
+            current_year = datetime.datetime.now().year
+            monthly_itinerary_counts = CustomisedPackage.objects.filter(
+                company=company,
+                leaving_on__year=current_year
+            ).values('leaving_on__month').annotate(count=Count('id')).order_by('leaving_on__month')
+
+            monthly_counts = {i: 0 for i in range(1, 13)}  # Initialize dictionary for all months
+            for entry in monthly_itinerary_counts:
+                monthly_counts[entry['leaving_on__month']] = entry['count']
+            state_package_counts = CityNight.objects.filter(
+                package__company=company,
+                package__leaving_on__year=current_year
+            ).values('city__state__name').annotate(package_count=Count('package', distinct=True)).order_by('city__state__name')
+            
+            state_counts = {item['city__state__name']: item['package_count'] for item in state_package_counts}
+
             context={
                 "total_customers": total_customer,
                 "total_pending_itinerary":total_pending_itinerary,
-                "total_completed_itinerary":total_completed_itinerary
-
+                "total_completed_itinerary":total_completed_itinerary,
+                "total_itinerary":total_itinerary,
+                 "monthly_itinerary_counts": monthly_counts,
+                 "state_package_counts": state_counts
             }
+
+         
             return Response(context)
         else:
             return Response({"message": "Couldn't find company"})

@@ -3,6 +3,7 @@ from .models import *
 import django_filters as filter_field
 from django_filters.rest_framework import FilterSet
 from django_filters import rest_framework as filters
+from django.db.models import ImageField
 
 class EmployeeFilters(FilterSet):
     order_by_field = 'ordering'
@@ -60,6 +61,15 @@ class ActivityFilter(filter_field.FilterSet):
     class Meta:
         model = Activity
         fields = '__all__'
+         
+        filter_overrides = {
+            ImageField: {
+                'filter_class': filter_field.CharFilter,
+                'extra': lambda f: {
+                    'lookup_expr': 'icontains',
+                },
+            },
+        }
 
 class CustomizedPackageFilter(filter_field.FilterSet):
     customer = filter_field.CharFilter(field_name='customer__name', lookup_expr='icontains')

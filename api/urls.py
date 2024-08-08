@@ -2,6 +2,7 @@ from django.urls import path
 from api import views
 urlpatterns = [
     # employees urls
+    path('dashboard/',views.DashboardListView.as_view(),name="DashboardViews"),
     path('employee/',views.EmployeeListCreateView.as_view(),name="EmployeeListCreateView"),
     path('employee/<int:pk>/',views.EmployeeUpdateDeleteView.as_view(),name="EmployeeUpdateDeleteView"),
     path('employee/attendant/',views.EmployeeAttendanceListCreateAPI.as_view(),name="EmployeeAttendanceListCreateAPI"),

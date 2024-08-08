@@ -28,6 +28,9 @@ admin.site.register(Hotel,HotelAdmin)
 admin.site.register(Country)
 admin.site.register(RoomCategory)
 admin.site.register(RoadTransportOption)
+class ActivityAdmin(admin.ModelAdmin):
+    list_display=['activity_name','activity_city','sequence','category',]
+    search_fields=('activity_name','activity_city__name')
 
 class CitiesAdmin(admin.ModelAdmin):
     list_filter = ('name','country__name', 'state__name')  # Add fields you want to filter by
@@ -41,7 +44,7 @@ admin.site.register(Cities,CitiesAdmin)
 admin.site.register(Nationality)
 admin.site.register(CustomisedPackage)
 admin.site.register(Travel_Details)
-admin.site.register(Activity)
+admin.site.register(Activity,ActivityAdmin)
 admin.site.register(EmployeeAttendance)
 admin.site.register(CityNight)
 admin.site.register(Itinerary,ItineraryAdmin)

@@ -426,7 +426,8 @@ class CustomisedPackageSerializer(serializers.ModelSerializer):
             for i in range(city_night.nights):
                 # Get the next unique activity from the cycle
                 if i==0:
-                    activity,is_created = Activity.objects.get_or_create(activity_name__icontains=f"Arrival at {city_night.city.name}",activity_city=city_night.city)
+                    activity_desc = f"your journey in {city_night.city.name}."
+                    activity,is_created = Activity.objects.get_or_create(activity_name=f"Arrival at {city_night.city.name}",activity_city=city_night.city,activity_desc=activity_desc)
                     print("Activity=======>",activity,is_created)
                
                 else:
@@ -1388,8 +1389,19 @@ class CitieSerializer(serializers.ModelSerializer):
             data['state_name']=instance.state.name
     
         return data
-    
 
+class HotelRoomCategorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model= RoomCategory
+        fields='__all__'
+
+    def to_representation(self, instance):
+        data=super().to_representation(instance)
+        data['room_img']=instance.category.rooms_category_img.all().values()
+        data['rooms']=instance.cate_roomtype.all().values()
+
+        return data
 class HotelRoomTypeSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -1406,7 +1418,6 @@ class HotelRoomTypeSerializer(serializers.ModelSerializer):
         #     print(f"Error decoding JSON: {e}")
         if instance.category:
             data['category_name']=instance.category.name
-        data['room_img']=instance.category.rooms_category_img.all().values()
         if instance.category:
             room_category=RoomCategory.objects.filter(id=instance.category.id).values().first()
             data['room_category']=room_category
@@ -1423,14 +1434,19 @@ class HotelDetailsUpdateSerializer(serializers.ModelSerializer):
         return super().update(instance, validated_data)
  
 class HotelSerializer(serializers.ModelSerializer):
-    rooms_type=HotelRoomTypeSerializer(many=True)
+    
     class Meta:
         model= Hotel
         fields='__all__'
 
     def to_representation(self, instance):
         data=super().to_representation(instance)
+        room_cat=instance.rooms_category.all().values()
+        for rc in room_cat:
+            rc['room_img']=RoomsImg.objects.filter(room_category=rc.get('id')).values()
 
+            rc['rooms']=RoomType.objects.filter(hotel_id=instance.id,category_id=rc.get('id')).values()
+        data['room_type']=room_cat
         data['hotel_imgs']=instance.hotel_images.all().values()
         if instance.city:
             data['city_name']=instance.city.name

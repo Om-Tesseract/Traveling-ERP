@@ -52,7 +52,7 @@ time.sleep(2)
 
 # select date
 select_departure_date=driver.find_element(By.XPATH,'//*[@id="yDmH0d"]/c-wiz[2]/div/div[2]/c-wiz/div[1]/c-wiz/div[2]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[1]/div/div[1]/div/input[@aria-label="Departure"]')
-select_departure_date.send_keys('Wed, Jul 31')
+select_departure_date.send_keys('Wed, Aug 21')
 select_departure_date.click()
 time.sleep(2)
 
